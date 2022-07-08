@@ -1,0 +1,28 @@
+{% set hero_zone__base_class = 'hero-zone' %}
+<div {{bem(hero_zone__base_class, hero_zone.hero_zone__modifiers, hero_banner__blockname, hero_banner__extra_classes)}} >
+  <div class="hero-zone__container {{ hero_zone.image_src ? 'hero-zone--with-image' : 'hero-zone--without-image' }}">
+    <div class="hero-zone__content">
+      {% if hero_zone.title %}
+        <h1 class="hero-zone--title">{{ hero_zone.title }}</h1>
+      {% endif %}
+      {% if hero_zone.description %}
+        <div class="hero-zone--description">{{ hero_zone.description }}</div>
+      {% endif %}
+      <div class="hero-zone__cta">
+        {% if hero_zone.cta1 and hero_zone.cta1.title %}
+            <a href="{{ hero_zone.cta1.url }}" {{ hero_zone.cta1.target ? "target='" ~ hero_zone.cta1.target  ~ "'" : ""  }} class="button hero-zone__link">{{ hero_zone.cta1.title }}</a>
+        {% endif %}
+        {% if hero_zone.cta2 and hero_zone.cta2.title %}
+            <a href="{{ hero_zone.cta2.url }}" {{ hero_zone.cta2.target ? "target='" ~ hero_zone.cta2.target  ~ "'" : ""  }} class="button hero-zone__link">{{ hero_zone.cta2.title }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if hero_zone.image_src %}
+    <div class="hero-zone__image">
+      <div class="hero-zone__image-wrapper">
+        <img src="{{ hero_zone.image_src }}" alt="{{ hero_zone.image_alt }}">
+      </div>
+    </div>
+  {% endif %}
+</div>

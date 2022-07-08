@@ -1,0 +1,16 @@
+<div class="woocommerce-variation-add-to-cart variations_button">
+    {% do action('woocommerce_before_add_to_cart_button') %}
+    {% do action('woocommerce_before_add_to_cart_quantity') %}
+
+    {{ fn('woocommerce_quantity_input', {'min_value' : min_value, 'max_value' : max_value, 'input_value' : input_value }) }}
+
+    {% do action('woocommerce_after_add_to_cart_quantity') %}
+
+    <button type="submit" class="single_add_to_cart_button button alt" alt="Purchase Now">{{ fn('esc_html', product.single_add_to_cart_text()) }}</button>
+
+    {% do action('woocommerce_after_add_to_cart_button') %}
+
+	<input type="hidden" name="add-to-cart" value="{{ fn('absint', product.get_id()) }}" />
+	<input type="hidden" name="product_id" value="{{ fn('absint', product.get_id()) }}" />
+	<input type="hidden" name="variation_id" class="variation_id" value="0" />
+</div>

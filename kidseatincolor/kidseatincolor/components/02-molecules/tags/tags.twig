@@ -1,0 +1,15 @@
+<div class="tags-block">
+  {% if tags %}
+    {% for i in tags %}
+    <a class="button-base desktop-only" href="{{ i.button_url }}">
+        {{ i.button_content }}
+    </a>
+    {% endfor %}
+	{% endif %}
+
+  {% if evidence_based %}
+  <a class="evidence_based" href="{{ i.button_url }}" data-toggle="modal" data-target="#evidenceBased">
+    Evidence Based
+  </a>
+	{% endif %}
+</div>

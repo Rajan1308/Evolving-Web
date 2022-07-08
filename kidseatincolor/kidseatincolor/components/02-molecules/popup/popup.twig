@@ -1,0 +1,23 @@
+{% if popup %}
+  <div class="popup__container">
+    {% if popup.image_src %}
+      <div class="popup__left-content">
+        <img src="{{ popup.image_src }}" alt="{{ popup.image_alt }}" class="{{ popup.mobile_image_src ? 'desktop-only' : '' }}">
+        {% if popup.mobile_image_src %}
+          <img src="{{ popup.mobile_image_src }}" alt="{{ popup.mobile_image_alt }}" class="{{ popup.mobile_image_src ? 'mobile-only' : '' }}">
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="popup__right-content">
+      {% if popup.title %}
+        <h3 class="popup__title">{{ popup.title }}</h3>
+      {% endif %}
+      {% if popup.description %}
+        <div class="popup__description">{{ popup.description }}</div>
+      {% endif %}
+      {% if popup.popup__form %}
+        <div class="popup__form">{{ popup.popup__form }}</div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

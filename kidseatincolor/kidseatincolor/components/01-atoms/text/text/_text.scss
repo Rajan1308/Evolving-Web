@@ -1,0 +1,149 @@
+/* Create a mixin for paragraph styles that can be implemented
+ * in components with other classnames.
+*/
+// @mixin paragraph($margin: 0 0 1em) {
+//   margin: $margin;
+// }
+
+// .paragraph {
+//   @include paragraph;
+// }
+
+// .blockquote {
+//   font-style: italic;
+//   border-left: solid 3px clr(accent);
+//   margin-left: 1em;
+//   padding-left: 1em;
+// }
+
+// .hr {
+//   border-style: solid;
+//   border-width: 1px 0 0;
+//   color: currentColor;
+// }
+
+/* TODO: BEM selectors should be applied to wysiwyg-created content */
+
+// .text-long {
+//   // p {
+//   //   @extend .paragraph;
+//   // }
+
+//   blockquote {
+//     @extend .blockquote;
+//   }
+
+//   hr {
+//     @extend .hr;
+//   }
+// }
+
+body {
+  p {
+    @include fs-body();
+
+    margin: 20px 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+  }
+
+  p:empty{
+    display: none;
+  }
+
+  ul,
+  ol {
+    @include fs-body();
+
+    li {
+      @include fs-body();
+
+      color: $gray-slate;
+      font-weight: 400;
+    }
+  }
+
+  strong, b {
+    font-family: $font-primary-bold;
+  }
+
+  h1, .h1, h2, .h2 {
+    margin: 12px 0;
+
+    @include breakpoint($medium) {
+      margin: 40px 0 32px
+    }
+  }
+
+  h3, .h3, h4, .h4, h5, .h5 {
+    margin: 12px 0;
+
+    @include breakpoint($medium) {
+      margin: 32px 0 24px;
+    }
+  }
+
+  h6, .h6 {
+    margin: 12px 0;
+
+    @include breakpoint($medium) {
+      margin: 24px 0 16px;
+    }
+  }
+
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px dotted;
+    margin-bottom: 16px;
+    color: currentColor;
+  }
+
+  blockquote {
+    border-left: 12px solid $olnav;
+    margin: 0;
+    padding-left: 28px;
+    p {
+      font-family: $font-primary-regular;
+      font-size: 18px;
+      line-height: 1.6;
+      color: $scorpion;
+
+      @include breakpoint($medium) {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.text-block,
+.article-content,
+.article-body,
+.two-col-content__description {
+  a {
+    font-family: $font-primary-semi-bold;
+    color: $red;
+    text-decoration: underline;
+
+    &:hover {
+      font-family: $font-primary-semi-bold;
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+}

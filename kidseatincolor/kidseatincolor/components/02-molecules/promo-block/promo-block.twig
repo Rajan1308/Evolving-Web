@@ -1,0 +1,16 @@
+<div class="promo-block {{ promo_block.cta.url ? 'with-cta' : 'without-cta' }}">
+	{% if promo_block.cta.url %}
+		<a href="{{ promo_block.cta.url }}" {{ promo_block.cta.target ? "target='" ~ promo_block.cta.target  ~ "'" : ""  }} class="promo-block__link"></a>
+	{% endif %}
+	{% if promo_block.title %}
+		<h2 class="promo-block__title">{{ promo_block.title }}</h2>
+	{% endif %}
+	{% if promo_block.description %}
+		<div class="promo-block__description">{{ promo_block.description }}</div>
+	{% endif %}
+	{% if promo_block.cta.url %}
+	<div class="mobile-cta">
+		<a href="{{ promo_block.cta.url }}" {{ promo_block.cta.target ? "target='" ~ promo_block.cta.target  ~ "'" : ""  }} >{{promo_block.cta.text}}</a>
+	</div>
+	{% endif %}
+</div>

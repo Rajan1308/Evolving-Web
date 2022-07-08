@@ -1,0 +1,4 @@
+cta_card_content_align: 'left'
+cta_card__content_bg: '#31ABD1'
+hero_banner__modifiers: 
+  - 'with-card'

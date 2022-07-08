@@ -1,0 +1,6 @@
+article_data:
+  type: 'blog'
+  title: 'Title - Lorem ipsum dolor sit amet consectetur adipiscing elite'
+  date: 'December 2021'
+  reviewed_date: 'January 2022'
+  affiliate: true

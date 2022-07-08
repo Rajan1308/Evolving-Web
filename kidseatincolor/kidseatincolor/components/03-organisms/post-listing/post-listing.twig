@@ -1,0 +1,12 @@
+{% if post_listing %}
+  <div class="post_listing">
+    <h{{ post_listing.heading_level }} class="post_listing__heading">{{ post_listing.heading }}</h{{ post_listing.heading_level}}>
+    <div class="post_listing__content">
+      {% block post_listing_content %}
+        {% for i in range (1, 3) %} 
+          {% include "@molecules/post/post.twig" with postData %} 
+        {% endfor %}
+      {% endblock %}
+    </div>
+  </div>
+{% endif %}

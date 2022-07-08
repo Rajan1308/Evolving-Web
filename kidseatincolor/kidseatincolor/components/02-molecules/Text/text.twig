@@ -1,0 +1,82 @@
+{% set text__base_class = text__base_class | default('text-with-cta') %}
+
+<div {{ bem(text__base_class, text__modifiers, text__blockname, text__extra_classes) }} style="background-image:url('{{text__backround_image__url}}')">
+  {# Image #}
+  {% block text__img %}
+    {% if text__image__src %}
+      {% include "@atoms/images/image/responsive-image.twig" with {
+        image_blockname: text__base_class,
+        output_image_tag: text__image__output_image_tag,
+        image_src: text__image__src,
+        image_alt: text__image__alt,
+      } %}
+    {% endif %}
+  {% endblock %}
+  {# Content #}
+  <div {{ bem('content', text__content__modifiers, text__base_class) }}>
+    {# Heading #}
+    {% if text__heading %}
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading_base_class: text__heading__base_class|default('heading'),
+        heading_modifiers: text__heading__modifiers,
+        heading_blockname: text__base_class,
+        heading_level: 2,
+        heading: text__heading,
+        heading_url: text__heading__link|default(text__link__url),
+        heading_link_base_class: text__heading__link_base_class|default('heading-link'),
+        heading_link_blockname: text__base_class,
+      } %}
+    {% endif %}
+    {# Subheading #}
+    {% if text__subheading %}
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading_base_class: text__subheading__base_class|default('body'),
+        heading_modifiers: text__subheading__modifiers,
+        heading_blockname: text__base_class,
+        heading_level: 3,
+        heading: text__subheading,
+        heading_url: text__subheading__link,
+      } %}
+    {% endif %}
+    {# Body #}
+    {% if text__body %}
+      {% include "@atoms/text/text/01-paragraph.twig" with {
+        paragraph_base_class: text__body__base_class|default('body'),
+        paragraph_modifiers: text__body__modifiers,
+        paragraph_blockname: text__base_class,
+        paragraph_content: text__body,
+      } %}
+    {% endif %}
+    {# Link #}
+    {% if text__link__url %}
+      {% include "@atoms/links/link/link.twig" with {
+        link_base_class: text__link__base_class|default('link'),
+        link_blockname: text__base_class,
+        link_attributes: text__link__attributes,
+        link_content: text__link__text,
+        link_url: text__link__url,
+      } %}
+    {% endif %}
+    {% if text__placeholder_name %}
+      <input type="text" placeholder="{{text__placeholder_name}}" class="textbox">
+    {% endif %}
+
+    {% if text__placeholder_email %}
+      <input type="text" placeholder="{{text__placeholder_email}}" class="textbox">
+    {% endif %}
+    {# Button #}
+    {% if text__button__url %}
+      {% include "@atoms/buttons/twig/button.twig" with {
+        button_base_class: text__button__base_class|default('button'),
+        button_modifiers: text__button__modifiers,
+        button_blockname: text__base_class,
+        button_attributes: text__button__attributes,
+        button_content: text__button__content,
+        button_url: text__button__url,
+      } %}
+    {% endif %}
+    {% if text__form_short_code %}
+      {{ text__form_short_code }}
+    {% endif %}
+  </div>
+</div>

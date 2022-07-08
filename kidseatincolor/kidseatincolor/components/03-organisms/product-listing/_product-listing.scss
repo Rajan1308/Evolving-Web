@@ -1,0 +1,81 @@
+.product-listing {
+  display: block;
+  margin-bottom: 35px;
+  &__title {
+    @include fs-h3();
+
+    color: #256e30;
+    margin: 36px 0;
+  }
+  &__slider {
+    margin-top: 25px;
+    padding: 0 0;
+    @include breakpoint($small) {
+      padding: 0 70px;
+    }
+  }
+  &__control {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+    @include breakpoint($medium) {
+      display: initial;
+    }
+  }
+  &__left__control {
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  &__right__control {
+    position: absolute;
+    top: 50%;
+    right: -5px;
+  }
+
+  .center {
+    padding: 37px 0;
+    text-align: center;
+
+    @include breakpoint($medium) {
+      padding: 50px;
+    }
+
+    .button {
+      border: 2px solid $red;
+      color: $white;
+
+      &:hover {
+        color: $red;
+        background: $white;
+      }
+    }
+  }
+
+  .product-listing__wp-content {
+    @include breakpoint($medium) {
+      padding: 0 90px;
+      margin-bottom: 13px;
+    }
+
+    .owl-prev,
+    .owl-next {
+      top: 175px;
+    }
+
+    .owl-prev {
+      left: 0;
+    }
+
+    .owl-next {
+      right: 0;
+    }
+
+    .owl-dots {
+      @include breakpoint($upto-medium) {
+        margin-top: 37px;
+      }
+    }
+  }
+}

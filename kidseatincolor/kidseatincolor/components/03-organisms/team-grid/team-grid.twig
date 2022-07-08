@@ -1,0 +1,30 @@
+<div class="team-grid">
+  <div class="team-grid__desktop__wrapper">
+    {% block team_grid %} {% for i in range(1, 12) %} {% include
+    "@molecules/team-member/team-member.twig" %} {% endfor %} {% endblock %}
+  </div>
+  <div class="team-grid__mobile__wrapper">
+    <div class="team-grid__slider glide">
+      <div class="team-grid__track glide__track" data-glide-el="track">
+        <div class="team-grid__content glide__slides">
+          {% block team_grid_mobile %} {% for i in range(1, 12) %} {% include
+          "@molecules/team-member/team-member.twig" %} {% endfor %} {% endblock
+          %}
+        </div>
+      </div>
+      <div class="team-grid__rollbar">
+        <div
+          class="slider__bullets glide__bullets"
+          data-glide-el="controls[nav]"
+        >
+          {% for i in range(1, 12) %}
+          <button
+            class="slider__bullet glide__bullet"
+            data-glide-dir="={{ i }}"
+          ></button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

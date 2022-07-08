@@ -1,0 +1,60 @@
+.card-with-image-link {
+  display: flex;
+  margin: 10px;
+  max-width: 377px;
+  width: 100%;
+  height: auto;
+
+  @include large {
+    flex-direction: column;
+    margin: 0 25px;
+    width: 280px;
+    height: 100%;
+  }
+
+  .image {
+    width: 190px;
+    height: auto;
+    border-radius: 10px;
+
+    @include large {
+      width: 280px;
+    }
+  }
+
+  &__content {
+    margin-left: 22px;
+    font-family: $font-primary-semi-bold;
+
+    @include large {
+      margin-left: 0;
+      margin-top: 17px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+  }
+
+  &__heading {
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: $font-primary-semi-bold;
+    color: $gray-slate;
+
+    @include large {
+      font-size: 18px;
+    }
+  }
+
+  &__button {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: $red;
+
+    @include large {
+      font-size: 16px;
+    }
+  }
+}

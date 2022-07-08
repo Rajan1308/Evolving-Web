@@ -1,0 +1,11 @@
+<div class="member">
+  {% if member.image_src %}
+  <div class="member__image__wrapper">
+    <img src="{{ member.image_src }}" alt="{{ member.image_alt }}">
+  </div>
+  <div class="member__content">
+    <h2 class="member__name">{{ member.name }}</h2>
+    <p class="member__title">{{ member.title }}</p>
+  </div>
+  {% endif %}
+</div>

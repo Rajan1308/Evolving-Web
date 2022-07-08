@@ -1,0 +1,23 @@
+.header-top {
+  min-height: 45px;
+  text-align: center;
+  background-color: $red;
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint($upto-large) {
+    padding: 0 24px;
+  }
+ 
+  p {
+    margin: auto;
+    line-height: 18px;
+    color: $white;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+      font-family: $font-primary-bold;
+    }
+  }
+}

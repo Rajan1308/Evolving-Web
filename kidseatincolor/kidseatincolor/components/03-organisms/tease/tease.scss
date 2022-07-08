@@ -1,0 +1,46 @@
+.tease-generic{
+    display: block;
+    grid-gap: 40px;
+    padding: 30px 0;
+    border-top: 1px solid $alto-light;
+
+    @include large{
+        display: flex;
+    }
+
+    .tease-thumbnail{
+        width: 100%;
+        margin-bottom: 15px;
+        img{
+            height: 245px;
+            width: 100%;
+            border: 1px solid $alto-light;
+            border-radius: 10px;
+            object-fit: cover;
+            @include large{
+                height: 130px;
+            }
+        }  
+        @include large{
+            max-width: 200px;
+            margin-bottom: 0;
+        }
+    }
+    .tease-content{
+        h4{
+            margin-bottom: 10px;
+            a{
+                text-decoration: none;
+                &:hover{
+                    color: $green;
+                }
+            }
+        }
+        p{
+            margin-top: 0;
+        }
+        a{
+            text-decoration: underline;
+        }
+    }
+}

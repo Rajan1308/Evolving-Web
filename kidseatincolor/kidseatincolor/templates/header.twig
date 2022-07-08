@@ -1,0 +1,106 @@
+{% set header__base_class = 'header' %}
+{# If `theme` is defined, set the path relative for Wordpress.
+ # Otherwise, set the path relative to the Component Library. #}
+{% set header__logo_src = theme ? theme.link ~  '/images/logo.png' : 'logo.png' %}
+{% set header__topContent = options.header_top_message ? options.header_top_message : 'Add you message here..' %}
+{% if options.header_top_enabledisable == true %}
+{% block header__strip %}
+  {% include "@molecules/header-top/header-top.twig" with {
+   headertop__contet: header__topContent
+  }  %}
+{% endblock %}
+{% endif %}
+<header {{ bem(header__base_class) }}>
+  <div {{ bem('inner', [], header__base_class) }}>
+    <div {{ bem('primary', [], header__base_class) }}>
+      <div {{ bem('branding', [], header__base_class) }}>
+
+        {% block header__branding %}
+          {% if options.options_site_logo %}
+            {% include "@organisms/site/site-header/_site-header-branding.twig" with {
+              header__logo_src: options.options_site_logo
+            } %}
+            {% else %}
+            {% include "@organisms/site/site-header/_site-header-branding.twig" %}
+          {% endif  %}
+        {% endblock %}
+      </div>
+
+      <div {{ bem('hamburger__menu', [], header__base_class) }}>
+        <button class="hamburger__menu--open">
+          <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <line x1="1.5" y1="1.5" x2="28.5" y2="1.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <line x1="1.5" y1="11.5009" x2="28.5" y2="11.5009" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <line x1="1.5" y1="21.4999" x2="28.5" y2="21.4999" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div {{ bem('topBarMenu', [], header__base_class) }}>
+        {% block header__topBarMenu %}
+          <div id="main-nav utitlities" class="main-nav">
+            {% include "@molecules/menus/_menu.twig" with {
+              menu_class: "main-menu",
+              items: topBarMenu.get_items,
+            } %}
+          </div>
+        {% endblock %}
+      
+        <form class="c-search-form" role="search" method="GET" action="/">
+          <input type="text" class="columns small-14" id="search" value="{{ function('get_search_query') }}" name="s" placeholder="Search">
+          <button class="button c-site-search__btn columns small-2" type="submit">
+          <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container" {{ bem('primaryMenu', [], header__base_class) }}>
+  <div class="primary-header-menu">
+    <div {{ bem('topBarMenu', [], header__base_class) }}>
+      <form class="c-search-form" role="search" method="GET" action="/">
+        <input type="text" class="columns small-14" value="{{ function('get_search_query') }}" id="search" name="s" placeholder="Search">
+        <button class="button c-site-search__btn columns small-2" type="submit">
+        <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+          </svg>
+        </button>
+      </form>
+      {% block header__mobileTopBarMenu %}
+        <div id="main-nav" class="main-nav">
+          {% include "@molecules/menus/_menu.twig" with {
+            menu_class: "main-menu",
+            items: topBarMenu.get_items,
+          } %}
+        </div>
+      {% endblock %}
+    </div>
+    {% block header__primaryMenu %}
+      <div id="main-nav" class="main-nav ">
+        {% include "@molecules/menus/_menu.twig" with {
+          menu_class: "main-menu",
+          items: primaryMenu.get_items
+        } %}
+        
+      </div>
+      
+    {% endblock %}
+  </div>
+  <div class="primary-header--ghost"></div>
+</div>
+{% if not fn('is_page_template', 'page-templates/home-templates.php') and not fn('is_page_template', 'page-templates/bloglisting-templates.php') and not fn('is_page_template', 'page-templates/recipelisting-templates.php')  %}
+<div class="container">
+  {{ function('yoast_breadcrumb', '<div id="breadcrumbs" class="yoast-breadcrumb mt-5">','</div>', false ) }}
+</div>
+{% endif %}
+
+{% if fn('is_account_page') %}
+  {% set dashboard_url = fn('get_permalink', fn('get_option', 'woocommerce_myaccount_page_id')) %}
+  <div class="container">
+    <a class="return-btn" href="{{ dashboard_url }}">Back to My Account</a>
+  </div>
+{% endif %}

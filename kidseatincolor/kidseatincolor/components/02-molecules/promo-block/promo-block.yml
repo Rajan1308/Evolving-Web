@@ -1,0 +1,7 @@
+promo_block:
+  title: Lorem ipsum dolor sit amet
+  description: <p>Sed do eiusmod tempor incididunt. dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+  cta:
+    url: '#'
+    target: ''
+    text: 'Learn more'

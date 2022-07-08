@@ -1,0 +1,43 @@
+.tags-block {
+  padding: 0 15px;
+
+  @include breakpoint($upto-medium) {
+    width: calc(100% - 56px);
+  }
+}
+
+.button-base {
+  background-color: #F1F1F1;
+  border: none;
+  border-radius: 4px;
+  margin: 10px 10px 10px 0;
+  color: $friar-gray;
+  font-weight: 700;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+
+  &:hover {
+    color: $friar-gray;
+  }
+}
+
+.evidence_based{
+  background-color: $white;
+  border: $green;
+  border-style: solid;
+  border-radius: 4px;
+  color: $green;
+  font-weight: 700;
+  padding: 2px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+
+  &:hover {
+    color: $green;
+  }
+}

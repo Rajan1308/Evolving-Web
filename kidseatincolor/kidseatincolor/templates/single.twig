@@ -1,0 +1,317 @@
+{% extends "templates/blocks/_defaults.twig" %}
+
+{% block content %}
+
+<div class="content-wrapper container mt-4 mb-4">
+	<div class="row"> {# Tags row start#}
+		{% set blogCat = [] %}
+		{% for cat in category %}
+				{% set blogCat = blogCat|merge([{ button_content: cat.name, button_url: '/category/'~cat.slug~'/' }]) %}
+		{% endfor %}
+		{{ primaryCat }}
+		  {% if blogCat %}
+				{% include '@molecules/tags/tags.twig' with {
+					tags: blogCat,
+					evidence_based: post.evidence_based_indication
+				}%}
+			{% endif %}
+			
+			{% if post.evidence_based_indication == 1 %}
+					<!-- Modal -->
+					<div class="modal fade" id="evidenceBased" tabindex="-1" role="dialog" aria-labelledby="evidenceBasedTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+							<div class="modal-content">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								<div class="modal-body py-4 pt-0 ml-4 mr-4 mt-0 mb-3">
+								<h2 class="text-with-form__heading" id="exampleModalLongTitle">Evidence Based</h2>
+									<p>{{ options.evidence_based_description}}</p>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+			{% endif %}
+	</div> {# Tags row end#}
+	<div class="row content__container" id="leftcontainer"> {# Header row start #}
+		<div class="col-md-9 content__item" > {# Header column start #}
+			<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+				{# <img src="{{ post.thumbnail.src|resize(1200, 300) }}"> #}
+				<section class="article-content">
+					<h1 class="article-h1">{{ post.title }}</h1>
+					{% if post.get_field('publication_date') %}
+						<p class="mt-2 mb-1">{{ post.get_field('publication_date')|date("F Y")|escape('wp_kses_post') }}</p>
+					{% endif %}
+					{% if post.get_field('review_date') %}
+						<p class="mt-1 mb-3">Last reviewed: {{ post.get_field('review_date')|date("F Y")|escape('wp_kses_post') }}</p>
+					{% endif %}
+					<div class="blog_details mobile-only">
+						{% if post.get_field('blog_author') %}
+							{% if category[0].name != 'Recipe' %}
+								{% set postCoAuth = post.get_field('post_coauthor') %}
+								{% include '@molecules/author/author.twig' with { 
+										author: {
+											name: post.get_field('blog_author'),
+										}
+									} %}
+									{# {% if post.get_field('post_coauthor') %}
+										<div class="author-block mb-4 pb-4 coauthor-block">
+											<p class="label">Coauthors:</p>
+											{% for coauth  in post.get_field('post_coauthor') %}
+												<p>{{ coauth.post_related_coauthor.title  }}</p>
+											{% endfor %}
+										</div>
+									{% endif %} #}
+									{#  #}
+									
+										
+									{#  #}
+									{% if post.get_field('post_coauthor') %}
+									
+										<div class="author-block mb-4 pb-4 coauthor-block">
+										<p class="label">Coauthors:</p>
+										{% set postCoAuth = [] %}
+										
+											<div id="show-more"><a href="javascript:void(0)">View coauthors</a></div>
+											<div id="show-more-content">
+												{% for coauths in post.get_field('post_coauthor') %}
+													{% set postCoAuth = coauths.post_related_coauthor %}	
+													<p>{{ postCoAuth }}</p>
+												{% endfor %}
+												<div id="show-less"><a href="javascript:void(0)">Hide coauthors</a></div>
+											</div> 
+										
+										</div>
+									{% endif %}
+
+							{% endif %}
+						{% endif %}
+					</div>
+
+					<div class="mobile-only">
+						{% if options.boilerplate_title %}
+							{% include '@molecules/about-us/about-us.twig' with { 
+								about_us: {
+									icon: theme.link ~  '/images/about-auth.svg',
+									title: options.boilerplate_title,
+									text: options.boilerplate_description
+								}
+							} %}
+							{# {% block javascripts %}
+									<script  src="{{ site.theme.link }}/dist/js/02-molecules/about-us/about-us.js" type="text/javascript"></script>
+							{% endblock %} #}
+						{% endif %}
+					</div>
+					{% if post.get_field('affiliate_disclaimer') %}
+						<p class="mt-1 mb-3 text-dark"><em>{{ options.affiliate_disclaimer_description }}</em></p>
+					{% endif %}
+				</section>
+			</article>
+		</div> {# Header column end #}
+		<div class="col-md-3 content__item desktop-only"> {# Author column start #}
+			{% if post.get_field('blog_author') %}
+				{% if category[0].name != 'Recipe' %}
+					{% set postCoAuth = post.get_field('post_coauthor') %}
+					{% include '@molecules/author/author.twig' with { 
+						author: {
+							name: post.get_field('blog_author'),
+						}
+						} %}
+						{% if post.get_field('post_coauthor') %}
+							<div class="author-block mb-4 pb-4 coauthor-block">
+								<p class="label">Coauthors:</p>
+								{% for coauth  in post.get_field('post_coauthor') %}
+									<p>{{ coauth.post_related_coauthor.title  }}</p>
+								{% endfor %}
+							</div>
+						{% endif %}
+				{% endif %}
+			{% endif %}
+		</div> {# Author column end #}
+	</div>{# Header row end#}
+	<div class="row content__container main--container"> {# article row start#}
+		<div class="col-md-9 content__item social-share-column" >
+			<div class="social-share-block">
+				<div>
+					{% set socShare = [] %}
+					{% for shareIoc in options.socical_share %}
+							{% set socShare = socShare|merge([{ title: post.title, url: shareIoc.social_link~post.link, icon: shareIoc.social_icon }]) %}
+					{% endfor %}
+					{% include '@molecules/social-share/social-share.twig' with {
+						social_menu_items: socShare,
+						emailshare: {
+							subject: post.title|e('url'),
+							body: 'Your friend has shared an article you with you.  '~ post.link,
+							icon: 'envelope'
+						},
+						print: {
+							title: 'Print',
+							url: '#',
+							icon: 'print'
+						}
+
+					}%}
+				</div>
+			</div>
+			<div class="order-sm-12 order-md-2 assidecontent"  id="leftcontainer">
+				<div class="article-body">
+					{{post.content}}
+				</div>
+				<div class="row bottom__content">
+					<div class="section-tag mb-3">
+						{% set tags = [] %}
+						{% for tag in post.terms('tags') %}
+								{% set tags = tags|merge([{ button_content: tag.name, button_url: tag.link }]) %}
+						{% endfor %}
+							{% if tags %}
+								{% include '@molecules/tags/tags.twig' with {
+									tags: tags
+								}%}
+							{% endif %}
+							
+					</div>
+					<section class="author-info-section">
+						{% include '@molecules/author-profile/author-profile.twig' with { 
+								author: {
+									image_src: Image(post.get_field('blog_author').team_featured_image).src,
+									image_alt: post.get_field('blog_author'),
+									name: post.get_field('blog_author'),
+									bio: post.get_field('blog_author').bio
+								}
+							} %}
+							
+					</section>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 order-sm-1 order-first order-md-12 content__item">
+			<div class="desktop-only">
+				{% if options.boilerplate_title %}
+					{% include '@molecules/about-us/about-us.twig' with { 
+						about_us: {
+							icon: theme.link ~  '/images/about-auth.svg',
+							title: options.boilerplate_title,
+							text: options.boilerplate_description
+						}
+					} %}
+					{% block javascripts %}
+							<script  src="{{ site.theme.link }}/dist/js/02-molecules/about-us/about-us.js" type="text/javascript"></script>
+					{% endblock %}
+				{% endif %}
+			</div>
+
+    <!-- Right sidebar ads start -->
+		{% if ads_right_side is not empty %}
+		<div class="ads-right-sidebar desktop-only">
+		  {% for key,ad in ads_right_side %}
+			<div class="wrapper right-rail-{{key}}">
+				<a href="{{ ad.ad_url }}">
+					<img src="{{ ad.ad_image }}">
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+		{% endif %}
+		<!-- Right sidebar ads end -->
+		</div>
+	</div>  {# article row end#}
+
+	{# <div class="row bottom__content">
+		<div class="section-tag mb-3">
+			{% set tags = [] %}
+			{% for tag in post.terms('tags') %}
+					{% set tags = tags|merge([{ button_content: tag.name, button_url: tag.link }]) %}
+			{% endfor %}
+				{% if tags %}
+					{% include '@molecules/tags/tags.twig' with {
+						tags: tags
+					}%}
+				{% endif %}
+				
+		</div>
+		<section class="author-info-section">
+			{% include '@molecules/author-profile/author-profile.twig' with { 
+					author: {
+						image_src: Image(post.get_field('blog_author').team_featured_image).src,
+						image_alt: post.get_field('blog_author'),
+						name: post.get_field('blog_author'),
+						bio: post.get_field('blog_author').bio
+					}
+				} %}
+				
+		</section>
+	</div> #}
+  </div>
+
+	
+
+	</div><!-- /content-wrapper -->
+	<div class="container">
+		{% if category[0].name == 'Recipe' %}
+			{% embed '@organisms/post-listing/post-listing.twig' with {
+				post_listing:{
+					heading_level: 2,
+					heading: options.related__recipes_title,
+				}
+				} %}
+				{% block post_listing_content %}
+					{% if related_post is not empty %}
+						{% for rp in related_post %}
+							{% include '@molecules/post/post.twig' with {
+								post: {
+									heading_level: 5,
+									heading: rp.title,
+									image_src: rp.img|resize(378, 202),
+									image_alt: rp.title,
+									cta: {
+										url: rp.postlink,
+										text: "Learn More",
+									}
+								}
+							} %}
+						{% endfor %}
+					{% endif %}
+				{% endblock %}
+			{% endembed %}
+		{% else %}
+			{% embed '@organisms/post-listing/post-listing.twig' with {
+				post_listing:{
+					heading_level: 2,
+					heading: options.related_post_settings_title,
+				}
+			} %}
+			{% block post_listing_content %}
+				{% if related_post is not empty %}
+					{% for rp in related_post %}
+						{% include '@molecules/post/post.twig' with {
+							post: {
+								heading_level: 5,
+								heading: rp.title,
+								image_src: rp.img|resize(378, 202),
+								image_alt: rp.title,
+								cta: {
+									url: rp.postlink,
+									text: "Learn More",
+								}
+							}
+						} %}
+					{% endfor %}
+				{% endif %}
+			{% endblock %}
+			{% endembed %}
+		{% endif %}
+
+		{% if ads_right_side is not empty %}
+		<div class="ads-right-sidebar mobile-only">
+		  {% for key,ad in ads_right_side %}
+			<div class="ad-wrapper right-rail-{{key}}">
+				<a href="{{ ad.ad_url }}">
+					<img src="{{ ad.ad_image }}">
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+		{% endif %}
+	</div>
+{% endblock %}

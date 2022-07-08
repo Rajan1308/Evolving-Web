@@ -1,0 +1,39 @@
+.text-with-cta {
+  text-align: center;
+  padding: 0 24px;
+
+  &__heading {
+    @include fs-h3();
+
+    color: $green;
+    margin-bottom: 10px;
+
+    @include large {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: $font-primary-light;
+    color: $gray-slate;
+    margin-bottom: 20px;
+
+    @include large {
+      font-size: 22px;
+      line-height: 1.36;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    @include button-color-primary;
+
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: $font-primary-semi-bold;
+    padding: 14px 18px;
+    margin-bottom: 34px;
+  }
+}

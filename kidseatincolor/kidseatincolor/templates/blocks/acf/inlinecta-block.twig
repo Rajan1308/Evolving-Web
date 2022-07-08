@@ -1,0 +1,27 @@
+{#
+/**
+ * Block Name: Inline CTA
+ *
+ * This is the template that displays the example block.
+ */
+#}
+{% if is_preview %}
+    <p>Inline CTA Block editor, only appear in the editor.</p>
+{% endif %}
+
+
+<div id="inlinecta-{{ block.id }}" class="wrapper inline-cta">
+    {% include "@molecules/Text-block/text-block.twig" with {
+        text_block: {
+        inline_cta: true,
+        heading: fields.inlinectatitle,
+            cta : {
+                title: fields.inlinectabtnlink_texts,
+                url: fields.inlinectabtn_urls
+            }
+        
+        }
+    } %}
+    {# <p>{{ fields.inlinectatitle }}</p>
+    <a href="{{ fields.inlinectabtn_urls }}">{{ fields.inlinectabtnlink_texts }}</a> #}
+</div>

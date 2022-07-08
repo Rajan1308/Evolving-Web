@@ -1,0 +1,158 @@
+.slide-with-image--Green {
+  background: $green;
+}
+
+.slide-with-image--Purple {
+  background: $purple-dark;
+}
+.slide-with-image--Blue {
+  background: $sky-blue;
+}
+
+.home-testimonial-section {
+  .heading-testimonials{
+    @include fs-h2();
+
+    position: absolute;
+    display: block;
+    z-index: 111111;
+    padding-top: 28px;
+    color: $white;
+    padding-left: 48px;
+
+    @include breakpoint($upto-medium) {
+      left: 24px;
+      padding-left: 0;
+    }
+
+    @include breakpoint($xl) {
+      padding-left: 98px;
+    }
+  }
+
+  .slide-with-image__content {
+    @include breakpoint($medium) {
+      width: calc(100% - 235px);
+      padding-left: 45px
+    }
+
+    @include breakpoint($medium) {
+      width: calc(100% - 235px);
+      padding-left: 45px
+    }
+
+    p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: $white;
+
+      @include breakpoint($medium) {
+        font-size: 22px;
+        line-height: 1.36;
+      }
+    }
+
+    a {
+      color: $white;
+      text-decoration: underline;
+      font-family: $font-primary-semi-bold;
+    }
+
+    .slide-with-image__author {
+      font-family: $font-primary-semi-bold;
+      font-size: 14px;
+      line-height: 1.28;
+      color: $white;
+
+      @include breakpoint($medium) {
+        font-size: 18px;
+        line-height: 1.36;
+      }
+    }
+  }
+
+  .slide-with-image__wrapper.container {
+  padding: 90px 0 95px;
+
+    @include breakpoint($medium) {
+    padding: 90px 65px 0;
+    }
+
+    @include breakpoint($xl) {
+    padding: 90px 115px 0;
+    }
+  }
+
+  .owl-carousel {
+    .owl-dots {
+    position: absolute;
+    bottom: 57px;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+      .owl-dot {
+        background: $white;
+
+        &.active {
+          background: $friar-gray;
+        }
+      }
+    }
+
+    .owl-prev {
+      @include breakpoint($small) {
+        left: 24px;
+      }
+      @include breakpoint($xl) {
+        left: calc((100vw - 1220px) / 2 );
+      }
+    }
+
+    .owl-next {
+      @include breakpoint($small) {
+        right: 24px;
+      }
+
+      @include breakpoint($xl) {
+        left: auto;
+        right: calc((100vw - 1220px) / 2);
+      }
+    }
+  }
+
+  @include breakpoint($medium) {
+    .slide-with-image__wrapper {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .left__image {
+      width: 235px;
+    }
+  }
+
+  picture.left__image {
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 44px;
+      height: 40px;
+      display: inline-block;
+      background-image: url('../images/quote.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      @include breakpoint($medium) {
+        width: 78px;
+        height: 68px;
+      }
+    }
+  }
+}

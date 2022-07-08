@@ -1,0 +1,14 @@
+hero_zone:
+  title: Picky Eating Help
+  description: Kids Eat in Color knows how hard it can be to address picky eating. From picky eating guides to picky eating courses, we have tools to help
+  cta1:
+    title: 'View Courses'
+    url: '#'
+    target: ''
+  cta2:
+    title: 'View Picky Eating Guides'
+    url: '#'
+    target: ''
+  image_src: 'https://placeimg.com/908/510/nature'
+  image_alt: "This is the card image's alt text"
+  hero_zone__modifiers: 'hero-zone-block'

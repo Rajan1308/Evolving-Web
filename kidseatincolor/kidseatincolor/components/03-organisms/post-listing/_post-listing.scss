@@ -1,0 +1,38 @@
+.post_listing {
+  margin-bottom: 32px;
+
+  @include breakpoint($medium) {
+    margin-bottom: 80px;
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .post {
+    width: 100%;
+
+    @include breakpoint($medium) {
+      width: calc(((100% - 80px) / 3));
+    }
+
+    &:not(:last-child) {
+      @include breakpoint($upto-medium) {
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  &__heading {
+    @include fs-h2();
+
+    color: $purple-dark;
+    margin-bottom: 30px;
+
+    @include breakpoint($medium) {
+      margin-bottom: 48px;
+    }
+  }
+}

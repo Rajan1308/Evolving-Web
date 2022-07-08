@@ -1,0 +1,88 @@
+.socical-feed {
+  .container {
+    @include breakpoint($upto-medium) {
+      padding: 0 26px;
+    }
+
+    .socical-title {
+      @include fs-h2();
+
+      color: $purple-dark;
+      margin: 21px 0 25px;
+
+      @include breakpoint($medium) {
+        margin: 40px 0 30px;
+      }
+    }
+
+    > p {
+      font-size: 16px;
+      line-height: 1.25;
+      color: $gray-slate;
+
+      @include breakpoint($medium) {
+        font-size: 22px;
+        line-height: 1.2;
+      }
+
+      a {
+        font-family: $font-primary-semi-bold;
+        color: $red;
+      }
+    }
+  }
+
+  #sb_instagram {
+    padding-bottom: 0 !important;
+
+    .sb_instagram_header {
+      margin-bottom: 25px !important;
+    }
+
+    #sbi_images {
+      padding: 0 !important;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      .sbi_item {
+        border-radius: 4px;
+        margin-bottom: 25px !important;
+
+        @include breakpoint($large) {
+          &:nth-child(4) {
+            margin-bottom: 0 !important;
+          }
+        }
+
+        &:nth-child(5),
+        &:nth-child(6) {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+
+    #sbi_load {
+      > a,
+      > span {
+        margin-top: 25px;
+      }
+
+      > span a {
+        margin-top: 0;
+      }
+    }
+
+    &.sbi_col_3 {
+      #sbi_images {
+        .sbi_item {
+          width: calc((100% - 14px) / 2);
+
+          @include breakpoint($large) {
+            width: calc((100% - 59px) / 3);
+          }
+        }
+      }
+    }
+  }
+}

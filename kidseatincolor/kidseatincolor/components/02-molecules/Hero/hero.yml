@@ -1,0 +1,11 @@
+hero_banner__heading: 'Helping you get your child to eat veggies'
+hero_banner__button_text: 'Learn How'
+hero_banner__image__src: 'https://dev-keic.pantheonsite.io/wp-content/uploads/2021/12/banner-1.png'
+hero_banner__image__alt: "This is the card image's alt text"
+hero_banner__image__output_image_tag: true
+hero_banner__subheading: 'Curabitur non nulla sit amet nisl tempus convallis quis ac lectus'
+hero_banner__body: 'ellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.'
+hero_banner__link__text: 'Read more about this card'
+hero_banner__link__url: '#'
+responsive_image_blockname: 'hero-banner'
+heading_level: '1'

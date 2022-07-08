@@ -1,0 +1,124 @@
+/* Mixin - list-reset
+ * Reset list item defaults when no margin, padding, list styles needed
+*/
+
+ul,
+ol {
+  padding-left: 1em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+.list-item {
+  margin-bottom: 0.2em;
+  padding-left: 1em;
+}
+
+/* TODO: BEM selectors should be applied to wysiwyg-created content */
+
+.text-long {
+  ol,
+  ul {
+    li {
+      @extend .list-item;
+    }
+  }
+}
+
+.text-block,
+.article-content,
+.two-col-content__description,
+.article-body {
+  ul,ol {
+    padding: 0;
+
+    @include breakpoint($medium) {
+      padding-left: 60px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul:not(.list--unstyled) {
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 16px;
+
+      @include breakpoint($medium) {
+        padding-left: 32px;
+      }
+
+      &::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        background: $gray-slate;
+        border-radius: 4px;
+        position: absolute;
+        top: 10px;
+        left: 0;
+
+        @include breakpoint($medium) {
+          left: 10px;
+          top: 10px;
+        }
+      }
+
+      + li, ul {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  ol:not(.list--unstyled) {
+    counter-reset: list;
+
+    li {
+      position: relative;
+      padding-left: 16px;
+      counter-increment: list;
+      list-style-type: none;
+
+      @include breakpoint($medium) {
+        padding-left: 32px;
+      }
+
+      &::before {
+        content: counter(list) ".";
+        color: $gray-slate;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include breakpoint($medium) {
+          left: 10px;
+        }
+      }
+      ol {
+        li {
+          &::before {
+            content: counter(list, lower-alpha) ".";
+          }
+        }
+      }
+
+      + li, ol {
+        margin-top: 15px;
+      }
+    }
+  }
+}

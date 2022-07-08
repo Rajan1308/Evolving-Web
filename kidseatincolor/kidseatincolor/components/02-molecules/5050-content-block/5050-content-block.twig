@@ -1,0 +1,29 @@
+<div id="fifty-fifty-content-block-{{item}}" class="fifty-fifty-content-block">
+    <h3  class="{% if data.title_alignment == 'left' %} text-left {% endif %}">{{ data.ff_content_block_title }}</h3>
+
+    {% for item in data.ff_content_block_content_block_rep %}
+        <div class="wrapper">
+            <div class="ff-col column-{{ item.cbcbr_column_1.cbcbr_column_type_1 }} col-left">
+                {% if item.cbcbr_column_1.cbcbr_column_type_1 == 'image' %}
+                    <img src="{{ item.cbcbr_column_1.cbcbr_content1_image.url }}">
+                {% else %}
+                    <div class="wrapper-content">
+                        {{ item.cbcbr_column_1.cbcbr_description }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="ff-col column-{{ item.cbcbr_column_2.cbcbr_column_type_2 }} col-right desktop-image">
+                {% if item.cbcbr_column_2.cbcbr_column_type_2 == 'image' %}
+                    <img src="{{ item.cbcbr_column_2.cbcbr_column2_image.url }}">
+                {% else %}
+                    <div class="wrapper-content">
+                        {{ item.cbcbr_column_2.cbcbr_column2_description }}
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    {% endfor %}
+    
+</div>

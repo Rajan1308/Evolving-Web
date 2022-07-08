@@ -1,0 +1,33 @@
+.member {
+  text-align: center;
+  width: fit-content;
+  &__image__wrapper {
+    margin-bottom: 15px;
+    img {
+      width: 100px;
+      height: 125px;
+      margin: 0 auto;
+      @include breakpoint($small) {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+  &__content {
+    * {
+      margin: 0;
+      font-size: 12px;
+      @include breakpoint($small) {
+        font-size: 16px;
+      }
+    }
+    h2 {
+      font-family: $font-primary-bold;
+      color: $gray-slate;
+    }
+    p {
+      font-family: $font-primary-light;
+      color: $black;
+    }
+  }
+}

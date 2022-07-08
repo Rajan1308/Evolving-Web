@@ -1,0 +1,117 @@
+.testimonial-card-carousel{
+    background-color: $purple-dark;
+    .container{
+        margin-top: 40px;
+        max-width: 100%;
+        padding: 40px 0;
+        @include large{
+            padding: 40px 15px;
+        }
+    }
+    h3{
+        color: $white;
+        margin-bottom: 38px;
+    }
+    .testimonials{
+        @include large{
+            padding: 0 80px;
+        }
+        .slick-arrow {
+            position: absolute;
+            top: calc(50% - 20px);
+            width: 40px;
+            height: 40px;
+            font-size: 0;
+            border: 0;
+            background: $olnav;
+            border-radius: 50%;
+            outline: 0;
+            &:after{
+                content: '';
+                border-top: 3px solid $gray-slate;
+                border-right: 3px solid $gray-slate;
+                width: 12px;
+                height: 12px;
+                display: block;
+                margin: auto;
+            }
+        }
+        .slick-prev{
+            left: 0;
+            &:after{
+                transform: rotate(225deg);
+            }
+        }
+        .slick-next{
+            right: 0;
+            &:after{
+                transform: rotate(45deg);
+            }
+        }
+        .testimonial{
+            background-color: $white;
+            max-width: 332px;
+            padding: 28px 28px 38px;
+            border-radius: 10px;
+            margin: 0 16px;
+            .quote{
+                padding-bottom: 60px;
+                span.quote-mark {
+                    font-family: $font-primary-black;
+                    font-size: 50px;
+                    color: $sky-blue;
+                    line-height: 1;
+                }
+                p{
+                    margin-top: 0;
+                    font-size: 16px;
+                }                
+            }
+            .author{
+                display: flex;
+                align-items: center;
+                img{
+                    width: 59px;
+                    height: 59px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+                .name{
+                    margin: 0 15px;
+                    font-family: $font-primary-bold;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    ul.slick-dots{
+        text-align: center;
+        margin-top: 50px;
+        li {
+            display: inline-block;
+            &:first-child{
+                button{
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+            }
+            &:last-child{
+                button{
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+        button {
+            font-size: 0;
+            border: 0;
+            background: $white;
+            height: 3px;
+            outline: 0;
+            width: 35px;
+        }
+        .slick-active button{
+            background: $sky-blue;
+        }
+    }
+}

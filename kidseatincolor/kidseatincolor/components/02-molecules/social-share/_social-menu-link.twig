@@ -1,0 +1,7 @@
+{% block link_content %}
+  <div class="social-icon">
+    <a href="{{ item.url}}&amp;text={{ post.title|e('url')  }}&#13;" target="_blank" rel="noopener noreferrer">
+      <i class='fab fa-{{item.icon}} fa-lg text-white'></i>
+    </a>
+  </div>
+{% endblock %}

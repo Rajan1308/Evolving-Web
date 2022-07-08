@@ -1,0 +1,166 @@
+// Sass map to define colors. Each set should have a "Dark" variation when required.
+// e.g. `default` and `default-dark`. Or `purple` and `purple-dark`.
+$button-colors: (
+  primary: (
+    text: clr(text-inverse),
+    bg: #E5391A,
+    text-hover: clr(primary),
+    bg-hover: clr(highlight),
+    border-radius: 10px,
+  ),
+  primary-dark: (
+    text: clr(text),
+    bg: $red,
+    text-hover: clr(text),
+    bg-hover: clr(highlight-high),
+    border-radius: 10px,
+  ),
+  secondary: (
+    text: clr(text-inverse),
+    bg: clr(secondary),
+    text-hover: clr(secondary),
+    bg-hover: clr(highlight),
+  ),
+  secondary-dark: (
+    text: clr(text),
+    bg: clr(secondary),
+    text-hover: clr(text),
+    bg-hover: clr(highlight-high),
+  ),
+);
+
+// Mixin to define colors for one or more schemes.
+// Simply pass the color scheme to the mixin to get the colors defined in the map.
+// e.g. @include buttonColors(default) will get all of the colors defined in the "default" section.
+@mixin buttonColors(
+  $scheme,
+  $pallate: map-get($button-colors, $scheme),
+  $map: $button-colors
+) {
+  color: map-get($pallate, text);
+  background-color: map-get($pallate, bg);
+
+  &:visited {
+    color: map-get($pallate, text);
+  }
+
+  &:hover {
+    color: map-get($pallate, text-hover);
+    background-color: map-get($pallate, bg-hover);
+  }
+}
+
+// The button-base mixin contains styles that apply to all buttons
+// regardless of color or size.
+@mixin button-base {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: $font-primary-semi-bold;
+}
+
+// Button color variations
+// Note how we include dark mode options for each
+@mixin button-color-primary {
+  @include buttonColors(primary);
+
+  @media (prefers-color-scheme: dark) {
+    @include buttonColors(primary-dark);
+  }
+}
+
+@mixin button-color-secondary {
+  @include buttonColors(secondary);
+
+  @media (prefers-color-scheme: dark) {
+    @include buttonColors(secondary-dark);
+  }
+}
+
+// Button size variations
+@mixin button-medium {
+  line-height: 1.2;
+  padding: 11px 22px;
+}
+
+@mixin button-large {
+  line-height: 2;
+  padding: $space $space-double;
+}
+
+.button {
+  @include button-base;
+  @include button-medium;
+
+  &--alt {
+    @include button-large;
+  }
+}
+
+@mixin primary-cta {
+  font-family: $font-primary-semi-bold;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 11px 22px;
+  text-transform: capitalize;
+  border-radius: 10px;
+  background: $red;
+  border: 2px solid $red;
+  color: $white;
+  display: inline-block;
+
+  &:hover,
+  &.outline{
+    background: $white;
+    color: $red;
+  }
+  &.outline:hover{
+    background: $red;
+    color: $white;
+  }
+}
+
+@mixin primary-cta-with-color-bg {
+  font-family: $font-primary-semi-bold;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 11px 22px;
+  text-transform: capitalize;
+  border-radius: 10px;
+  background: $white;
+  color: $gray-slate;// #474747;
+  border: 2px solid $white;
+  display: inline-block;
+
+  &:hover,
+  &.outline{
+    background: transparent;
+    color: $white;
+  }
+  &.outline:hover{
+    background: $white;
+    color: $gray-lightest;
+  }
+}
+
+.button {
+  @include primary-cta;
+
+  &.secondary {
+    @include primary-cta-with-color-bg;
+  }
+}
+
+a.wp-block-button__link{
+  @include primary-cta;
+  text-decoration: none !important;
+  color: $white !important;
+  border-bottom: 2px solid $red !important;
+  &:hover{
+    color: $red !important;
+  }
+}

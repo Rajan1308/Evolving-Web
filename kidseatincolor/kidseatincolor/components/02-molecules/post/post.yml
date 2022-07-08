@@ -1,0 +1,8 @@
+post:
+  heading_level: 5
+  heading: 'Lorem ipsum dolor sit amet consectetur adipiscing elite '
+  image_src: 'https://placeimg.com/600/202/nature'
+  image_alt: "demo"
+  cta:
+    text: 'Learn More'
+    url: '#'

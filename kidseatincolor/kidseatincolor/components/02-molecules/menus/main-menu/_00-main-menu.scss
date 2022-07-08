@@ -1,0 +1,98 @@
+/* Menu media */
+$main-menu-medium: $medium;
+
+/* Nav */
+.main-nav {
+  display: none;
+
+  @include medium {
+    display: block;
+  }
+
+  &--open {
+    background-color: clr(background);
+    display: block;
+    left: 0;
+    overflow-y: scroll;
+    position: absolute;
+    top: 134px;
+    right: 0;
+    width: 100%;
+  }
+}
+
+/* UL */
+.main-menu {
+  @include list-reset;
+  border-bottom: 1px solid;
+  position: relative;
+  z-index: 10;
+
+  @include medium {
+    border-bottom: none;
+  }
+
+  .main-menu__link--with-sub {
+    position:relative;
+    display:inline-block;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 9px;
+      background-image: url('../images/arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      margin: 0;
+      transform: rotate(270deg);
+    }
+  }
+}
+
+/*
+ * Sub Navigation
+ */
+
+/* UL (Nested) */
+.main-menu--sub {
+  border-bottom: none;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  display: none;
+
+  @include large {
+    background-color: $white;
+    display: none;
+    height: auto;
+    left: 12px;
+    overflow: visible;
+    position: absolute;
+    top: 42px;
+    width: 165px;
+    z-index: 1;
+    font-size: 0.9rem;
+    opacity: 1;
+    padding: 0;
+  }
+
+  .main-menu__link--sub {
+    min-height: 57px;
+    display: flex;
+    align-items: center;
+    padding: 8px 13px;
+  }
+
+  /* See main-menu.js */
+  &-open {
+    height: auto;
+  }
+}
+
+.main-menu--sub-2 {
+  @include medium {
+    display: none; /* Never shown on large screens */
+  }
+}

@@ -1,0 +1,33 @@
+primaryMenu:
+  get_items:
+    - title: 'Picky Eating Help'
+      url: '#'
+    - title: 'Courses'
+      url: '#'
+    - title: 'Recipes'
+      url: '#'
+    - title: 'Shop'
+      url: '#'
+    - title: 'Blog'
+      url: '#'
+    - title: 'About'
+      url: '#'
+      children:
+        - title: 'Meet Jennifer'
+          url: '#'
+        - title: 'Meet The Team'
+          url: '#'
+        - title: 'Our Values'
+          url: '#'
+        - title: 'Careers'
+          url: '#'
+
+
+topBarMenu: 
+  get_items:
+      - title: 'provider'
+        url: '#'
+      - title: 'cart'
+        url: '#'
+      - title: 'login'
+        url: '#'

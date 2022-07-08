@@ -1,0 +1,138 @@
+.team-member-spotlight {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  p:empty{
+    display: none;
+  }
+
+  @include large {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .image {
+    width: 274px;
+    height: auto;
+    padding: 10px;
+
+    @include large {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+
+  &__heading {
+    text-decoration: none;
+    color: $purple-dark;
+  }
+
+  &__body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+
+    @include large {
+      font-size: 22px;
+      line-height: 1.4;
+    }
+  }
+
+  &__content {
+    padding: 10px;
+
+    @include large {
+      padding: 20px;
+    }
+
+    form {
+      //margin-top: 0;
+
+      @include large {
+        margin-top: 0px;
+        max-width: 60%;
+      }
+
+      p {
+        width: 125px;
+        height: 45px;
+      }
+
+      ._form_element{
+        margin-bottom: 30px;
+      }
+    }
+
+    label{
+      display: none;
+    }
+
+    input[type='text'] {
+      color: $black !important;
+    }
+
+    input[type='email'] {
+      height: 40px;
+      color: $black !important;
+      width: 150px;
+      background-color: $near-white;
+      border: none;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: $font-heading;
+      line-height: 26.4px;
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px;
+
+      @include large {
+        width: 265px;
+        height: 45px;
+      }
+    }
+
+    input[type='submit'] {
+      margin-top: 4px;
+      padding: 10px 16px;
+      text-transform: capitalize;
+      font-family: $font-primary-semi-bold;
+      line-height: 1.18;
+      background: $red;
+      font-size: 16px;
+      min-width: 140px;
+
+      @include large {
+        min-width: 125px;
+        margin-top: 0;
+        padding: 12px 16px;
+      }
+    }
+  }
+
+  ._button-wrapper{
+    text-align: left;
+  }
+
+  &__button {
+    @include button-color-primary;
+
+    border-radius: 4px;
+    min-width: 125px;
+    position: relative;
+    right: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 12px 16px;
+    text-transform: capitalize;
+    font-family: $font-primary-semi-bold;
+    line-height: 1.18;
+    background: $red;
+  }
+
+  ._submit{
+    margin-top: 5px !important;
+    border-color: $red;
+    outline: $red;
+  }
+}

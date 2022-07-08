@@ -1,0 +1,165 @@
+.hero-zone {
+  position: relative;
+  background: $purple-dark;
+  display: flex;
+  align-items: center;
+  margin-bottom: 56px;
+
+  @include breakpoint($upto-medium) {
+    margin-bottom: 26px;
+  }
+
+  @include breakpoint($upto-medium) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &--Purple {
+    background: $purple-dark;
+  }
+  &--Blue {
+    background: $sky-blue;
+  }
+  &--Green {
+    background: $green;
+  }
+
+  &__container {
+    padding: 24px 24px 40px;
+
+    @include breakpoint($upto-medium) {
+      order: 1;
+    }
+
+    @include breakpoint($medium) {
+      @include wrapper;
+    }
+  }
+
+  &__content {
+    @include breakpoint($medium) {
+      max-width: 444px;
+      padding: 60px 40px 60px 24px;
+    }
+
+    @include breakpoint($xl) {
+      max-width: 420px;
+      padding: 60px 40px 60px 0;
+    }
+  }
+
+  &__image {
+    @include breakpoint($xl) {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      max-width: 908px;
+    }
+
+    .hero-zone__image-wrapper,
+    img {
+      @include breakpoint($medium) {
+        height: inherit;
+      }
+    }
+  }
+
+  &--title {
+    @include fs-h1();
+
+    color: $white;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 11px;
+
+      @include breakpoint($medium) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &--description {
+    font-family: $font-primary-light;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $white;
+    max-width: 324px;
+
+    @include breakpoint($medium) {
+      font-size: 22px;
+      max-width: 350px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 18px;
+
+      @include breakpoint($medium) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .button.hero-zone__link {
+    border-radius: 4px;
+    background-color: $white;
+    color: $gray-slate;
+    border: 2px solid $white;
+    text-transform: initial;
+    font-family: $font-primary-semi-bold;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 6px 24px;
+    width: inherit;
+    display: block;
+
+    @include breakpoint($medium) {
+      font-size: 18px;
+      padding: 12px 36px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+
+      @include breakpoint($medium) {
+        margin-bottom: 20px;
+      }
+    }
+
+    @include breakpoint($medium) {
+      &:hover {
+        background: transparent;
+        color: $white;
+      }
+    }
+  }
+
+  &__cta {
+    max-width: 300px;
+  }
+
+  &--without-image {
+    .hero-zone__content {
+      max-width: none;
+    }
+
+    .hero-zone--title {
+      margin: 0;
+    }
+
+    &.hero-zone__container {
+      @include breakpoint($upto-medium) {
+        width: 100%;
+        padding: 47px 24px;
+      }
+    }
+  }
+}
+
+.hero-zone-section {
+  + .two-col-content-section {
+    @include breakpoint($medium) {
+      margin-top: 60px !important;
+    }
+  }
+}

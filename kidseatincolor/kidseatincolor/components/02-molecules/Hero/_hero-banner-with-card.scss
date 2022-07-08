@@ -1,0 +1,83 @@
+.hero-banner {
+  &.hero-banner--with-card {
+    position: relative;
+    flex-direction: column;
+    background-color: transparent;
+    padding: 0 9px;
+    height: auto;
+ 
+    @include large {
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 0 140px;
+      height: 500px;
+    }
+  }
+
+  &__image { 
+    .hero-banner--with-card & {
+      position: relative;
+      height: 296px;
+      top: 0;
+
+      @include large {
+        position: absolute;
+        height: 100%;
+      }
+    } 
+  }
+
+  &__content {
+    .hero-banner--with-card & {
+      z-index: 1;
+      max-width: 100%;
+      padding: 27px;
+      background-color: $sky-blue;
+      position: relative;
+
+      @include large {
+        padding: 27px 37px;
+        max-width: 560px;
+        max-height: 203px;
+      }
+
+      h2 {
+        font-family: $font-primary-semi-bold;
+        color: $white;
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 0;
+
+        @include large {
+          font-size: 32px;
+          line-height: 1.18;
+        }
+      }
+
+      .button {
+        background-color: $white;
+        color: $black;
+        padding: 5px 20px;
+        border-radius: 5px;
+        text-transform: capitalize;
+
+        @include large {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.18;
+        }
+      }
+    }
+  }
+  .Left {
+    text-align: left;
+  }
+  .Right {
+    text-align: right;
+  }
+  .Center {
+    text-align: center;
+  }
+}

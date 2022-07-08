@@ -1,0 +1,406 @@
+/*
+ * Generic header styles:
+ * All arguments are optional. If not defined, the defaults below will be used
+*/
+
+$color-heading: clr(accent);
+
+@mixin heading-xl(
+  $font-family: $font-heading,
+  $font-size: 2rem,
+  $line-height: 1.4,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: inherit,
+  $font-weight: 700,
+  $margin: 0 0 0.5em
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+@mixin heading-large(
+  $font-family: $font-heading,
+  $font-size: 1.8rem,
+  $line-height: 1.4,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: inherit,
+  $font-weight: 700,
+  $margin: 0 0 0.5em
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+@mixin heading-medium(
+  $font-family: $font-heading,
+  $font-size: 1.4rem,
+  $line-height: 1.6,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: inherit,
+  $font-weight: 700,
+  $margin: 0 0 0.3em
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+@mixin heading-small(
+  $font-family: $font-heading,
+  $font-size: 1.2rem,
+  $line-height: 1.6,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: inherit,
+  $font-weight: 600,
+  $margin: 0 0 0.5em
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+@mixin heading-xs(
+  $font-family: $font-heading,
+  $font-size: 1.1rem,
+  $line-height: 2,
+  $color: $color-heading,
+  $color-link: inherit,
+  $color-link-hover: inherit,
+  $font-weight: 600,
+  $margin: 0 0 0.5em
+) {
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: $margin;
+  width: auto;
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+.h1 {
+  @include heading-xl;
+}
+
+.h2 {
+  @include heading-large;
+}
+
+.h3 {
+  @include heading-medium;
+}
+
+.h4 {
+  @include heading-small;
+}
+
+.h5,
+.h6 {
+  @include heading-xs;
+}
+
+/* TODO: BEM selectors should be applied to wysiwyg-created content */
+
+.text-long {
+  h1 {
+    @extend .h1;
+  }
+
+  h2 {
+    @extend .h2;
+  }
+
+  h3 {
+    @extend .h3;
+  }
+
+  h4 {
+    @extend .h4;
+  }
+
+  h5 {
+    @extend .h5;
+  }
+
+  h6 {
+    @extend .h6;
+  }
+}
+
+// KEIC style guide headings.
+@mixin heading(
+  $font-size: 32px,
+  $font-family: $font-primary-bold,
+  $font-weight: 900,
+  $line-height: 1.2,
+  $color: $slate-gray
+) {
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin heading1($font-size: 54px, $color: $sky-blue) {
+  @include heading($font-size, $color);
+}
+
+@mixin heading2($font-size: 40px, $color: $purple-dark) {
+  @include heading($font-size, $color);
+}
+
+@mixin heading3($color: $green) {
+  @include heading($font-size, $color);
+}
+
+// KEIC body headings
+@mixin body_text_header($font-size: 22px) {
+  font-size: $font-size;
+  line-height: 1.2;
+  font-family: $font-primary-semi-bold;
+  color: $gray-slate;
+}
+
+// KEIC body text
+@mixin body_text(
+  $font-size: 22px,
+  $line-height: 1.7,
+  $color: $gray-slate,
+  $font-family: $font-primary-light
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  font-family: $font-family;
+}
+
+@mixin fs-h1() {
+  font-family: $font-primary-black;
+  // color: #31ABD1;
+  color: $gray-slate;
+  font-size: 32px;
+  line-height: 1.2;
+
+  @include breakpoint($medium) {
+    font-size: 50px;
+  }
+}
+
+@mixin fs-h2() {
+  font-family: $font-primary-black;
+  // color: #604893;
+  color: $gray-slate;
+  font-size: 24px;
+  line-height: 1.2;
+
+  @include breakpoint($medium) {
+    font-size: 38px;
+  }
+}
+
+@mixin fs-h3() {
+  font-family: $font-primary-black;
+  // color: #256E30;
+  color: $gray-slate;
+  font-size: 20px;
+  line-height: 1.2;
+
+  @include breakpoint($medium) {
+    font-size: 30px;
+  }
+}
+
+@mixin fs-h4() {
+  font-family: $font-primary-black;
+  // color: #474747;
+  color: $gray-slate;
+  font-size: 20px;
+  line-height: 1.2;
+
+  @include breakpoint($medium) {
+    font-size: 28px;
+  }
+}
+
+@mixin fs-h5() {
+  font-family: $font-primary-semi-bold;
+  color: $gray-slate;
+  font-size: 16px;
+  line-height: 1.2;
+
+  @include breakpoint($medium) {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+}
+
+@mixin fs-h6() {
+  font-family: $font-primary-semi-bold;
+  color: $gray-slate;
+  font-size: 16px;
+  line-height: 1.2;
+
+  @include breakpoint($medium) {
+    font-size: 20px;
+  }
+}
+
+@mixin fs-body() {
+  font-family: $font-primary-book;
+  color: $gray-slate;
+  font-size: 14px;
+  line-height: 1.5;
+
+  @include breakpoint($medium) {
+    font-size: 20px;
+  }
+}
+
+@mixin fs-body2() {
+  font-family: $font-primary-book;
+  color: $gray-slate;
+  font-size: 12px;
+  line-height: 1.6;
+
+  @include breakpoint($medium) {
+    font-size: 18px;
+  }
+}
+
+@mixin fs-body3() {
+  font-family: $font-primary-book;
+  color: $gray-slate;
+  font-size: 11px;
+  line-height: 1.6;
+
+  @include breakpoint($medium) {
+    font-size: 16px;
+  }
+}
+
+@mixin fs-body4() {
+  font-family: $font-primary-book;
+  color: $gray-slate;
+  font-size: 10px;
+  line-height: 1.5;
+
+  @include breakpoint($medium) {
+    font-size: 14px;
+  }
+}
+
+body {
+  .fs-h1,
+  h1 {
+    @include fs-h1();
+  }
+
+  .fs-h2,
+  h2 {
+    @include fs-h2();
+  }
+
+  .fs-h3,
+  h3 {
+    @include fs-h3();
+  }
+
+  .fs-h4,
+  h4 {
+    @include fs-h4();
+  }
+
+  .fs-h5,
+  h5 {
+    @include fs-h5();
+  }
+
+  .fs-h6,
+  h6 {
+    @include fs-h6();
+  }
+
+  .fs-body {
+    @include fs-body();
+  }
+
+  .fs-body2 {
+    @include fs-body2();
+  }
+
+  .fs-body3 {
+    @include fs-body3();
+  }
+
+  .fs-body4 {
+    @include fs-body4();
+  }
+}

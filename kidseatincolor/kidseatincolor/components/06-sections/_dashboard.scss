@@ -1,0 +1,433 @@
+.woocommerce-account{
+    
+    &.wc-dashboard{
+        @media screen and (max-width: 990px) {
+            section.article-content.container {
+                max-width: 100%;
+            }
+            h1{
+                display: block;
+            }
+            .woocommerce-MyAccount-content{
+                display: none;
+            }
+            .woocommerce-MyAccount-navigation{
+                width: 100% !important;
+                display: block;
+                li{
+                    border-top: 1px solid $alto-light;
+                    &:last-child{
+                        border-bottom: 1px solid $alto-light;    
+                    }
+                    a:after{
+                        content: '';
+                        color: $olnav;
+                        position: absolute;
+                        right: 15px;
+                        top: calc(50% - 8px);
+                        border-top: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                        border-left: 16px solid $olnav;
+                        width: 0px;
+                        height: 0px;
+                    }
+                }
+            }
+            .logout-btn{
+                display: inline-block !important;
+                width: 100%;
+                margin: 25px 0;
+            }
+            .return-btn{
+                display: none;
+            }
+        }
+    }
+
+    div#breadcrumbs{
+        display: none;
+    }
+    h1{
+        display: none;
+        color: $purple-dark;
+        text-transform: capitalize;
+        @include large{
+            display: block;
+            font-size: 38px;
+        }
+    }
+    .main-content {
+        width: 100%;
+        padding: 30px 0 0 0;
+        border-top: 1px solid $alto-light;
+        margin-top: 0;
+        background: $alabaster;
+        @include large{
+            margin-top: 40px;
+        }
+    }
+    .logout-btn{
+        display: none !important;
+        @include large{
+            position: absolute !important;
+            top: -70px;
+            right: 0;
+            display: block !important;
+        }
+    }
+    .return-btn{
+        display: inline-block;
+        color: $red;
+        font-size: 11px;
+        font-family: $font-primary-bold;
+        text-decoration: underline;
+        padding: 25px 0;
+        &:before{
+            content: '';
+            background: url('../images/back.svg');
+            width: 20px;
+            height: 8px;
+            display: inline-block;
+            background-repeat: no-repeat;
+        }
+        @include large{
+            display: none;
+        }
+    }
+    .woocommerce{
+        position: relative;
+    }
+    .woocommerce-MyAccount-navigation {
+        display: none;
+        @include large{
+            width: 20% !important;
+            display: block;
+        }
+        ul{
+            padding: 0;
+            li{
+                padding: 20px 17px;
+                margin: 0 !important;
+                &:before{
+                    display: none;
+                }
+                &.is-active{
+                    background-color: $alto-light;
+                    a{
+                        font-family: $font-primary-bold;
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    color: $gray-slate;
+                    font-family: $font-primary-regular;
+                }
+            }
+        }
+    }
+    .woocommerce-MyAccount-content {
+        width: 100% !important;
+        margin-bottom: 70px;
+        @include large{
+            width: 80% !important;
+            border-left: 1px solid $alto-light;
+            padding: 0 0 0 40px;
+            
+        }
+        h3{
+            margin-top: 0;
+            color: $green;
+        }
+        form.woocommerce-EditAccountForm.edit-account {
+            background: $white;
+            border-radius: 10px;
+            padding: 35px 40px;
+            box-shadow: 0px 2px 4px rgba(128, 125, 121, 0.15);
+            margin-bottom: 50px;
+        }
+        .form-row{
+            width: 100% !important;
+            
+            label{
+                font-family: $font-primary-bold;
+                font-size: 18px;
+                line-height: 1;
+                margin-bottom: 5px;
+                text-align: left;
+                max-width: 175px;
+                width: 100%;
+                padding-top: 20px;
+                float: left;
+            }      
+            input.input-text, 
+            textarea{
+                width: calc(100% - 175px);
+                border: 1px solid $alto-light;
+                border-radius: 10px;
+                padding: 15px 25px;
+            }  
+        } 
+        fieldset {
+            padding: 0;
+            border: 0;
+            .form-row{
+                display: block;
+                input.input-text{
+                    width: 100%;
+                }
+                label{
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+
+    //Purchase History
+    .purchase-history{
+        h6.order-number{
+            border-bottom: 1px solid $alto-light;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+        .purchase-order{
+            background: $white;
+            box-shadow: 0px 2px 4px rgba(128, 125, 121, 0.15);
+            border-radius: 10px;
+            padding: 35px 45px 30px;
+            margin-bottom: 25px;
+            p{
+                margin: 0 0 5px;
+                font-size: 16px;
+            }
+        }
+        .order-items {
+            max-width: 595px;
+            width: 100%;
+            float: left;
+            img{
+                display: inline-block;
+                width: 175px;
+                height: 175px;
+                object-fit: contain;
+                border: 1px solid $alto-light;
+            }
+            h6{
+                font-size: 18px;
+                border: 0;
+                margin: 0 0 3px;
+            }
+            .order-item{
+                display: flex;
+                margin-bottom: 20px;
+            }
+            .order-item-description{
+                display: inline-block;
+                padding: 0 22px;
+                .product-price{
+                    margin-bottom: 50px;
+                }
+            }
+            .course-links{
+                margin-bottom: 20px;
+                a{
+                    display: block;
+                    margin-right: 10px;
+                    @include large{
+                        width: 175px;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        .order-summary {
+            width: 100%;
+            float: right;
+            @include large{
+                max-width: 245px;
+            }
+            h6{
+                font-size: 16px;
+                margin-top: 3px;
+            }
+            .total{
+                display: flex;
+                justify-content: space-between;
+                font-family: $font-primary-bold;
+                padding-top: 23px;
+                margin-top: 23px;
+                border-top: 1px solid $alto-light;
+            }
+            p{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    //Learning Center
+    .learning-center{
+        .ld-profile-summary{
+            display: none;
+        }
+        .learndash-wrapper {
+            background: $white;
+            padding: 35px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(128, 125, 121, 0.15);
+
+            @include medium{
+                padding: 35px 40px;
+            }
+
+            .ld-item-list{
+                margin-top: 0;
+            }
+
+            .ld-section-heading{
+                .ld-item-list-actions{
+                    display: none;
+                }
+                h3{
+                    margin-top: 0;
+                    color: $gray-dark;
+                    font-family: $font-primary-bold;
+                    font-size: 20px;
+                    border-bottom: 1px solid $alto-light;
+                    width: 100%;
+                    padding-bottom: 15px;
+                    text-align: left;
+                }
+            }
+            .ld-progress-heading{
+                flex-direction: row;
+            }
+            .ld-item-list-items{
+                .ld-expand-button{
+                    background-color: $olnav !important;
+                    width: 21px;
+                    height: 21px;
+                    flex-basis: 21px;                    
+                    @include large{
+                        width: 36px;
+                        height: 36px;
+                        flex-basis: 36px;    
+                    }
+                    .ld-icon-arrow-down:before{
+                        color: $gray-slate;
+                        font-size: 10px;
+                        @include medium{
+                            font-size: 16px;
+                        }
+                    }
+                    .ld-text{
+                        display: none;
+                    }
+                    .ld-icon-arrow-down{
+                        background-color: transparent !important;
+                    }
+                }
+                .ld-item-list-item-preview {
+                    flex-direction: row;
+                    @media screen and (max-width: 640px) {
+                        padding: 18px 14px;
+                    }
+                }
+                .ld-progress{
+                    margin-bottom: 0;
+                    background-color: $concrete !important;
+                }
+                .ld-status{
+                    text-transform: none;
+                    @media screen and (max-width: 640px){
+                        font-size: 10px;
+                    }
+                }
+                span.ld-course-title{
+                    font-size: 14px;
+                    margin-top: 2px;
+                    @include medium{
+                        font-size: 20px;
+                    }
+                }
+                .ld-progress-label{
+                    text-transform: none;
+                    font-family: $font-primary-regular;
+                    font-size: 16px;
+                    font-weight: 400;
+                    margin-bottom: 10px;
+                    @media screen and (max-width: 640px) {
+                        font-size: 11px;
+                    }
+                }
+                .ld-progress-stats{
+                    .ld-progress-percentage{
+                        color: $green !important;
+                        font-family: $font-primary-bold;
+                        font-size: 16px;
+                        text-transform: none;
+                        @media screen and (max-width: 640px) {
+                            font-size: 11px;
+                        }
+                    }
+                    .ld-progress-steps{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    //Downloads
+    .your-downloads{
+        background: $white;
+        padding: 35px 45px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(128, 125, 121, 0.15);
+        margin-top: 30px;
+        h3{
+            margin-top: 0;
+            color: $gray-dark;
+            font-family: $font-primary-bold;
+            font-size: 20px;
+            border-bottom: 1px solid $alto-light;
+            width: 100%;
+            padding-bottom: 15px;
+        }
+        .product-wrapper{
+            margin-bottom: 45px;     
+            &:last-child{
+                margin-bottom: 0;
+            }       
+        }
+        .product-item {
+            display: flex;
+            img{
+                width: 175px;
+                height: 175px;
+                object-fit: contain;
+                border: 1px solid $alto-light;
+            }
+            .button{
+                margin-top: 10px;
+                display: none;
+                @include large{
+                    display: inline-block;
+                }
+            }
+        }
+        .product-content{
+            padding: 0 22px;
+            &-mobile{
+                display: block;
+                @include large{
+                    display: none;
+                }
+                .button{
+                    display: block;
+                    width: 100%;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}

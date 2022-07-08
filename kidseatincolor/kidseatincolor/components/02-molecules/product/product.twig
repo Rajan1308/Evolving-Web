@@ -1,0 +1,18 @@
+<div class="product glide__slide">
+  {% if product.image_src %}
+    <div class="product__image__wrapper">
+      {% if product.url %}
+        <a href="{{ product.url }}" {{ product.cta.target ? "target='" ~ product.cta.target  ~ "'" : ""  }} class="product__link"></a>
+      {% endif %}
+      <img src="{{ product.image_src }}" alt="{{ product.image_alt }}">
+    </div>
+  {% endif %}
+  <div class="product__content">
+    {% if product.title %}
+      <h3 class="product__title">{{ product.title }}</h3>
+    {% endif %}
+    {% if product.description %}
+      <div class="product__description">{{ product.description }}</div>
+    {% endif %}
+  </div>
+</div>

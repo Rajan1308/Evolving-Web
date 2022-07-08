@@ -1,0 +1,36 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+	<div class="tease-generic tease-{{post.post_type}}" id="tease-{{post.ID}}">
+		<div class="tease-thumbnail">
+			{% if post.thumbnail.src %}
+				<a href="{{ post.link }}"><img src="{{post.thumbnail.src}}" alt="{{ post.title }}"/></a>
+			{% else %}
+				<a href="{{ post.link }}"><img src="{{ theme.link ~  '/images/placeholder.png' }}" alt="{{ post.title }}" /></a>
+			{% endif %}
+		</div>
+		<div class="tease-content">
+			{% include "@atoms/text/headings/_heading.twig" with {
+				heading_level: 4,
+				heading: post.title,
+				heading_url: post.link,
+				heading_base_class: 'text-left pl-0 text-with-cta',
+				heading_link_base_class: 'heading'
+			} %}
+
+			
+
+			{% if post.post_excerpt %}
+				<p data-text="excerpt">{{post.post_excerpt}}</p>
+			{% elseif text %}
+				<p data-text="text">{{ text|excerpt(25) }}</p>
+			{% elseif post.meta('hero_zone_description') %}
+				<p data-text="hero">{{ post.meta('hero_zone_description') }}</p>
+			{% else %}
+				<p data-text="content">{{post.preview.length(25).read_more('')}}</p>
+			{% endif %}
+		</div>
+	</div>
+
+  
+{% endblock %}

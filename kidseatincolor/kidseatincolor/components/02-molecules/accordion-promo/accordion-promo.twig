@@ -1,0 +1,18 @@
+{% if data.background == false %}
+    {% set bg = 'bg-white' %}
+{% endif %}
+<section id="accordion-promo-{{item}}" class="accordion-promo {{ bg }}">
+    <div class="container">
+        <div class="wrapper">
+            {% if data.accordion_promo_title %}<h3>{{data.accordion_promo_title}}</h3>{% endif %}
+            {% for item in data.accordion_block %}
+                <div class="accordion">
+                    <div class="body-text-1">
+                        <div class="accordion-question"><b>{{ item.question }}</b></div>
+                        <div class="accordion-answer">{{ item.answer }}</div>
+                    </div>
+                </div>
+            {% endfor %}    
+        </div>
+    </div>
+</section>

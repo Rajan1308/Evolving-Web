@@ -1,0 +1,24 @@
+<div class="article-header">
+  {% include "@molecules/breadcrumbs/breadcrumbs.twig" with breadcrumbs %}
+  {% include "@molecules/tags/tags.twig" with tags %}
+
+  <div class="article-header__container">
+  <div class="article-title-block">
+        <h2 >{{ article_data.title }}</h2>
+  {% if article_data.date %}
+  <div>{{article_data.date}}</div>
+  {% endif %}
+  {% if article_data.reviewed_date %}
+  <div>Last reviewed: {{article_data.reviewed_date}}</div>
+  {% endif %}
+
+  </div>
+  {% if article_data.type == 'blog' %}
+  {% include "@molecules/author/author.twig" with author %}
+  {% endif %}
+
+    {% if article_data.affiliate %}
+  <div class="affiliate">As an Amazon Associate we earn from qualifying purchases.</div>
+  {% endif %}
+  </div>
+</div>

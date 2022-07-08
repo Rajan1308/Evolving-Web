@@ -1,0 +1,137 @@
+.popup {
+  &__container {
+    display: flex;
+    max-width: 784px;
+    background: $white;
+
+    @include breakpoint($medium) {
+      flex-flow: nowrap;
+    }
+
+    @include breakpoint($upto-medium) {
+      flex-direction: column-reverse;
+    }
+
+    button {
+      &:hover {
+        border: none;
+        color: $white;
+        background: $red;
+      }
+    }
+
+    form {
+      input[type='email'],
+      input[type='text'] {
+        margin-bottom: 0;
+        border-radius: 4px;
+        background: $white;
+        opacity: 1;
+        padding: 0 10px;
+        font-size: 16px;
+        color: $gray !important;
+        background: $concrete;
+        border: none;
+
+        @include breakpoint($medium) {
+          padding: 13px 0 13px 14px;
+          max-width: 280px;
+        }
+
+        &::placeholder {
+          text-transform: uppercase;
+          font-family: $font-primary-light;
+          font-size: 16px;
+          line-height: 1.125;
+          color: $friar-gray;
+          padding-left: 0;
+        }
+      }
+
+      input[type="submit"]{
+        background-color: $red;
+        font-family: $font-primary-semi-bold;
+        font-size: 16px;
+        width: auto;
+        box-shadow: none;
+        border: none;
+        min-height: 50px;
+        margin-top: 24px;
+
+        &:hover {
+          background-color:$red;
+          color: $white;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .form-inline {
+        align-items: flex-start;
+      }
+
+      .row {
+        margin: 0;
+      }
+    }
+  }
+
+  &__left-content {
+    img {
+      width: 100%;
+      height: 100% !important;
+      object-fit: cover;
+
+      @include breakpoint($medium) {
+        min-width: 340px;
+      }
+    }
+  }
+
+  &__right-content {
+    padding: 30px 20px;
+
+    @include breakpoint($medium) {
+      padding: 40px 52px 40px 44px;
+    }
+  }
+
+  &__title {
+    @include fs-h3();
+
+    color: $green;
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    @include fs-body();
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.pum-responsive-medium {
+  padding: 0 !important;
+  max-width: 784px !important;
+
+  .popmake-close {
+    box-shadow: none !important;
+    background-image: url('../images/popupclose.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 100% !important;
+    margin: 15px !important;
+    font-size: 0 !important;
+    width: 15px !important;
+    height: 15px !important;
+    padding: 0 !important;
+  }
+}
+
+.pum-theme-default-theme {
+  background: rgba(49, 49, 49, 0.45) !important;
+}

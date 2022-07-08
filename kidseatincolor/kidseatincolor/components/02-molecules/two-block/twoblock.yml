@@ -1,0 +1,14 @@
+twoblocksection_video__src: 'http://techslides.com/demos/sample-videos/small.mp4'
+twoblocksection_heading: 'This is the card heading new '
+twoblocksection_body: 'ellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.'
+twoblocksection_link__text: 'Read more about this card'
+twoblocksection_link__url: ''
+twoblocksection_image__class : 'img-fluid'
+twoblocksection_link__attributes: 
+'target': '_blank'
+twoblocksection_button__content: 'start today'
+twoblocksection_button__url: '#'
+
+twoblocksection_videoThembimage__url: 'https://www.youtube.com/watch?v=_sI_Ps7JSEk'
+twoblocksection_image__src: 'https://placeimg.com/960/540/any'
+video_content_raw: "<iframe title='Emulsify Video' width='854' height='480' frameborder='0' allowfullscreen='allowfullscreen' src='https://www.youtube.com/embed/YRnVnlhjOBs?autoplay=0&amp;start=0'></iframe>"

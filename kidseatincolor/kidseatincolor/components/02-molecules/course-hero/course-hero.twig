@@ -1,0 +1,26 @@
+{% set hero = post.meta('header_zone') %}
+{% set product = fn('wc_get_product', hero.product) %}
+<section class="course-hero">
+    <div class="container">
+        <div class="featured-media">
+            {% if hero.media_type == 'video' %}
+                <div class="video">{{ hero.video }}</div>
+            {% else %}
+                <img src="{{ hero.image.url }}">
+            {% endif %}
+        </div>
+        <div class="description">
+            <h1>{{ post.title }}</h1>
+            {{ hero.course_description }}
+            <b>${{ product.get_price() }}</b>
+            {% if hero.cta == 'enroll-now' %}
+                <p><a href="?add-to-cart={{ product.get_ID() }}&quantity=1" class="button">Enroll Now</a></p>
+            {% else %}
+                <p><a href="javascript:void(0)" class="button cta-join-waitlist">Join the Waitlist</a></p>
+            {% endif %}
+            {% if hero.secondary_cta %}
+                <p class="secondary_cta">Already enrolled? <a href="{{ fn('get_permalink', fn('get_option','woocommerce_myaccount_page_id')) }}">Log in here</a></p>
+            {% endif %}
+        </div>
+    </div>
+</section>

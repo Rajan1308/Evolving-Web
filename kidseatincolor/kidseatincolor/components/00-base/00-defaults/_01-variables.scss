@@ -1,0 +1,45 @@
+/*
+ * General Variables
+ * Note: colors should go into
+ * components/00-base/01-colors/_color-vars.css
+ * and breakpoint related vars into
+ * components/00-base/base/_breakpoints.css
+*/
+
+// Fonts
+$font-body: 'Buenos Aires', sans-serif;
+$font-primary-semi-bold: 'BuenosAires-SemiBold', sans-serif;
+$font-primary-bold: 'BuenosAires-Bold', sans-serif;
+$font-primary-light: 'BuenosAires-Light', 'helvetica', 'arial', sans-serif;
+$font-primary-regular: 'BuenosAires-Regular', 'helvetica', 'arial', sans-serif;
+$font-primary-book: 'BuenosAires-Book', 'helvetica', 'arial', sans-serif;
+$font-primary-black: 'BuenosAires-Black', sans-serif;
+$font-heading: $font-primary-regular;
+
+// Spacing
+$space: 1rem;
+
+// Times
+$space-double: $space * 2;
+$space-triple: $space * 3;
+$space-quadruple: $space * 4;
+$space-quintuple: $space * 5;
+$space-sextuple: $space * 6;
+$space-septuple: $space * 7;
+
+// Divided
+$space-one-half: $space/2;
+$space-one-third: $space/3;
+$space-one-fourth: $space/4;
+$space-one-fifth: $space/5;
+$space-one-sixth: $space/6;
+$space-one-seventh: $space/7;
+$space-one-eighth: $space/8;
+
+/*
+ * Use this on the outer wrapper of page-level elements.
+ * It ensures consistent spacing between elements on the page.
+ */
+@mixin space-stack-page {
+  margin-bottom: $space-double;
+}

@@ -1,0 +1,8 @@
+<section id="cta-banner-{{item}}" class="cta-banner">
+    <div class="container">
+        <h2>{{data.description}}</h2>
+        {% if data.cta['url'] %}
+        <a class="button secondary" href="{{data.cta['url']}}">{{data.cta['title']}}</a>
+        {% endif %}
+    </div>
+</section>

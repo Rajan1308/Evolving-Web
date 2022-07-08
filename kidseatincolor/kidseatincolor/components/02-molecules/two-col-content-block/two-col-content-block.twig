@@ -1,0 +1,20 @@
+<div class="two-col-content">
+  <div class="two-col-content__container two-col-content__image--{{ two_col_content.image_aligment }}">
+    <div class="two-col-content__image">
+      {% if two_col_content.image_src %}
+        <img src="{{ two_col_content.image_src }}" alt="{{ two_col_content.image_alt }}">
+      {% endif %}
+    </div>
+    <div class="two-col-content__data">
+      {% if two_col_content.title %}
+        <h2 class="two-col-content__title">{{ two_col_content.title }}</h2>
+      {% endif %}
+      {% if two_col_content.description %}
+        <div class="two-col-content__description">{{ two_col_content.description }}</div>
+      {% endif %}
+      {% if two_col_content.cta and two_col_content.cta.title %}
+          <a href="{{ two_col_content.cta.url }}" {{ two_col_content.cta.target ? "target='" ~ two_col_content.cta.target  ~ "'" : ""  }} class="two-col-content__link">{{ two_col_content.cta.title }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

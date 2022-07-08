@@ -1,0 +1,26 @@
+.editor-column{
+    width: 100%;
+    @include large{
+        width: 50%;
+        float: left;    
+    }
+    &.checkmark{
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            padding-left: 40px !important;
+            &:before{
+                width: 18px !important;
+                height: 9px !important;
+                border-bottom: 2px solid $red;
+                border-left: 2px solid $red;
+                background: transparent !important;
+                border-radius: 0 !important;
+                transform: rotate(325deg);
+                left: 0 !important;
+            }
+        }
+    }
+}

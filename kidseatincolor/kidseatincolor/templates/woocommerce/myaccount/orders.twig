@@ -1,0 +1,97 @@
+{% do action('woocommerce_before_account_orders', has_orders ) %}
+
+{% if has_orders %}
+
+    <div class="purchase-history">
+        
+        {% for customer_order in customer_orders %}
+            
+            {% set order = fn('wc_get_order', customer_order ) %}
+            {% set refunds = order.get_refunds() %} 
+            {# {{ dump(refunds) }} #}
+            {# {{ dump(refunds)}} #}
+            <div class="purchase-order">
+
+                <h6 class="order-number">Order Number #{{ order.get_id() }}</h6>
+                
+                <div class="order-items">
+
+                    {% for item in order.get_items() %}
+                    {# {{ dump(item) }} #}
+                        {% set product_id = item.get_product_id() %}
+                        {% set product = item.get_product() %}
+                        {% set product_name = item.get_name() %}
+                        {% set quantity = item.get_quantity() %}
+                        {% set subtotal = item.get_subtotal() %}
+                        {% set total = item.get_total() %}
+                        {% set tax = item.get_subtotal_tax() %}
+                        {% set image_id  = product.get_image_id() %}
+                        {% set image_url = fn('wp_get_attachment_image_url', image_id, 'full' ) %}
+                        {% set courses = fn('get_post_meta', product_id, '_related_course', true ) %} 
+                        {% set downloads = product.get_downloads() %} 
+                        
+                        
+                        <div id="product-{{ product_id }}">
+                            <div class="order-item">
+                                {% if image_id %}
+                                    <img src='{{ image_url }}' height="175" width="175">
+                                {% else %}
+                                    {{ fn('wc_placeholder_img') }}
+                                {% endif %}
+                                <div class="order-item-description">
+                                    <h6 class="product-title">{{ product_name }}</h6>
+                                    <p class="product-price">{{ fn('wc_price', subtotal) }}</p>
+                                    <p class="product-qty">Qty: {{ quantity }}</p>
+                                    <p class="date-purchased">Date Purchased: {{ order.get_date_created().date('m/j/y') }}</p>
+                                </div>
+                            </div>
+                            {% if courses %}
+                                {% if refunds is empty %}
+                                <div class="course-links">
+                                    {% for course in courses %}
+                                        <a href="{{ fn('get_permalink', course) }}" class="button" alt="View Course">View Course</a>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            {% endif %}	  
+                            
+                            {% if downloads %}
+                                {% if refunds is empty %}
+                                <div class="course-links">
+                                    {% for download in downloads %}
+                                        <a href="?action=download&file={{ download.file }}" alt="Download" class="button" download>Download</a>
+                                    {% endfor %}   
+                                </div>
+                                {% endif %} 
+                            {% endif %}                   
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="order-summary">
+                    <h6 class="order-title">Order Summary</h6>
+                    <p>Subtotal: {{ order.get_subtotal_to_display() }}</p>
+                    <p>Tax: {{ fn('wc_price', order.get_total_tax()) }}</p>
+                    <p class="total">
+                        <span>{{ order.get_payment_method_title() }}</span>
+                        <span>{{ order.get_formatted_order_total() }}</span>
+                    </p>
+                </div>
+                
+                <div class="clear"></div>
+            
+            </div>
+
+        {% endfor %}
+    
+    </div>
+
+{% else %}
+    <div class="purchase_history">
+	    <img class="centered-img" src="{{theme.link}}/images/about-auth.svg">
+        <p>No purchase history available</p>
+        <div class="shop_links"><a href="/shop/">View Shop</a> <a href="/shop-courses/">View Courses</a> </div>
+    </div>
+{% endif %}
+
+{% do action('woocommerce_after_account_orders', has_orders ) %}

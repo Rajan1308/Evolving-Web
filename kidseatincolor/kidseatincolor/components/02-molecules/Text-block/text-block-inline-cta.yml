@@ -1,0 +1,6 @@
+text_block:
+  inline_cta: true
+  heading: 'Lorem ipsum dolor sit amet. Eget magna fermentum eu non diam.'
+  cta:
+    title: 'Learn More'
+    url: '#'

@@ -1,0 +1,100 @@
+.accordion-promo {
+    background-color: $alabaster;
+    position: relative;
+    padding: 72px 0;
+
+    a {
+        font-family: "BuenosAires-SemiBold",sans-serif;
+        color: #E5391A;
+        text-decoration: underline;
+    }
+        
+    &.bg-white {
+        background-color: $white;
+        padding: 50px 0;
+        &:before{
+            display: none;
+        }
+    }
+
+    h3 {
+        color: $green;
+    }
+
+    &:before {
+        content: '';
+        background-color: $alabaster;
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        left: calc(-50vw + 49%);
+        top: -1px;
+        z-index: -1;
+        border-top: 1px solid $alto-light;
+    }
+    
+    .wrapper {
+        max-width: 940px;
+        margin: 0 auto;
+    }
+
+    .accordion {
+
+        background: $white;
+        padding: 20px 25px;
+        border-radius: 10px;
+        border: 1px solid $alto-smoky;
+        margin-bottom: 12px;
+
+        .accordion-question {
+
+            position: relative;
+            cursor: pointer;
+            
+            b {
+                max-width: 765px;
+                display: inline-block;
+                padding-right: 45px;
+                font-family: $font-primary-semi-bold;
+                color: $gray-slate;
+                @include large{
+                    font-size: 20px;
+                }
+            }
+
+            &:after {
+                content: '';
+                background-image: url('../images/plus.svg');
+                width: 24px;
+                height: 24px;
+                background-color: $olnav;
+                text-align: center;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                right: 0;
+                top: calc(50% - 12px);                
+            }
+
+            &.open {
+                &:after {
+                    background-image: url('../images/minus.svg');
+                }
+            }
+        }
+        
+        .accordion-answer {
+            display: none;
+            margin-top: 20px;
+
+            ul {
+              li {
+                list-style: disc;
+              }
+            }
+        }
+
+    }
+
+    @include list-custom;
+}

@@ -1,0 +1,52 @@
+.team-member {
+  width: 150px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include large {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  &__content {
+    text-align: center;
+    color: $black;
+    font-family: $font-heading;
+    margin-top: 10px;
+
+    @include large {
+      margin-top: 20px;
+    }
+  }
+  
+  &__heading,
+  &__subheading {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.4px;
+    color: $gray-slate;
+
+    @include large {
+      font-size: 16px;
+      line-height: 1.18;
+    }
+  }
+
+  &__heading {
+    font-family: $font-primary-semi-bold;
+  }
+  
+  &__subheading {
+    font-family: $font-primary-light;
+  }
+}
+
+.home-team-promo-section {
+  > .container:last-child {
+    @include breakpoint($xl) {
+      padding: 0 60px;
+    }
+  }
+}

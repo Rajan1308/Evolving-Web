@@ -1,0 +1,108 @@
+{# by U22 #}
+{% extends "templates/blocks/_defaults.twig" %}
+{% block content %}
+    {# Hero #}
+  	{% include "@molecules/course-hero/course-hero.twig" %}
+    {# Flexible Content #}
+    {% for content_block in post.meta('courses_page') %}
+        {% if content_block.acf_fc_layout == 'lp_text_block' %}
+            <section class="text-block course-text-block">
+                <div class="container">
+                    {{ content_block.content_text_block }}
+                </div>
+            </section>
+        {% endif %}
+        {% if content_block.acf_fc_layout == 'lp_logo_promo' %}
+            <section class="partners-logo courses-logo">
+                <div class="container">
+                    {% if content_block.lp_logo_promo_title %}<h3 class="items-title">{{ content_block.lp_logo_promo_title}}</h3>{% endif %}
+                    <div class="logo-itmes owl-carousel">
+                    {% for Promologos in content_block.lp_logo_promo_logos %}
+                    <span class="logo"><img src="{{Promologos.lp_logo_promo_logos_logo.url}}" alt="{{Promologos.lp_logo_promo_logos_logo.alt}}" /></span>
+                    {% endfor %}
+                    </div>
+                </div>
+            </section> 
+        {% endif %}
+        {% if content_block.acf_fc_layout == 'home_team_promo' %}
+            {% set home_team_promo_team_member = content_block.home_team_profiles %}
+            <section class="home-team-promo-section course-team-promo aos-init pb-3" data-aos="fade-up">
+                <div class="container pt-4 mt-4">
+                    <div class="rows">
+                            {% include '@molecules/Text/text.twig' with { 
+                                text__heading: content_block.home_team_promo_title,
+                                text__subheading: content_block.home_team_promo_description,
+                                text__button__content: content_block.home_team_promo_cta.title,
+                                text__button__url: content_block.home_team_promo_cta.url,
+                            } %}
+                    </div>
+                </div>
+                <div class="container pt-4 mt-3 pb-4 mb-4">
+                    {% if home_team_promo_team_member %}
+                    <div class="owl-carousel teampromo">
+                            {% for teamPromo in home_team_promo_team_member %}
+                                {% set teamProfile = teamPromo.team_profile %}
+                            {% include '@molecules/card/card.twig' with {
+                                card__image__src: Image(teamProfile.team_featured_image).src,
+                                card__heading: teamProfile.title,
+                                card__subheading: teamProfile.titlecredentials,
+                                card__base_class: 'team-member',
+                                card__extra_classes: 'item slide'
+                            } %}
+                            {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </section> 
+        {% endif %}
+        {% if content_block.acf_fc_layout == 'promo_grid' %}
+            {% embed '@organisms/promo-block-listing/promo-block-listing.twig' with {
+				promo_block_listing:{ title: content_block.lppg_title }
+			} %}
+			{% block promo_block_listing %}
+				{% set prompblock = content_block.promo_grid_rep %}
+				{% for key, promoGrid in prompblock %}
+					{% include '@molecules/promo-block/promo-block.twig' with { 
+						promo_block: {
+							title: promoGrid.promo_grid_rep_title,
+							description: promoGrid.promo_grid_rep_description,
+							cta: {
+								url: promoGrid.promo_grid_rep_url.url,
+								text: promoGrid.promo_grid_rep_url.title
+							}
+						}
+					} %}
+				{% endfor %}
+			{% endblock %}
+		{% endembed %}	 
+        {% endif %}
+
+
+        {% if content_block.acf_fc_layout == 'testimonial_card_carousel' %}
+            {% include "@molecules/testimonial-card-carousel/testimonial-card-carousel.twig" with {
+                data: content_block,
+                item: loop.index,
+            } %}	 
+        {% endif %} 
+        {% if content_block.acf_fc_layout == 'related_courses_promo' %}
+            {% include "@molecules/related-courses-promo/related-courses-promo.twig" with {
+                data: content_block,
+                item: loop.index,
+            } %}	 
+        {% endif %}
+        {% if content_block.acf_fc_layout == 'accordion_promo' %}
+            {% include "@molecules/accordion-promo/accordion-promo.twig" with {
+                data: content_block,
+                item: loop.index,
+            } %}	 
+        {% endif %}
+        {% if content_block.acf_fc_layout == 'cta_banner' %}
+            {% include "@molecules/cta-banner/cta-banner.twig" with {
+                data: content_block,
+                item: loop.index,
+            } %}	 
+        {% endif %}
+        
+
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+<div class="author-block">
+  {% if author %}
+	<p class="label">Author:</p>
+  <p>{{author.name}}</p>
+	{% endif %}
+  {% if co_author %}
+    <p class="label">Coauthors:</p>
+    <div id="show-more"><a href="javascript:void(0)">View coauthors</a></div>
+    <div id="show-more-content">
+      {% for authName in co_author %}
+        <p>{{authName.name}}</p>
+      {% endfor %}
+      <div id="show-less"><a href="javascript:void(0)">Hide coauthors</a></div>
+    </div>  
+	{% endif %}
+</div>

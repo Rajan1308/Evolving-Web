@@ -1,0 +1,49 @@
+.partners-logo {
+  padding-top: 30px;
+
+  .items-title {
+    text-align: center;
+    color: $green;
+  }
+
+  .logo-itmes {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+    justify-content: center;
+
+    @include large {
+      margin-top: 37px;
+      display: flex !important;
+    }
+
+    span.logo {
+      display: inline-block;
+      display: flex;
+      justify-content: center;
+      margin: 0 15px;
+      min-width: 50px;
+
+      @include large {
+        min-width: 120px;
+        margin: 0 35px;
+        max-width: 200px;
+      }
+    }
+  }
+
+  .owl-stage {
+    align-items: center;
+
+    .owl-item {
+      align-items: center;
+    }
+  }
+
+  @include breakpoint($upto-medium) {
+    .owl-dots {
+      margin-top: 20px;
+    }
+  }
+}

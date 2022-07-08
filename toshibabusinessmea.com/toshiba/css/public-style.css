@@ -1,0 +1,735 @@
+img { max-width: 100%; }
+.partner_solution_sec p { color: #797979; font-size: 16px; font-weight: 400; font-style: normal; letter-spacing: normal; line-height: 26px; text-align: left; }
+.partner_solution_sec .row { margin-top: 30px; margin-bottom: 70px; }
+.partner_solution_sec h5 { font-size: 34px; }
+.partner_solution_sec .row .box-6 { width: 50%; padding-left: 15px; padding-right: 15px; }
+.partner_solution_sec { padding-top: 70px; }
+.partner_solution_sec h2 { margin-bottom: 30px; }
+.partner_solution_sec .row .box { margin-bottom: 20px; }
+.partner_solution_sec .box .img_div .prag p { color: #fff; }
+.Management_section:last-child { border-right: 0; }
+.multifunction_printers_section .slick-slide.slick-center >div { background-size: 100% calc(100% - 120px) !important; }
+.media_center { overflow-x: hidden; }
+.pos_rel { position: relative; }
+.partner_solution_sec .box .box_content { background: rgb(175 140 200 / 0.9); opacity: 0; }
+.pm-left-button.Downloads_btn { bottom: -142px; left: inherit; right: -40px; z-index: 9; }
+.partner_solution_sec .box p {/*display: flex; opacity: 1; */ }
+.partner_solution_sec .box .img_div:hover .box_content { opacity: 1; }
+.embedded_wrap .embedded_inner .content .prag {height: 110px; overflow-y: auto; }
+.embedded_wrap .embedded_inner .content .button-1 a { color: #af8bc8; opacity: 0; transition: all 0.5s; background: #fff; }
+.embedded_wrap .embedded_inner .content .button-1 a:hover { background-color: #fff; }
+.embedded_wrap .embedded_inner:hover .button-1 a { opacity: 1; }
+.page-template-pm-template section.features_section { margin-top: 30px; }
+.page-template-pm-template .empowering_top_logo { margin-top: 40px; }
+.empowering_top_logo_wrap h2 { font-weight: 700; color: #0064D2; }
+.ui_single-tab { padding-left: 50px; padding-right: 50px; position: relative; padding-top: 235px; padding-bottom: 110px; background-repeat: no-repeat; background-size: 100% 484px; }
+.ui_single-tab .e-bridge_tabbing { padding-bottom: 30px; }
+
+/*.ui_single-tab:before{content: ''; top: 0; left: 0; position: absolute; background: url(../images/ui_single_bg.png) no-repeat; background-size: cover; height: 484px; width: 100%}*/
+.ui_single-tab:after { position: absolute; content: ''; width: 100%; height: 484px; background: rgba(0, 0, 0, 0.62); top: 0; left: 0; z-index: 1; }
+.ui_single-tab .border_sec { max-width: 1340px; margin-left: auto; margin-right: auto; filter: drop-shadow(0 28px 57px rgba(136, 136, 136, 0.5)); z-index: 2; position: relative; background: url("../images/ui-single-shape.png") center center / 100% 100% no-repeat; }
+.ui_single-tab .line { position: absolute; width: 658px; height: 13px; background-color: #af8cc8; bottom: 5px; left: 6px; }
+.ui_single-tab .line:before { position: absolute; content: ''; width: 0; height: 0; border-top: 13px solid white; border-left: 16px solid transparent; right: 0; bottom: 0px; }
+.ui_single-tab .bottom_logo { position: absolute; right: 31px; bottom: 34px; }
+.ui_single-tab .bottom_logo img { display: block; }
+.ui_single-tab .e-bridge_tabbing .tabbing ul.tabs { padding-left: 88px; justify-content: left; position: relative; top: -20px; padding-bottom: 0; }
+.ui_single-tab .e-bridge_tabbing .tab_content { padding-top: 25px; }
+.ui_single-tab .e-bridge_tabbing .tabbing ul.tabs li { font-size: 16px; font-weight: 700; color: #949494; width: auto; height: 52px; padding: 14px 35px; border: 1px solid #dcdcdc; }
+.ui_single-tab .e-bridge_tabbing .tabbing ul.tabs li.active { background-color: #af8cc8; color: #ffffff; border: 1px solid #af8cc8; }
+.ui_single-tab .e-bridge_inner { max-width: 100%; margin-left: 90px; margin-right: 32px; box-shadow: unset; border: 0; background-color: transparent; padding: 0; }
+.ui_single-tab .sec-main-titel, .ui_single-tab h3 { margin-bottom: 20px; color: #50bebe; font-size: 49px; font-weight: 400; line-height: 54px; }
+.ui_single-tab .e-bridge_inner .inner_content ul { padding-top: 25px; }
+.ui_single-tab .e-bridge_inner .image-left .image { width: 100%; height: auto; background: transparent; box-shadow: unset; margin-top: -43px; /*top: -43px;*/ right: 0; position: relative; }
+.ui_single-tab .e-bridge_inner .inner_content ul li { margin-bottom: 15px; }
+.ui_single-tab .Download_Brochure { padding-top: 60px; }
+.contact_us_form h3 { color: #000000; font-size: 30px; font-weight: 400; font-style: normal; line-height: 42px; position: relative; }
+.contact_us_form h3 span { color: #e61e1e; font-size: 12px; font-weight: 400; top: 50%; transform: translateY(-45%); position: absolute; right: 0; }
+.contact_us_form .container { background: url(../images/contact-us_bg.png) no-repeat; background-size: 100% 100%; padding: 55px 155px 120px 122px; max-width: 1085px; }
+.contact_us_form input[type="email"],.contact_us_form input[type="tel"], .contact_us_form select, .contact_us_form input[type=text], .contact_us_form input#toshiba_contact_email, .contact_us_form textarea, .contact_us_form .toshiba_contact_service select, .contact_us_form input#toshiba_career_email, .contact_us_form .toshiba_career_service select, .contact_us_form select, .career_form_sec .toshiba_career_int_prof select, .contact_us_form input[type="file"], .dealer_enquery_form  .dealer-enq-email, .dealer_enquery_form .toshiba_cities select { margin-bottom: 25px; width: 100%; padding: 14px 50px 17px 20px !important; box-shadow: 0 10px 25px #e7e7e7; border: 1px solid #fff; border-radius: 3px; background-color: #ffffff; font-size: 16px; color: #636363; font-weight: 400; font-family: 'Toshiba Sans'; }
+.contact_us_form input[type=text]:focus, .contact_us_form input#toshiba_contact_email:focus, .contact_us_form textarea:focus, .contact_us_form .toshiba_contact_service select:focus, .contact_us_form input#toshiba_career_email:focus, .contact_us_form 
+.toshiba_career_service select:focus, .career_form_sec .toshiba_career_int_prof select:focus, .dealer_enquery_form 
+.dealer-enq-email:focus { border-color: #af8cc8; }
+.contact_us_form input::placeholder, .contact_us_form textarea::placeholder { font-family: 'Toshiba Sans'; font-size: 16px; color: #636363; font-weight: 400; }
+.contact_us_form input.wpcf7-submit { margin-bottom: 50px; border: 1px solid #e61e1e !important; cursor: pointer; transition: all 0.5s; border-radius: 5px; color: #ffffff; background-color: #e61e1e; font-size: 16px; font-weight: 700; padding: 20.5px 46px; }
+.contact_us_form input.wpcf7-submit:hover { background-color: #fff; color: #e61e1e; border-color: #e61e1e; }
+.contact_us_form .country-select, .contact_us_form .intl-tel-input { margin-bottom: 25px; }
+.contact_us_form textarea { padding-top: 19px !important; max-height: 148px; }
+.contact_us_form .country-select.inside .flag-dropdown, .contact_us_form .intl-tel-input .flag-container { left: inherit; right: 10px; }
+.contact_us_form .toshiba_contact_fname input, .contact_us_form .toshiba_contact_lname input, .contact_us_form 
+input#toshiba_contact_email, .contact_us_form .toshiba_career_fname input, .contact_us_form .toshiba_career_lname input, .contact_us_form input[type="file"], .dealer_enquery_form input.dealer-enq-fname, .dealer_enquery_form input.dealer-enq-lname, .dealer_enquery_form .toshiba_countries, .dealer_enquery_form .toshiba_cities select { width: calc(50% - 11px); }
+.contact_us_form .toshiba_contact_fname input, .contact_us_form input#toshiba_contact_email, .contact_us_form .toshiba_career_fname
+input, .contact_us_form .toshiba_career_cv input[type="file"], .dealer_enquery_form input.dealer-enq-fname { margin-right: 11px; }
+.contact_us_form .toshiba_contact_lname input, .contact_us_form .allow-dropdown, .contact_us_form .toshiba_career_lname input, .contact_us_form .toshiba_career_coverletter input[type="file"], .dealer_enquery_form input.dealer-enq-lname { margin-left: 11px; }
+.contact_us_form .cf7sr-g-recaptcha > div { /*margin-left: 24px;*/ margin-top: 35px; transform-origin: 0; transform: scale(0.54); }
+.our_locations_section .inner .right { height: 430px; }
+.contact_us_form .allow-dropdown { width: 98px; display: inline-block; }
+.intl-tel-input .selected-flag .iti-flag { display: none; }
+.contact_us_form .allow-dropdown input#toshiba_contact_phone { width: 100% !important; margin-left: 0 !important; }
+.contact_us_form span.toshiba_contact_phone input#toshiba_contact_phone, .dealer_enquery_form input.toshiba_dealer_phone { width: calc(50% - 120px); margin-left: 9px; }
+
+/*.our_locations.light-bg.our_locations {z-index: -1;}*/
+.our_locations.light-bg.our_locations:before { top: 58%; height: 1613px; }
+.contact_us_form { position: relative; z-index: 1; }
+.career_form_text .text_div { margin: 90px auto 60px; max-width: 996px; }
+.career_form_text .text_div h2 { color: #0064d2; font-weight: 300; }
+.career_form_text .text_div p { color: #606060; font-weight: 400; font-size: 20px; line-height: 34px; }
+.contact_us_form.career_form_sec .allow-dropdown { margin-left: 0; }
+.career_form_sec.contact_us_form .toshiba_country_input_txt input { width: calc(50% - 11px); margin-left: 11px; }
+.career_form_sec span.toshiba_career_cv { position: relative; display: inline-block; width: 50%; }
+.career_form_sec span.toshiba_career_cv:before, .career_form_sec span.toshiba_career_coverletter:before { content: '\f093'; position: absolute; right: 30px; font-family: fontawesome; top: 0; }
+.career_form_sec span.toshiba_career_cv:before { top: 20%; }
+.career_form_sec span.toshiba_career_cv input { width: 100%; }
+.career_form_sec.contact_us_form input.wpcf7-submit { width: 210px; }
+.career_form_sec input[type="file"i]::-webkit-file-upload-button { display: none; }
+.career_form_sec .toshiba_career_phone input { width: calc(50% - 120px); margin-left: 9px; margin-right: 11px; }
+.dealer_enquery_form h3 { margin-bottom: 60px; }
+.dealer_enquery_form input.dealer-enq-comp-name, .dealer_enquery_form .country-select { width: calc(50% - 11px); margin-right: 11px; display: inline-block; }
+.dealer_enquery_form .wpcf7-form.init > p br { display: none; }
+.dealer_enquery_form.light-bg { z-index: 1 }
+.dealer_enquery_form.light-bg:before { top: -10%; }
+.dealer_page_sec h2 { color: #0064D2; font-weight: 300; margin-bottom: 40px; }
+.dealer_page_sec p { color: #606060; font-size: 24px; line-height: 34px; }
+.dealer_page_sec .transforming_wrap { align-items: center; }
+.dealer_page_sec img { width: 100%; height: 100%; object-fit: cover; }
+.dealer_page_sec.transforming_section { padding-bottom: 90px; padding-top: 100px;}
+.single_printer_item .multifunction_printers_section >div { padding-bottom: 190px !important; }
+.single_printer_item .barcode-label_section .left h4 { color: #FFFFFF; font-size: 30px; line-height: 54px; font-weight: 400; }
+.single_printer_item .ui_single-tab:before {background: #DFF3FF; height: 652px; top: -235px;}
+.single_printer_item .barcode-label_section .inner .right .image { height: 370px; }
+.single_printer_item .barcode-label-printers:after, .single_printer_item .ui_single-tab:after { content: none; }
+.single_printer_item .Downloads_btn { bottom: 40px; right: -45px; left: inherit; }
+.single_printer_item .ui_single-tab .bottom_logo { right: 0px; bottom: 0px; }
+.single_printer_item .e-bridge_inner .content { width: 100%; padding-right: 50px; }
+.single_printer_item .col h3 { font-size: 30px; }
+.single_printer_item .col li { font-size: 18px; color: #636363; line-height: 36px; list-style: disc; }
+.single_printer_item .col { display: inline-block; }
+.single_printer_item .col.col-5 { width: 37.45%; }
+.single_printer_item .col.col-4 { width: 43.53%; }
+.single_printer_item .col.col-3 { width: 18.95%; }
+.single_printer_item .ui_single-tab .e-bridge_inner { margin-left: 115px; }
+.single_printer_item .ui_single-tab .e-bridge_tabbing .tab_content { padding-bottom: 75px; }
+.single_printer_item .e-bridge_inner .content { display: flex; flex-wrap: wrap; }
+.single_printer_item .col ul { padding-left: 20px; }
+.single_printer_item .ui_single-tab .line { bottom: 4px; }
+.single_printer_item .ui_single-tab .border_sec { filter: unset; box-shadow: 0 28px 57px rgba(136, 136, 136, 0.5); }
+
+/*.banner_section{position: relative; z-index: 2;}*/
+.ecc_page .ui_single-tab .img_div { justify-content: center; display: flex; align-items: center; background-color: #0064D2; border-radius: 50%; padding: 29px; height: 108px; width: 108px; margin-bottom: 28px; }
+.ecc_page .ui_single-tab .img_div i { color: #FFFFFF; font-family: "fontawesome"; font-size: 50px; letter-spacing: 0; line-height: 50px; }
+.ecc_page .ui_single-tab .col { padding: 0 44px; }
+.ecc_page .ui_single-tab .e-bridge_inner .content { padding: 0 44px; }
+.ecc_page .ui_single-tab .e-bridge_inner { margin-right: 0; margin-left: 0 !important; }
+.ecc_page .ui_single-tab .col { padding: 0 44px; }
+.ecc_page .ui_single-tab .col.col-5 { width: 33.33%; }
+.ecc_page .ui_single-tab .col.col-4 { width: 33.33%; }
+.ecc_page .ui_single-tab .col.col-3 { width: 33.33%; }
+.ecc_page .ui_single-tab .col h3 { color: #000000; font-size: 20px; font-weight: bold; line-height: 25px; }
+.ecc_page .ui_single-tab p { color: rgba(0, 0, 0, 0.7); font-size: 16px; line-height: 25px; }
+.ecc_page .ui_single-tab .line { background-color: #50bebe; left: 3px; bottom: 2px; }
+.ecc_page .ui_single-tab .bottom_logo { right: 2px; bottom: 2px; }
+.ecc_page .ui_single-tab .e-bridge_tabbing .tabbing ul.tabs li.active { background-color: #50bebe; border-color: #50bebe; }
+.ecc_page .ui_single-tab .border_sec { background: url(../images/eec_bg_box.png) center center / 100% 100% no-repeat; }
+.ecc_page .ui_single-tab:before { content: none; }
+.ecc_service_sec.light-bg:before { top: 0; bottom: 50px; }
+.ecc_page .ui_single-tab { padding-top: 78px; }
+.ecc_page .e-bridge_tabbing .tabbing ul li { position: relative; border-radius: 3px; background-color: #50bebe; width: 199px; height: 52px; color: #ffffff; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-left: 70px; top: -21px; }
+.ecc_page .e-bridge_tabbing .e-bridge_inner .col.col-4 { width: 33.33%; }
+.ecc_service_sec { padding-top: 30px; }
+.ecc_service_sec .container { max-width: 1290px; }
+.ecc_service_sec .inner_content { display: flex; flex-wrap: wrap; align-items: center; }
+.ecc_service_sec .left_side { max-width: 670px; padding-left: 15px; }
+.ecc_service_sec .right_side { max-width: 587px; position: relative; z-index: 2; }
+.ecc_service_sec li.none { padding-left: 0; }
+.ecc_service_sec li.none:before { content: none; }
+.ecc_service_sec li { position: relative; color: #9e9e9e; font-size: 16px; line-height: 26px; padding-left: 10px; }
+.ecc_service_sec li:before { position: absolute; width: 3px; height: 3px; border-radius: 50%; background-color: #9e9e9e; content: ''; left: 0; top: 12px; }
+.ecc_service_sec h2 { color: #0064d2; font-size: 51px; font-weight: 300; line-height: 59px; text-transform: lowercase; margin-bottom: 20px; }
+.ecc_service_sec h2 span { text-transform: uppercase; }
+.ecc_service_sec .img_div { position: relative; /*left: -83px;*/ }
+.eec_faq_sec { position: relative; z-index: 2; padding-top: 45px; padding-bottom: 80px; }
+.eec_faq_sec .container { max-width: 1205px; }
+.eec_faq_sec .faq { margin: 40px auto; }
+.eec_faq_sec .faq__list { margin: 0; padding: 0; list-style: none; }
+.eec_faq_sec .faq__item { position: relative; transition: all 200ms ease-in-out; padding: 42px 0; border-bottom: 1px solid #E6E6E6; padding-left: 29px; padding-right: 40px;}
+.eec_faq_sec .faq__item + .eec_faq_sec .faq__item { border-top: 1px solid #444; } 
+.eec_faq_sec .faq__item:last-child{border-bottom: 0;}
+.eec_faq_sec .faq__item--open { margin-top: 20px; background-color: #fff; box-shadow: 0 15px 44px 0 rgba(188, 188, 188, 0.5); padding: 65px 85px 40px 94px; margin-bottom: 120px; }
+.eec_faq_sec .faq__content { display: none; padding: 34px 0 10px; }
+.eec_faq_sec h2 i { color: #e61e1e; font-size: 33px; padding-right: 17px; }
+.eec_faq_sec h2 { display: flex; align-items: center; color: #0064d2; font-size: 52px; padding-bottom: 45px; }
+.eec_faq_sec .faq__item a { color: #636363; font-size: 20px; line-height: 25px;}
+.eec_faq_sec .faq__item a:hover { color: #F63;}
+.eec_faq_sec .faq__title { color: #636363; font-size: 20px; }
+.eec_faq_sec .faq__item a i { padding-right: 16px; }
+.eec_faq_sec .faq__item p b { margin-bottom: 35px; display: block; color: #000000; line-height: normal; }
+.eec_faq_sec .faq__item p { color: #636363; font-size: 18px; line-height: 29px; }
+.eec_faq_sec .faq__item--open .faq__title i { color: #E61E1E; }
+.eec_faq_sec .faq__item--open a.faq__title { color: #0064D2; }
+.eec_faq_sec .faq__content h6 { display: inline-block; color: #0064D2; font-family: "Toshiba Sans"; font-size: 20px; line-height: 25px; font-weight: 400; cursor: pointer; margin-top: 40px; }
+.eec_faq_sec .faq__content h6:hover { color: #636363; }
+.eec_faq_sec .faq__item--open .faq__title span { display: none; }
+.eec_faq_sec .faq__item a span { position: absolute; right: 0; color: #0064D2; top: 42px;}
+.eec_faq_sec .faq__item--open:before { position: absolute; content: ''; right: 0; bottom: 0; width: 100%; height: 13px; background: url(../images/faq_line.png) no-repeat; background-position: right; }
+.after_cv { left: 25px; position: relative; top: -62px; display: inline; font-size: 16px; color: #636363; }
+.after_cover { left: 30px; position: relative; top: -63px; display: inline; font-size: 16px; color: #636363; }
+.contact_us_form .toshiba_career_coverletter input[type="file"], .contact_us_form .toshiba_career_cv input[type="file"] { color: transparent; }
+.privacy_policy_sec h2 { color: #0064d2; font-size: 52px; font-weight: 400; margin-bottom: 30px; display: flex; align-items: center; }
+.privacy_policy_sec h2 img { padding-right: 22px; }
+.privacy_policy_sec .img_div { position: relative; margin-bottom: 70px; }
+.privacy_policy_sec .img_div .rel_img { width: 100%; display: block; box-shadow: 0 23px 46px #325959; }
+.privacy_policy_sec .img_div .abs_img { position: absolute; right: 0; bottom: 0; }
+.privacy_policy_sec .img_div:before { z-index: -1; position: absolute; content: ''; width: calc(100% + 134px); height: 100%; background: url(../images/policy_banner_bg.png) no-repeat; top: 57px; left: -67px; background-size: cover; }
+.privacy_policy_sec { padding-top: 145px; }
+.privacy_policy_sec .text_div h4 { color: #353535; font-size: 25px; font-weight: 500; line-height: 33px; margin-bottom: 25px; }
+.privacy_policy_sec .text_div p { color: #636363; font-size: 18px; line-height: 29px; }
+.privacy_policy_sec .text_div .single:hover h4 { color: #0064d2; }
+.privacy_policy_sec .text_div .single:hover { max-width: 1183px; box-shadow: 0 15px 44px rgba(188, 188, 188, 0.5); background-color: #ffffff; padding: 57px 73px 47px; }
+.privacy_policy_sec .text_div .single { position: relative; margin: 0 auto 70px; transition: all 0.5s; max-width: 1037px }
+.privacy_policy_sec .text_div .single:hover:before { position: absolute; content: ''; right: 0; bottom: 0; width: 100%; height: 13px; background: url(../images/policy_line.png) no-repeat; background-position: right; }
+.privacy_policy_sec .text_div { padding-top: 85px; }
+.privacy_policy_sec .text_div.cookies_sec .single:hover:before { background: url(../images/cookies_line.png) no-repeat; background-position: right; }
+.privacy_policy_sec .text_div.terms_cond_sec .single:hover:before { background: url(../images/tems_line.png) no-repeat; background-position: right; }
+.print_assesment_sec { text-align: center; background-color: #0064d2; padding-top: 80px; padding-bottom: 50px; margin-top: -50px; }
+.print_assesment_sec h2 { margin: 0 auto 45px; color: #fff; font-size: 51px; font-weight: 300; line-height: 64px; margin-bottom: 63px; text-transform: lowercase; }
+.print_assesment_sec h2 span { text-transform: uppercase; }
+.print_assesment_sec .inner { display: flex; flex-wrap: wrap; }
+.print_assesment_sec .inner .box { width: 25%; }
+.print_assesment_sec.light-bg:before { top: 0; height: 100%; background-size: 100% 100% !important; }
+.print_assesment_sec .box p { color: #ffffff; font-size: 20px; line-height: 35px; padding: 0 30px; text-transform: uppercase; font-weight: 500; }
+.print_assesment_sec .border_line { width: 185px; height: 185px; background-color: #fff; border-radius: 50%; border-radius: 50%; margin: auto; display: flex; align-items: center; justify-content: center; }
+.print_assesment_sec .img_div { position: relative; margin-bottom: 20px; }
+
+/*.print_assesment_sec .img_div:before{width: 100%; height: 50%; content: ''; position: absolute; top: 0; left: 0; background: url(../images/circle_curve.png);}*/
+.print_assesment_sec .img_div img { max-width: 100%; }
+.print_assesment_sec .border_line { margin: auto; display: flex; align-items: center; justify-content: center; }
+.page-template-print-assesment-template .section_bottom_image { position: relative; z-index: 2; }
+.print_asses_cont .toshiba_service_fname input, .print_asses_cont .toshiba_service_lname input, .print_asses_cont .toshiba_service_email input { width: calc(50% - 11px); }
+.print_asses_cont .toshiba_service_fname input, .print_asses_cont .toshiba_service_email input { margin-right: 11px; }
+.print_asses_cont .toshiba_service_lname input { margin-left: 11px; }
+.print_asses_cont .toshiba_service_phone input { width: calc(50% - 120px); margin-left: 9px; }
+.print_asses_cont h3 { margin-bottom: 45px; }
+.print_find_dealer .container { max-width: 1015px; }
+.print_find_dealer .inner { display: flex; flex-wrap: wrap; text-align: left; align-items: flex-end; padding-top: 185px; padding-bottom: 35px; }
+.print_find_dealer h2 { color: #0064D2; font-size: 30px; line-height: 38px; width: 750px; padding-right: 15px; margin-bottom: 0; }
+.print_find_dealer a { font-size: 14px; color: #fff; width: 160px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.find_Dealer .printer_cat_wrap { max-width: 1330px; padding-left: 15px; padding-right: 15px; }
+.sent .wpcf7-response-output { color: #46b450 !important; }
+.wpcf7-not-valid-tip { position: absolute; top: 40px; min-width: 200px; font-size: 13px; }
+.contact_us_form .cf7sr-g-recaptcha > div { transform: scale(0.84); margin-bottom: 15px; }
+.Sales_Enquiry_section .wpcf7-form-control-wrap input, .Sales_Enquiry_section .wpcf7-form-control-wrap textarea, .Sales_Enquiry_section .wpcf7-form-control-wrap select { margin-bottom: 20px !important; }
+.Sales_Enquiry_section .wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+    top: 50px;
+}
+.Sales_Enquiry_section .inner .right .inner .sales-enquiry-form select { cursor: pointer; }
+.wpcf7 form .wpcf7-response-output { margin-top: 0; }
+.Sales_Enquiry_section .contact_us_form input.wpcf7-submit { margin-bottom: 15px; }
+.our_locations_section .inner .left strong { display: block; margin-bottom: 10px; }
+.toshiba_career_message { display: inline-block; width: 100%; }
+.career_form_sec form.wpcf7-form p { margin: 0; }
+.contact_us .our_locations_section .inner .left > strong { color: #0064d2; margin-bottom: 20px; }
+.contact_us .our_locations_section .inner .left .full-add .content a { padding-top: 15px; }
+.cf7sr-g-recaptcha-invalid .wpcf7-not-valid-tip { top: -20px; /*margin-left: 25px; */}
+.page-id-198 .your_challenge_sec .border_box { border-color: #50bebe; }
+.page-id-198 .your_challenge_sec .border_box .line { background-color: #50bebe; }
+.page-id-198 .your_challenge_sec .border_box:after { border-top-color: #50bebe; }
+.page-template-multifn-print-template .wpcf7-not-valid-tip { position: relative; top: -10px; }
+/* .page-template-barcode-printers-template .banner_inner_slide .content h1, .page-template-barcode-printers-template .banner_inner_slide .content p { color: #000 !important; } */
+.page-template-barcode-printers-template .banner_inner_slide .inner .button_banner a { color: #0064d2; }
+.toshiba_career_message { display: inline-block; width: 100%; }
+.career_form_sec form.wpcf7-form p { margin: 0; }
+.toshiba_career_cv span.wpcf7-not-valid-tip, .toshiba_career_coverletter span.wpcf7-not-valid-tip { top: 60px; }
+.toshiba_career_coverletter span.wpcf7-not-valid-tip { left: 12px; }
+.toshiba_career_message span.wpcf7-not-valid-tip { bottom: 0; top: auto; }
+.toshiba_career_coverletter input#toshiba_career_coverletter { width: calc(100% - 11px) !important; }
+.Global_section .content .prag, .scroll-bar .prag { padding-right: 10px; }
+
+
+
+/* .page-id-40.page-template-contact-template .banner_inner_slide .content p, 
+.page-id-40.page-template-contact-template .banner_inner_slide .content h1{color: #000;}
+.page-id-40.page-template-contact-template .banner_inner_slide ul.slick-dots li button{background-color: #000;} */
+.our_locations.contact_us.light-bg{z-index: inherit;}
+
+.page-id-196 section.features_section .right-bg{top: -85px;}
+.page-id-196 .empowering_top_logo_wrap{padding-top: 40px;}
+
+.embedded_section .embedded_wrap .embedded_inner .content p{padding: 9px 0;}
+.filter-right a, a.clear_filter{transition: all 0.5s;}
+.filter-right a:hover, a.clear_filter:hover{text-decoration: underline; color: #000;}
+
+.printer_cat_in{border-bottom: 1px solid #EBEBEB; padding-bottom: 8px; margin-bottom: 8px;}
+.speed_filter .printer_cat_in{padding-bottom: 0; border-bottom: 0;}
+.eco-mfp-page .barcode-label_section .toshiba_title h2{font-size: 40px; font-weight: 300; line-height: 50px;}
+
+.contact_us_form .cf7sr-g-recaptcha {margin-bottom: 40px;}
+
+.page-template-event-listing-template .embedded_section .embedded_wrap .embedded_inner .content p{padding: 15px 0;}
+
+.page-template-thank-you-template .header_bottom{background-color: #000;}
+.Event_section_page .embedded_wrap .embedded_inner .content h6{font-weight: 400;}
+section.embedded_section{padding-top: 45px;}
+.single.single-post .Read_the_next_blog_section{padding-bottom: 95px;}
+
+.page-template-contact-template .bg-image:before { z-index: -1; content: ''; position: absolute; background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 100%); right: 0; height: 100%; top: 0; bottom: 0; max-width: 764px; width: 100%; }
+.page-template-embed-solution-template .embedded_wrap .embedded_inner .content .prag{/*height: auto;*/}
+.page-template-embed-solution-template .embedded_wrap .embedded_inner .content h5{margin-bottom: 12px;}
+.page-template-eco-mfp-template .barcode-label_section .inner .left{height: auto;}
+.single.single-printer .single_printer_item .col h3{color: #50bebe !important;}
+
+.single_printer_item .ui_single-tab{padding-top: 55px; padding-bottom: 30px; z-index: inherit;}
+.single_printer_item .barcode-label-printers{padding-top: 195px;}
+
+.single_printer_item_wrap .single_printer_item .ui_single-tab:before{z-index: 0;}
+.single_printer_item_wrap .single_printer_item .ui_single-tab:after {content: ''; background: url(../images/light-bg.png) no-repeat center; width: 100%; height: 800px; position: absolute; z-index: -1; left: 0; right: 0; top: 40%; background-position: left center; background-size: 100% 890px !important;}
+/*.single_printer_item .ui_single-tab:after{}*/
+
+.MPS_Process_wrap .left_inner ul.tabs li.tab-link.tab_last.current{z-index: 5;}
+
+
+/*.single_printer_item #tab1 .e-bridge_inner .content .col-4{width: 20%; padding-right: 70px;}
+.single_printer_item #tab1 .e-bridge_inner .content .col-5{width: 80%;}
+.single_printer_item #tab1 .e-bridge_inner li, .single_printer_item #tab1 .e-bridge_inner p{list-style: none; color: #000; line-height: 38px;}
+.single_printer_item #tab1 .e-bridge_inner ul{padding: 0;}
+.single_printer_item #tab1 .sec-main-titel{font-size: 30px;}
+.single_printer_item #tab1{padding-top: 50px;}
+.single_printer_item #tab1 .e-bridge_inner .content{border-bottom: 1px solid rgb(151 151 151 / 30%); padding-bottom: 75px;}
+.single_printer_item #tab1 .e-bridge_inner p{font-size: 18px; margin-bottom: 0;}
+.single_printer_item #tab1 .e-bridge_inner .second_div .col-4{padding-right: 30px;}
+.single_printer_item #tab1 .second_div_head{padding-top: 30px;}*/
+
+
+.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap { width: 100%; }
+.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap .wrap_inner { display: flex; flex-wrap: wrap; width: 100%; list-style: none; color: #000; line-height: 38px; font-size: 18px; }
+.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap .wrap_inner .title { width: 230px; }
+.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap .wrap_inner .dec { width: calc(100% - 230px); }
+.single_printer_sec .tabbing .tab_content .e-bridge_inner  .content { border-bottom: 1px solid rgb(151 151 151 / 30%); padding-bottom: 60px; }
+.single_printer_sec .tabbing .tab_content .e-bridge_inner .content h2.sec-main-titel { color: #50BEBE; font-size: 30px; letter-spacing: 0; line-height: 54px; margin: 0 0 10px; }
+.single_printer_sec .tabbing .tab_content .e-bridge_inner .content:last-child { border-bottom: none; }
+.single_printer_item .ui_single-tab .border_sec {border: 3px solid #af8cc8;background-image: none;background-color: #fff;box-shadow: -16px 28px 57px rgb(136 136 136 / 50%); }
+.single_printer_item .ui_single-tab .border_sec:after { content: ''; position: absolute; width: 658px; height: 13px; bottom: -1px; left: -1px; background-image: url(../images/line_bottom.png); background-repeat: no-repeat; background-size: 100% 100%; }
+.single_printer_item .ui_single-tab .border_sec:before { content: ''; position: absolute; background-image: url(../images/right-top_1.png); width: 140px; height: 75px; background-repeat: no-repeat; right: -87px; top: -23px; z-index: 11; }
+
+.single_printer_sec .tabbing .tab_content .e-bridge_inner .content + .content{padding-top: 60px;}
+
+.single_printer_item_new .e-bridge_tabbing .e-bridge_section h3{color:#000000!important;}
+.single_printer_item_new .e-bridge_tabbing .e-bridge_section ul li{display: inline-block; width:auto;background-color:transparent;color:rgba(0,0,0,0.7);line-height:25px;margin-left:0;height:auto;top:auto;border-radius:0px;font-weight:400;}
+.single_printer_item_new .e-bridge_tabbing .e-bridge_section ul{padding:0;}
+.single_printer_item_new .e-bridge_tabbing .content .col.col-4{padding:0 29px;}
+
+/* 05/04/2021*/
+.printer_load_more {text-align: center;width: 100%;}
+@media(max-width:1550px) {
+
+	/*.e-bridge_inner{margin-left: 15px; margin-right: 15px;}*/
+	.e-bridge_inner { max-width: 1250px; }
+}
+@media(max-width:1380px) {
+
+	/*	.multifunction_printers_section .slick-slide .image{height: 220px;}
+	.multifunction_printers_section .slick-slide.slick-center img{height: auto; max-height: 220px;}
+	.multifunction_printers_section .slick-slide.slick-center .content{padding-left: 45px; padding-right: 45px;}*/
+	.pm-left-button.Downloads_btn { right: 0; }
+	.features_wrap .features_inner .right { right: 60px; }
+	.privacy_policy_sec .container { max-width: 1070px; }
+	.privacy_policy_sec .text_div .single:hover { max-width: 1145px; }
+	.e-bridge_inner { max-width: 1100px; padding: 60px 0 60px 50px; }
+	.e-bridge_inner .image-left .image { right: -5%; width: 505px; }
+}
+@media(max-width:1336px) {
+	.events_embedded_section .title { padding-left: 15px; padding-right: 15px; }
+	.ecc_service_sec .left_side{max-width: 55%;}
+	.ecc_service_sec .right_side{max-width: 45%;}
+	.eec_faq_sec .container{max-width: 1170px;}
+
+}
+@media(max-width:1287px){
+	.embedded_section .embedded_wrap .embedded_inner .content p{padding: 0;}
+}
+@media(max-width:1199px) {
+	.your_challenge_sec .border_box { margin-left: 20px; margin-right: 20px; }
+	.your_challenge_sec .line { width: 500px; }
+	.your_challenge_sec .sec_title { font-size: 61px; }
+	.Who_we_are_section .inner .right { padding-left: 75px; }
+	.Who_we_are_section .inner .right h5 { margin: 15px 0; }
+	.privacy_policy_sec .container { max-width: 850px; }
+	.privacy_policy_sec .text_div { padding-left: 30px; padding-right: 30px; }
+	.privacy_policy_sec h2 { font-size: 42px; }
+	section.embedded_section.events_embedded_section { padding-top: 50px; }
+	.single_news_blog { padding-bottom: 70px; }
+	.date_name { padding-top: 25px; }
+	.e-bridge_inner .content, .e-bridge_inner .image-left { width: 50%; }
+	.e-bridge_inner .image-left .image { right: 0; width: 100%; }
+	.e-bridge_inner { padding: 60px 50px; }
+	.e-bridge_inner .inner_content { padding-right: 40px; }
+	.e-bridge_inner .inner_content ul { padding-top: 40px; }
+	.ecc_page .ui_single-tab .e-bridge_inner .content{padding: 0 0;}
+	.ecc_page .ui_single-tab .col{padding: 0 20px;}
+	.eec_faq_sec h2{padding-bottom: 15px;}
+	.eec_faq_sec .faq__item--open{margin-bottom: 50px;}
+
+	.managed_print_services { padding-top: 80px; padding-bottom: 40px; min-height: auto; }
+	.print_assesment_sec .inner .box { width: 50%; margin-bottom: 30px; }
+	.print_assesment_sec .img_div { margin-bottom: 0; }
+	.managed_print_image { height: auto; margin-top: 15px; }
+	.print_assesment_sec .img_div img { width: 200px; }
+
+	.ecc_service_sec h2, .eec_faq_sec h2{font-size: 44px;}
+	.single-printer .single_printer_item .barcode-label_section .inner .right .image img{margin-left: -100px; margin-top: 0; height: 100%;}
+	.single-printer .single_printer_item .Downloads_btn{right: 60px;}
+	/*.ecc_page .ui_single-tab .e-bridge_inner{margin-left: 0 !important;}*/
+	.single_printer_item .ui_single-tab .bottom_logo { width: 20%;display: block; }
+	.single_printer_item .ui_single-tab .border_sec:before { width: 60px; right: -6px; }
+	.single_printer_item .ui_single-tab .border_sec:after{width: 40%;}
+}
+@media(max-width:991px) {
+	.your_benifit_sec .left { padding-left: 10px; }
+	.your_benifit_sec { padding-top: 0; padding-bottom: 50px; }
+	.partner_solution_sec h5 { font-size: 28px; }
+	.partner_solution_sec .row { margin-bottom: 50px; }
+	.your_challenge_sec .left { padding-right: 20px; padding-top: 25px; }
+	.your_challenge_sec .right { padding-left: 20px; padding-top: 25px; }
+	.your_challenge_sec .sec_title { width: 100%; font-size: 50px; left: 50px; bottom: 0; }
+	h2 { font-size: 40px; }
+	.features_wrap .features_inner .right { left: 0; }
+	.pm-left-button.Downloads_btn { bottom: -120px; }
+	.Who_we_are_section .inner .right { padding: 20px 30px 0 !important; }
+	.Global_section .content { padding: 78px 90px 140px; }
+	.dealer_listing_wrap .find-dealer_in { width: 50%; margin: 30px 0; }
+	.dealer_listing_wrap .find-dealer_in:nth-child(3n+0)::after { opacity: 1; }
+	.dealer_listing_wrap .find-dealer_in:nth-child(2n+0)::after { opacity: 0; }
+	.dealer_listing { padding-bottom: 100px; padding-top: 70px; }
+	.category_printers { padding-left: 30px; }
+	.find_Dealer .printer_cat_wrap { padding-bottom: 75px; }
+	.dealer_listing { padding-bottom: 70px; padding-top: 50px; }
+	.dealer_listing_wrap .find-dealer_in:after { right: 0; }
+	.dealer_page_sec.transforming_section { padding-top: 90px; padding-bottom: 70px; }
+	.contact_us_form .container { padding: 55px 120px 100px; }
+	.dealer_page_sec h2 { margin-bottom: 20px; }
+	.dealer_page_sec p { font-size: 22px; }
+	.career_form_text .text_div { margin-bottom: 60px; }
+	/*.after_cover { left: 315px; }*/
+	.privacy_policy_sec .container { max-width: 720px; }
+	.privacy_policy_sec .img_div:before { width: calc(100% + 34px); left: -17px; top: 35px; }
+	.privacy_policy_sec .img_div .abs_img { max-height: 80%; }
+	.privacy_policy_sec .text_div { padding-top: 65px; }
+	.privacy_policy_sec .text_div .single:hover { padding: 35px; }
+	.event_gallery_wrap .event_gallery_inner .iner { width: calc(33.33% - 16px); }
+	.event_gallery { margin-bottom: 0; }
+	.Driver_plugins_wrap { padding: 70px 0; }
+	.e-bridge_tabbing .tabbing ul.tabs li { font-size: 18px; }
+	.Driver_plugins_wrap .inner .left { padding-right: 40px; }
+	.e-bridge_inner { padding: 40px 30px; }
+	.e-bridge_inner .inner_content ul { padding-top: 30px; }
+	.ui_single-tab .border_sec { background-image: none; box-shadow: 0 33px 51px rgb(208 208 208 / 50%); border: 3px solid #af8cc8; background-color: #fff; }
+	.ui_single-tab .line { width: auto; }
+	.ui_single-tab .bottom_logo { display: none; }
+	.ui_single-tab .e-bridge_inner { margin-left: 0; margin-right: 0; }
+	.ui_single-tab .e-bridge_inner .image-left .image { margin-top: 0; height: auto !important; }
+	.ui_single-tab .line { display: none; }
+	.ui_single-tab .e-bridge_inner .inner_content ul li { font-size: 15px; line-height: 24px; }
+	.ui_single-tab .e-bridge_tabbing .tabbing ul.tabs li { height: auto; line-height: normal; padding: 13px 18px; }
+	.ui_single-tab .e-bridge_tabbing .tabbing ul.tabs { padding-left: 0; }
+	.ui_single-tab .sec-main-titel, .ui_single-tab h3 { font-size: 40px; line-height: normal; }
+
+	.MPS_Process_wrap .left_inner, .MPS_Process_wrap .right_inner { width: 100%; }
+	.MPS_Process_wrap .left_inner ul.tabs, .MPS_Process_wrap .left_inner .in_text_wrap { margin: 0 auto; left: 0; right: 0; }
+	.MPS_Process_wrap .right_inner { margin-top: 30px; }
+	.managed_print_services { padding-top: 70px; min-height: auto; padding-bottom: 30px; }
+	.managed_print_wrap .inner .left { width: 40%; }
+	.managed_print_wrap .inner .right { width: 60%; }
+	.managed_print_image { height: 100%; margin-top: 15px; }
+	.MPS_Process { padding-top: 70px; }
+	.MPS_Process .sec-main-titel { padding-bottom: 30px; }
+	.print_assesment_sec .inner .box { width: 50%; margin-bottom: 20px; }
+	.print_assesment_sec .img_div { margin-bottom: 0; }
+	.print_assesment_sec .inner .box img { width: 170px; }
+	.print_find_dealer .inner { padding-top: 80px; }
+	.print_find_dealer .inner { text-align: center; align-items: center; padding-top: 50px; justify-content: center; }
+	.maintenance_print_find_dealer.print_find_dealer .inner { padding-top: 20px; }
+	.managed_print_services.managed_print_maintenance { min-height: auto; }
+	.managed_print_wrap .inner .left .image { width: 39%; height: 384px; }
+	.managed_print_maintenance .managed_print_wrap .inner .sec-main-titel { padding-bottom: 30px; padding-right: 10px; font-size: 30px; }
+	section.ui_single-tab.ui_single_tab_maintenance { padding: 70px 40px; }
+	section.ui_single-tab.ui_single_tab_maintenance .e-bridge_tabbing .tabbing ul.tabs li { line-height: 17px; }
+	.ui_single_tab_maintenance.ui_single-tab .e-bridge_tabbing .tabbing ul.tabs { top: 0; padding-left: 0 }
+	section.ui_single-tab.ui_single_tab_maintenance .border_sec { background-image: none; }
+	.ui_single-tab.ui_single_tab_maintenance .sec-main-titel { margin-bottom: 40px; }
+	.ui_single_tab_maintenance .e-bridge_inner .content .image { margin-top: 0; margin-bottom: 0; }
+
+	.ecc_page .ui_single-tab .border_sec{background: unset; border: 3px solid #50bebe;}
+	.ecc_page .single_printer_item .ui_single-tab .e-bridge_tabbing .tab_content{padding-bottom: 45px;}
+	.ecc_page .ui_single-tab{padding-bottom: 70px;}
+	.eec_faq_sec .faq__item--open{padding: 50px 50px 40px;}
+	.eec_faq_sec .faq__content h6{margin-top: 30px;}
+	.eec_faq_sec{padding-bottom: 50px;}
+	.eec_faq_sec h2{padding-bottom: 0;}
+	.eec_faq_sec{padding-top: 20px;}
+	.eec_faq_sec .faq{margin: 30px auto 20px;}
+	.ecc_service_sec h2, .eec_faq_sec h2{font-size: 40px; line-height: normal;}
+	.ecc_page .ui_single-tab .col{padding: 0 15px;}
+	.single_printer_item .multifunction_printers_section >div{padding-bottom: 70px !important;}
+	.single_printer_sec .tabbing .tab_content .e-bridge_inner .content { padding-bottom: 30px; }
+	.single_printer_sec .tabbing .tab_content .e-bridge_inner .content + .content { padding-top: 30px; }
+
+
+
+}
+@media(max-width:850px) {
+	/*.after_cover { left: 255px; }*/
+}
+@media(max-width:767px) {
+	.partner_solution_sec .row .box-3 { width: 50%; }
+	.partner_solution_sec .row .box-6, .your_benifit_sec .right, .your_benifit_sec .left, .your_challenge_sec .left, .your_challenge_sec .right { width: 100%; padding-right: 0; padding-left: 0; }
+	.partner_solution_sec { padding-top: 40px; }
+	.your_challenge_sec .line { width: 130px; }
+	.your_challenge_sec .sec_title { font-size: 40px; }
+	.your_benifit_sec h2 { margin-bottom: 15px; margin-top: 25px; }
+	.your_challenge_sec .container img { min-height: 300px; }
+	.our_locations_section .inner .left { padding-left: 15px }
+	.your_benifit_sec .left, .partner_solution_sec .row .box { padding-left: 15px; padding-right: 15px; }
+	.Global_section .content .line { width: 420px; }
+	.Global_section .content .line.lie-bottom { bottom: 92px; }
+	.our_locations_section .inner { display: block; }
+	.our_locations_section .inner .left, .our_locations_section .inner .right { width: 100%; margin-bottom: 20px; }
+	.device_type.filter-in { width: calc(50% - 12px); float: left; }
+	.category_printers { width: 100%; padding-top: 30px; }
+	.printer_cat .inner .filter-in:last-child { margin-left: 24px; }
+	.transforming_wrap .left, .printer_cat, .dealer_page_sec .right { width: 100%; }
+	.transforming_wrap .left, .dealer_page_sec .right { padding-right: 0; padding-left: 0; }
+	.contact_us_form .container { padding: 55px 70px 100px; }
+	.dealer_enquery_form h3 { margin-bottom: 30px; }
+	.contact_us_form input.wpcf7-submit { padding: 15.5px 25px; }
+	.contact_us_form .cf7sr-g-recaptcha > div { transform: scale(0.74); margin-bottom: 20px; margin-top: 0; }
+	.career_form_text .text_div { margin-top: 60px; }
+	.career_form_sec span.toshiba_career_cv, .contact_us_form .toshiba_career_coverletter input[type="file"] { width: 100%; }
+	.contact_us_form .toshiba_career_coverletter input[type="file"] { margin-left: 0; }
+	.after_cover { left: -55px; top: -62px; }
+	/*.after_cv { top: -142px; }*/
+	.toshiba_career_coverletter, .toshiba_career_cv { display: block; }
+	.career_form_sec span.toshiba_career_coverletter:before { top: 15px; }
+	h1 { font-size: 30px; line-height: 35px; }
+	.Who_we_are_section .inner .left .image { }
+	.Who_we_are_section .inner .left { width: 100%; }
+	.Who_we_are_section .inner { padding: 0 15px; }
+	.Who_we_are_section .inner .right { padding: 35px 0 15px !important; }
+	h5 { font-size: 35px; line-height: normal; }
+	.our_locations_section .inner .right { height: 300px; }
+	.our_locations_section .inner .right .footer-bottom-img { height: 190px; width: 70px; }
+	.our_locations_section .inner .right .footer-bottom-img img { }
+	.Global_section .content { background-image: none !important; background-color: #fff !important; box-shadow: 0 40px 41px rgba(141, 141, 141, 0.51); border: 1px solid #50bebe; background-color: #ffffff; padding: 50px 30px !important; height: auto; min-height: auto; }
+	.Global_section { margin-bottom: 100px; }
+	.banner_inner_slide ul.slick-dots { bottom: 30px; }
+	.Global_section ul li { line-height: normal; }
+	.Global_section ul li a { font-size: 15px; }
+	.Global_section ul li + li { }
+	section.Who_we_are:after { height: auto; }
+	.our_locations_section .inner .left, .our_locations_section .inner .right { padding: 0 15px; }
+	.dealer_page_sec h2 { font-size: 28px; line-height: normal; }
+	.dealer_page_sec p { font-size: 17px; line-height: 29px; }
+	.contact_us_form .intl-tel-input .selected-flag { width: auto; }
+	.contact_us_form .cf7sr-g-recaptcha iframe { transform: scale(0.8) translateX(-30px); }
+	.contact_us_form .cf7sr-g-recaptcha > div { margin-left: 0 !important; }
+	.privacy_policy_sec { padding-top: 125px; padding-left: 15px; padding-right: 15px; }
+	.privacy_policy_sec .text_div { padding-top: 45px; }
+	.e-bridge_inner .content, .e-bridge_inner .image-left { width: 100%; }
+	.Driver_plugins_wrap { padding: 50px 0; }
+	.e-bridge_inner .inner_content { padding-right: 0; }
+	.e-bridge_inner { padding-bottom: 80px; }
+	.e-bridge_inner .image-left .image { box-shadow: 1px 20px 36px rgb(164 164 164 / 50%); }
+	.Driver_plugins_wrap .inner .left { padding-bottom: 10px; }
+
+	.ecc_page .ui_single-tab .img_div{margin-bottom: 15px;}
+	.ecc_service_sec .left_side, .ecc_service_sec .right_side{max-width: 100%; width: 100%;}
+	.ecc_service_sec .right_side{text-align: center;}
+	.ecc_service_sec{padding-top: 50px;}
+	.ecc_page .e-bridge_tabbing{padding-top: 0;}
+
+	.after_cv { top: -48px; left: 17px; }
+	.toshiba_career_coverletter { width: 100%; }
+	.toshiba_career_coverletter input#toshiba_career_coverletter { width: 100% !important; height: 44px; }
+	.career_form_sec span.toshiba_career_cv:before { top: 12px; }
+	.after_cover { left: 16px; top: -48px; }
+	.single_printer_item .barcode-label-printers{padding-top: 40px;}
+	.single_printer_item .barcode-label_section .inner .right{width: 100%; height: auto; position: static; margin-bottom: 40px;}
+	.single_printer_item .barcode-label_section .inner .right .image{max-width: 100%; padding: 0 15px; margin-top: 0;}
+	.single_printer_item .barcode-label_section .inner .right .image img{object-position: center; margin: 0 !important;}
+	.single-printer .single_printer_item .Downloads_btn{position: static; margin-top: 0;}
+
+	.managed_print_services { padding-top: 50px; min-height: 100%; padding-bottom: 50px; }
+	.managed_print_wrap .inner .left, .managed_print_wrap .inner .right { width: 100%; }
+	.managed_print_wrap .inner .sec-main-titel { text-align: center; }
+	.managed_print_wrap .inner .right { text-align: justify; line-height: 30px; }
+	.MPS_Process { padding-top: 50px; }
+	.MPS_Process .sec-main-titel { padding-bottom: 50px; }
+	.MPS_Process_wrap .left_inner ul.tabs, .in_text_wrap { display: none; }
+	.mobile-service-image { display: block; margin-bottom: 30px; }
+	.mobile-service-image img { max-width: 100%; }
+	.MPS_Process_wrap .left_inner, .MPS_Process_wrap .right_inner { width: 100%; height: auto; }
+	.MPS_Process_wrap .right_inner .tab-content { display: block; }
+	.MPS_Process_wrap .right_inner .tab-content { display: block; }
+	.print_assesment_sec .inner .box img { width: 170px; }
+	.print_assesment_sec .inner .box { margin-bottom: 30px; }
+	.print_asses_cont .toshiba_service_fname input, .print_asses_cont .toshiba_service_lname input, .print_asses_cont .toshiba_service_email input { width: 100%; margin-left: 0 !important; }
+	.print_asses_cont .toshiba_service_phone input { width: calc(100% - 70px); margin-left: 0; }
+	.print_assesment_sec .inner .box { width: 100%; margin-bottom: 30px; }
+	.managed_print_image { height: 300px; margin-top: 15px; }
+	.print_assesment_sec h2 { font-size: 34px; line-height: 44px; }
+	.contact_us_form .container { background: #fff; box-shadow: 0 33px 51px rgba(208, 208, 208, 0.5); border: 1px solid #efefef; }
+	.print_assesment_sec.managed_print_assesment_sec { margin-top: 50px !important; }
+	.print_assesment_sec { padding-top: 50px; }
+	.contact_us_form { max-width: 330px; margin: 0 auto; }
+	.contact_us_form .allow-dropdown { width: 70px; }
+	.contact_us_form input.wpcf7-submit { margin-bottom: 0; }
+	.print_find_dealer .inner { padding-top: 50px; }
+	.contact_us_form h3 { margin-bottom: 0; }
+	.managed_print_wrap .inner .left .image { position: relative; width: 100%; height: auto; }
+	.ui_single-tab { padding-left: 15px; padding-right: 15px; padding-top: 50px; padding-bottom: 50px; }
+	.ui_single-tab .sec-main-titel { margin-bottom: 0; line-height: 44px; }
+	.ui_single-tab .sec-main-titel, .ui_single-tab h3 { font-size: 30px; }
+	section.ui_single-tab.ui_single_tab_maintenance .border_sec { background-image: none; }
+	.ui_single-tab .tab_container h3.tab_drawer_heading.d_active { background-color: #af8cc8; background-image: none; color: #fff !important; margin-bottom: 0; }   
+/*	.ui_single-tab .tab_container h3.tab_drawer_heading { border: 1px solid #dcdcdc; background: #000; display: flex; align-items: center; justify-content: center; border-radius: 3px; width: auto; height: auto; font-size: 16px; line-height: normal; font-weight: 700; background-image: none; margin-bottom: 20px; color: #fff !important; padding: 10px 0; }*/
+	.single_printer_item .ui_single-tab .border_sec:before { opacity: 0; }
+	.ui_single-tab.ui_single_tab_maintenance .sec-main-titel { margin-bottom: 0; line-height: normal;font-size: 26px; }
+	.ui_single-tab .e-bridge_inner .content .image { margin-top: 0; margin-bottom: 0; }
+	.ui_single-tab .e-bridge_inner .content .image img { max-width: 100%; }
+	.ui_single-tab .e-bridge_inner .content { padding-bottom: 0; }
+	section.ui_single-tab .e-bridge_tabbing { padding-top: 20px; }
+	.ui_single-tab .e-bridge_inner .inner_content { line-height: 36px; font-size: 16px; line-height: 28px; text-align: justify; }
+	section.ui_single-tab { padding: 50px 20px !important; }
+	.ui_single-tab .e-bridge_tabbing .tab_content { padding: 20px; border: 1px solid #c7c7c7; border-radius: 3px; border-top: none; margin-bottom: 20px; }
+	.Eco-MFP-tab .ui_single-tab { padding-top: 0 !important; }
+	.printing_Section { margin-bottom: 0; }
+	.single_printer_item .ui_single-tab .border_sec { height: auto; background-image: none; }
+	.single_printer_item .e-bridge_inner .content .col:nth-child(3), .single_printer_item .e-bridge_inner .content .col:nth-child(2), .single_printer_item .e-bridge_inner .content .col:nth-child(1) { width: 100%; padding-bottom: 10px; }
+	.single_printer_item .ui_single-tab .e-bridge_inner { margin: 0 0 !important; }
+	.single_printer_item .col ul { padding-right: 0; }
+	.single_printer_item .ui_single-tab .e-bridge_tabbing .tab_content { padding-bottom: 30px;border:0}
+
+	.contact_us_form { max-width: 90%; }
+	.career_form_sec.contact_us_form .toshiba_country_input_txt input { margin-left: 0; width: 100%; }
+	.contact_us_form .allow-dropdown { width: auto; }
+	.toshiba_career_contact { width: 80px !important; }
+	.toshiba_career_contact input#toshiba_career_contact { padding-left: C !important; padding-right: 0 !important; }
+	.toshiba_career_phone { width: calc(100% - 90px) !important; }
+	.toshiba_career_phone input { margin-right: 0 !important; }
+	.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap .wrap_inner .dec { width: 100%; padding-left: 20px;}
+	.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap .wrap_inner .title {width: auto; position: relative; padding-left: 18px; display: inline-block;} 
+	.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap .wrap_inner .title:before { content: ''; position: absolute; height: 6px; width: 6px; background-color: #000; border-radius: 100%; left: 0; top: 9px; }
+	.single_printer_sec .tabbing .tab_content .e-bridge_inner .content h2.sec-main-titel { font-size: 23px; line-height: normal; }
+	.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap .wrap_inner .title:after {content: ':';display: inline-block;font-size: 18px;filter: none;padding-left: 7px;}
+	.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap .wrap_inner .title{font-size: 16px;line-height: 22px;}
+	.single_printer_sec .tabbing .tab_content .e-bridge_inner .content_wrap .wrap_inner { font-size: 16px; line-height: 22px; padding-bottom: 13px; }
+	.single_printer_item .ui_single-tab .border_sec:after { width: 30%; background-size: cover; background-position: right; }
+	.single_printer_item .barcode-label_section .inner .right .image { height: auto; }
+	.e-bridge_tabbing .tabbing ul.tabs {display: block;justify-content: center;padding-bottom: 0;height: 60px;width: 100%;white-space: nowrap;overflow-y: scroll}
+	.e-bridge_tabbing .tabbing ul.tabs li {width: 200px;display: inline-block;line-height: 35px;margin-left: 0;}
+ }
+
+@media(max-width:576px) {
+	.partner_solution_sec .row .box-3 { width: 100%; }
+	.your_challenge_sec { padding-top: 40px; }
+	.your_challenge_sec .other { margin-top: -40px; }
+	.your_challenge_sec .sec_title { font-size: 32px; line-height: normal; bottom: 30px; }
+	h2 { font-size: 34px; }
+	.your_challenge_sec .line { width: 100px; }
+	.your_challenge_sec .border_box { box-shadow: unset; }
+	.your_challenge_sec .border_box:before { border-top-color: #fff; }
+	.Global_section .content .line.lie-bottom { bottom: 82px; }
+	.Global_section .content .line { width: 70%; }
+	.dealer_listing_wrap .find-dealer_in .content h4 { font-size: 24px; }
+	.dealer_listing_wrap .find-dealer_in span, .dealer_listing_wrap .find-dealer_in .content p, .dealer_listing_wrap .find-dealer_in .content strong, .dealer_listing_wrap .find-dealer_in a { font-size: 20px; }
+	.dealer_page_sec.transforming_section { padding-top: 70px; }
+	.contact_us_form .toshiba_contact_fname input, .contact_us_form .toshiba_contact_lname input, .contact_us_form input#toshiba_contact_email, .contact_us_form 
+	.toshiba_career_fname input, .contact_us_form .toshiba_career_lname input, .contact_us_form input[type="file"], .dealer_enquery_form input.dealer-enq-fname, .dealer_enquery_form 
+	input.dealer-enq-lname, .dealer_enquery_form .toshiba_countries, .dealer_enquery_form .toshiba_cities select, .dealer_enquery_form input.dealer-enq-comp-name, .dealer_enquery_form .country-select { width: 100%; display: block; }
+	.dealer_enquery_form input.dealer-enq-comp-name, .dealer_enquery_form .country-select { margin-right: 0; }
+	.contact_us_form .toshiba_contact_lname input, .contact_us_form .allow-dropdown, .contact_us_form .toshiba_career_lname input, .contact_us_form .toshiba_career_coverletter 
+	input[type="file"], .dealer_enquery_form input.dealer-enq-lname { margin-left: 0; }
+	.contact_us_form span.toshiba_contact_phone input#toshiba_contact_phone, .dealer_enquery_form input.toshiba_dealer_phone { width: calc(100% - 108px); }
+	.contact_us_form input[type="email"], .contact_us_form select, .contact_us_form input[type=text], .contact_us_form input#toshiba_contact_email, .contact_us_form textarea, .contact_us_form .toshiba_contact_service select, .contact_us_form input#toshiba_career_email, .contact_us_form .toshiba_career_service select, .contact_us_form select, .career_form_sec .toshiba_career_int_prof select, .contact_us_form input[type="file"], .dealer_enquery_form .dealer-enq-email, .dealer_enquery_form 
+	.toshiba_cities select { margin-bottom: 15px; padding: 10px 15px 10px 15px !important; }
+	.contact_us_form .container { padding: 50px 20px 50px; margin-bottom: 50px; }
+	.contact_us_form h3 { font-size: 28px; }
+	.contact_us_form .country-select, .contact_us_form .intl-tel-input { margin-bottom: 15px; }
+	.contact_us_form h3 span { text-align: right; display: block; position: relative; }
+	/*.after_cv { top: -105px; }*/
+	.career_form_sec .toshiba_career_phone input { margin-right: 0; width: calc(100% - 107px); }
+	.after_cover { top: -45px; }
+	.career_form_sec span.toshiba_career_coverletter:before { top: 10px; }
+	.career_form_sec.contact_us_form .toshiba_country_input_txt input { margin-left: 0; width: 100%; }
+	.privacy_policy_sec h2 { font-size: 36px; }
+	.privacy_policy_sec .text_div h4 { font-size: 22px; line-height: normal; }
+	.privacy_policy_sec .text_div p { line-height: 1.5; }
+	.privacy_policy_sec .text_div .single:hover { padding: 25px; }
+	.privacy_policy_sec .text_div .single { margin-bottom: 50px; }
+	.date_name ul li img { margin-bottom: 0; margin-top: 0; }
+	.news_detail_sec img { margin-bottom: 10px; margin-top: 10px; }
+	.event_gallery_wrap .event_gallery_inner .iner { width: calc(50% - 16px); }
+	.embedded_wrap .embedded_inner { width: 100%; margin-bottom: 30px; }
+	section.embedded_section.events_embedded_section { margin-bottom: 40px; }
+	.news_detail_sec { line-height: 25px; }
+	.Driver_plugins_wrap { padding: 0px 0 30px; }
+	.e-bridge_tabbing { padding-top: 45px; }
+	.e-bridge_inner { padding: 30px 20px 60px; }
+	.e-bridge_inner .inner_content { line-height: 28px; }
+	.ecc_service_sec h2, .eec_faq_sec h2{font-size: 34px;}
+	.ecc_page .e-bridge_tabbing .tabbing ul li{margin: auto; height: 40px; width: 100%; top: -20px;}
+	.ecc_page .single_printer_item .ui_single-tab .e-bridge_tabbing .tab_content{padding: 20px 15px 0;}
+	.ecc_page .ui_single-tab .col{padding: 0;}
+	.eec_faq_sec .faq__item--open{padding: 20px 15px 40px;}
+	.eec_faq_sec .faq__item{padding: 30px 20px; padding-right: 40px;}
+	.eec_faq_sec .faq__item a{font-size: 17px;}
+	.eec_faq_sec .faq__content h6{margin-top: 20px; margin-bottom: 0;}
+	.eec_faq_sec .faq__item--open{margin-bottom: 30px;}
+	.eec_faq_sec .faq__item p{font-size: 16px;}
+	.ecc_page .ui_single-tab .img_div{height: 80px; width: 80px; padding: 20px;}
+	.ecc_service_sec{padding-top: 30px;}
+
+	.embedded_wrap .embedded_inner .inner{height: calc(100% - 60px);}
+	.embedded_wrap .embedded_inner{margin-bottom: 40px !important;}
+}
+@media(max-width:480px) {
+	.your_benifit_sec h2 { margin-top: 15px; margin-bottom: 5px; }
+	.partner_solution_sec h2 { margin-bottom: 15px; }
+	.partner_solution_sec h5 { line-height: normal; }
+	.your_challenge_sec .line { width: 80px; }
+	.your_challenge_sec .bottom_logo img { max-width: 100%; width: calc(100% - 100px); margin-left: auto; }
+	.your_challenge_sec .container { max-width: 100%; }
+	.your_challenge_sec .border_box { padding-bottom: 55px; }
+	.your_challenge_sec .sec_title { left: 10px; position: relative; color: #50bebe; bottom: 0; }
+	.device_type.filter-in { width: 100%; float: none; }
+	.printer_cat .inner .filter-in:last-child { margin-left: 0; }
+	.your_challenge_sec .other { margin-top: 0; }
+	.dealer_listing_wrap .find-dealer_in { width: 100%; margin: 20px 0; }
+	.dealer_listing_wrap .find-dealer_in span { padding-bottom: 0; }
+	.dealer_listing_wrap .find-dealer_in a { padding-top: 20px; }
+	.dealer_listing_wrap .find-dealer_in:after { content: none; }
+	.category_printers { padding-left: 0; }
+	.point_style img { width: 70px; }
+	.news_letter_Sec { overflow-x: hidden; }
+	.dealer_listing { padding-bottom: 50px; }
+	.dealer_page_sec p, .career_form_text .text_div p { font-size: 20px; line-height: 28px; }
+	.contact_us_form input.wpcf7-submit { padding: 10.5px 18px; }
+	.dealer_listing_wrap .find-dealer_in:after { display: block; content: ''; width: 100%; height: 1px; bottom: -20px; top: auto; left: 0; right: 0; margin: 0 auto; }
+	.dealer_listing_wrap .find-dealer_in:nth-child(2n+0)::after { opacity: 1; }
+	.dealer_listing_wrap { max-width: 250px; margin: 0 auto; }
+	.dealer_listing_wrap .find-dealer_in { margin-bottom: 20px; padding-bottom: 20px; }
+	.dealer_listing_wrap .find-dealer_in:last-child:after { opacity: 0; }
+	.privacy_policy_sec .img_div:before { top: 20px; }
+	.privacy_policy_sec .img_div { margin-bottom: 30px; }
+	.privacy_policy_sec .text_div { padding-left: 0; padding-right: 0; }
+	.privacy_policy_sec .text_div .single:hover { padding: 20px; }
+	.privacy_policy_sec h2 { font-size: 32px; }
+	.privacy_policy_sec h2 img { padding-right: 12px; }
+}
+@media(max-width:460px) {
+	.Global_section .content .line.lie-bottom { display: none; }
+}
+.mobile-service-image { display: none; }
+
+
+
+.recaptcha iframe {
+    border: 1px;
+}

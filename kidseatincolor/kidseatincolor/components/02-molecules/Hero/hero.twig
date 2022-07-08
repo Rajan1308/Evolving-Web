@@ -1,0 +1,26 @@
+{% set hero_banner__base_class = 'hero-banner' %}
+{% set hero__with_description = hero_banner__body ? 'with-description' : 'without-description' %}
+
+{% if hero_banner_mobile_url %}
+  <img src="{{ hero_banner_mobile_url }}" class="responsive-bg">
+{% endif %}
+
+<div {{ bem(hero_banner__base_class, hero_banner__modifiers, hero_banner__blockname, hero_banner__extra_classes) }}>
+  {% include "@atoms/images/image/responsive-image.twig" with {
+        image_blockname: hero_banner__base_class,
+        output_image_tag: hero_banner__image__output_image_tag,
+        image_src: hero_banner__image__src,
+        image_alt: hero_banner__image__alt,
+      } %}
+  <div class="{{hero_banner__base_class}}__content {{ cta_card_content_align }}" style="background: {{ cta_card__content_bg }}">    
+    <h{{ heading_level }} class="{{ hero__with_description }}">{{ hero_banner__heading }}</h{{ heading_level }}>
+    {% if hero_banner__body %}
+      <div class="hero-banner__description">{{ hero_banner__body }}</div>
+    {% endif %}
+    {% if hero_banner__button_text %}
+      {% include "@atoms/buttons/twig/button.twig" with {
+        button_content: hero_banner__button_text,
+      } %}
+    {% endif %}
+  </div>
+</div>

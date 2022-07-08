@@ -1,0 +1,39 @@
+.post {
+  border: 1px solid $alto-smoky;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    @include fs-h5();
+
+    color: $friar-gray;
+  }
+
+  &__link {
+    color: $red;
+    text-decoration: underline;
+    font-family: $font-primary-semi-bold;
+    font-size: 16px;
+    line-height: 1.3;
+
+    &:hover {
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+
+  &__wrapper {
+    padding: 22px 44px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+{#
+/**
+ * Block Name: Inline Block
+ *
+ * This is the template that displays the example block.
+ */
+#}
+{% if is_preview %}
+    <p>Inline Form Block editor, only appear in the editor.</p>
+{% endif %}
+
+<div id="newsletter-{{ block.id }}" class="wrapper inline-newsletter">   
+  {% include "@molecules/Text-block/text-block.twig" with {
+    text_block: {
+      inline_form: true,
+      heading: fields.title,
+      description: fields.description,
+      formshortcode: fields.newsletter_form
+    }
+  } %}
+</div>

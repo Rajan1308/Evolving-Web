@@ -1,0 +1,9 @@
+product:
+  title: Lorem ipsum dolor
+  description: sit amet consectetur adipisicing elite
+  cta:
+    url: '#'
+    target: ''
+  url: '#'
+  image_src: 'https://placeimg.com/242/391/nature'
+  image_alt: "This is the card image's alt text"

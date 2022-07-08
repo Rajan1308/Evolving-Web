@@ -1,0 +1,179 @@
+{% extends "templates/blocks/_defaults.twig" %}
+
+{% block content %}
+        {##
+        # woocommerce_before_main_content hook.
+        #
+        # @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+        # @hooked woocommerce_breadcrumb - 20
+        #}
+        {% do action('woocommerce_before_main_content') %}
+
+        {##
+        # Hook: woocommerce_before_single_product.
+        #
+        # @hooked wc_print_notices - 10
+        #}
+        {% do action('woocommerce_before_single_product') %}
+
+        <div id="product-{{ post.id }}" {{ fn('wc_product_class') }}>
+            <div class="container"> 
+            {##
+            # Hook: woocommerce_before_single_product_summary.
+            #
+            # @hooked woocommerce_show_product_sale_flash - 10
+            # @hooked woocommerce_show_product_images - 20
+            #}
+            <div class="product-gallery">
+                {% do action('woocommerce_before_single_product_summary') %}
+
+                <div class="product-gallery-thumbs">
+                    <div class="product-thumb">{{ fn('get_the_post_thumbnail', product.ID, 'thumbnail' ) }}</div>
+                    {% for attachment_id in product.get_gallery_image_ids() %}
+                        <div class="product-thumb">
+                            {{ fn('wp_get_attachment_image', attachment_id, 'thumbnail') }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="summary entry-summary">
+                {##
+                # woocommerce_single_product_summary hook.
+                #
+                # @hooked woocommerce_template_single_title - 5
+                # @hooked woocommerce_template_single_rating - 10
+                # @hooked woocommerce_template_single_price - 10
+                # @hooked woocommerce_template_single_excerpt - 20
+                # @hooked woocommerce_template_single_add_to_cart - 30
+                # @hooked woocommerce_template_single_meta - 40
+                # @hooked woocommerce_template_single_sharing - 50
+                # @hooked WC_Structured_Data::generate_product_data() - 60
+                #}
+                {# {% do action('woocommerce_single_product_summary') %} #}
+                {{ fn('woocommerce_template_single_title') }}
+                {{ fn('woocommerce_template_single_rating') }}
+                {{ fn('woocommerce_template_single_price') }}
+                {{ fn('woocommerce_template_single_excerpt') }}
+                {{ fn('woocommerce_template_single_add_to_cart') }}
+                {# {{ fn('woocommerce_template_single_meta') }} #}
+                {{ fn('woocommerce_template_single_sharing') }}
+
+                {% if bundle_promo %}
+                    {% set bundlerepproduct = post.meta('bundle_products') %}
+                    
+                    {# {% set bundle_id = fn('query_bundled_items', bundle_product.ID ) %} #}
+                    <div class="bundle-promo">
+                        <h6 class="open">{{post.meta('bundle_promo_title')}}</h6>
+                        {% for bnpro in bundlerepproduct %}
+                        
+                        {% set bundleproduct = bnpro.bundle_product %}
+                        {% set bundle_cta = bnpro.bundle_cta %}
+                        {% set bundle = fn('wc_get_product', bundleproduct.ID ) %}
+                        
+
+                        <div class="bundle-promo-wrapper mb-4" style="display: block;">
+                            <div class="bundle-promo-container">
+                                <div class="bundle-promo-image">
+                                    {{ bundle.get_image() }}
+                                </div>
+                                <div class="bundle-promo-content">
+                                    <h5>{{ bundleproduct.title }}</h5>
+                                    <p>{{ bundleproduct.post_excerpt|excerpt(13) }}</p>
+                                    <p><b>${{ bundle.get_price() }}</b></p>
+                                    
+                                    {% set url = "?add-to-cart="~bundleproduct.ID %}
+                                    
+                                    {% for subproduct in bundle_subproducts[bundleproduct.ID] %}
+
+                                        {% set url = url ~'&quantity['~subproduct.product_id~']=1' %}
+                                        {# {{ dump(subproduct) }} #}
+                                    {% endfor %} 
+
+                                    <a href="{{ url }}" class="button alt">{{bundle_cta}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+            </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="product-content-area clearfix">
+                {% for content_block in post.meta('custom_product_meta') %}
+                    {% if content_block.acf_fc_layout == '5050_content_block' %}
+                        <div class="container"> 
+                        {% include "@molecules/5050-content-block/5050-content-block.twig" with {
+                            data: content_block,
+                            item: loop.index,
+                        } %}	 
+                        </div>
+                    {% endif %}
+                    {% if content_block.acf_fc_layout == 'testimonial_grid' %}
+                        <div class="container"> 
+                        {% include "@molecules/testimonial-grid/testimonial-grid.twig" with {
+                            data: content_block,
+                            item: loop.index,
+                        } %}	
+                        </div> 
+                    {% endif %}
+                    {% if content_block.acf_fc_layout == 'accordion_promo' %}
+                        <div class="container"> 
+                        {% include "@molecules/accordion-promo/accordion-promo.twig" with {
+                            data: content_block,
+                            item: loop.index,
+                        } %}	 
+                        </div>
+                    {% endif %}  
+                    {% if content_block.acf_fc_layout == 'text_block' %}
+                        <div class="container"> 
+
+                        {% include "@molecules/Text-block/paragraph.twig" with {
+                            data: content_block,
+                            item: loop.index,
+                        } %}
+                        </div> 
+                    {% endif %}   
+                    {% if content_block.acf_fc_layout == 'cta_banner' %}
+                        {% include "@molecules/cta-banner/cta-banner.twig" with {
+                            data: content_block,
+                            item: loop.index,
+                        } %}	 
+                    {% endif %}
+                    {% if content_block.acf_fc_layout == 'home_testimonial_block' %}
+                        {% include "@molecules/testimonial-card-carousel/testimonial-card-carousel.twig" with {
+                            data: content_block,
+                            item: loop.index,
+                        } %}	 
+                    {% endif %}          												
+                {% endfor %}	  
+            </div>
+
+            {##
+            # Hook: woocommerce_after_single_product_summary.
+            #
+            # @hooked woocommerce_output_product_data_tabs - 10
+            # @hooked woocommerce_upsell_display - 15
+            # @hooked woocommerce_output_related_products - 20
+            #}
+            {# do action('woocommerce_after_single_product_summary') #}
+        </div>
+
+        {% do action('woocommerce_after_single_product') %}
+
+        {##
+        # woocommerce_after_main_content hook.
+        #
+        # @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+        #}
+        {% do action('woocommerce_after_main_content') %}
+        
+        {##
+        # woocommerce_sidebar hook.
+        #
+        # @hooked woocommerce_get_sidebar - 10
+        #}
+        {# do action('woocommerce_sidebar') #}
+{% endblock %}

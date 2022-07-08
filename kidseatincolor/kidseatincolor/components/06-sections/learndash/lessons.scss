@@ -1,0 +1,287 @@
+body.ld-in-focus-mode.admin-bar{
+    padding-top: 0 !important;
+}
+body.admin-bar.learndash-cpt{
+    .learndash-wrapper{
+        .ld-focus-sidebar{
+            position: inherit;
+            @include medium{
+                top: 90px !important;
+            }
+            @include large{
+                top: 101px !important;    
+            }    
+            @media screen and (max-width: 768px) {
+                top: 175px !important;
+            }
+        }
+    }
+}
+body.admin-bar.learndash-cpt .learndash-wrapper .ld-focus-header {
+    top: 0;
+}
+body.learndash-cpt {
+    header.header {
+        position: relative;
+        width: 100%;
+        z-index: 999;
+    }
+    .header__inner {
+        .main-menu__item{
+            a{
+                color: #fff;
+            }
+        }
+        @include medium{
+            max-width: 85%;
+        }
+    }
+    .learndash-wrapper {
+
+        .ld-focus-sidebar{
+            position: inherit;
+            top: 86px;
+            padding-top: 0;
+            z-index: 9999;
+            @include medium{
+                top: 58px;
+            }
+            @include large{
+                top: 69px;
+            }
+            .ld-course-navigation-heading,
+            .ld-focus-sidebar-trigger{
+                height: 72px;
+                min-height: 72px;
+                background-color: $purple-dark !important;
+            }
+        }    
+
+        .ld-focus-header{
+            top: 0px;
+            position: relative;
+            width: 100%;
+            left: initial;
+            height: 72px;
+            background-color: $concrete;
+            @include large{
+                padding-right: 6vw;
+            }
+            .ld-progress-stats .ld-progress-percentage{
+                color: $gray-slate !important;
+                text-transform: none;
+            }
+            .ld-progress-steps{
+                display: none;
+            }
+            .ld-progress{
+                min-height: 69px;
+                @include medium{
+                    height: auto;
+                    padding: 0 30px;
+                    max-width: 650px;
+                    width: 100%;
+                }
+            }
+            .ld-content-action .sfwd-mark-complete {
+                margin: 0;
+            }
+        }
+
+        .ld-brand-logo,
+        .ld-user-menu{
+            display: none !important;
+        }
+
+        .ld-focus .ld-focus-main .ld-focus-content {
+            padding: 4em 25px;
+            max-width: 100%;
+            @include medium{
+                padding: 1em 5em;   
+            }
+            @include large{
+                padding: 1em 6vw 5.5em 3em;    
+            }
+            @media screen and (max-width: 640px) {
+                padding: 4em 25px;
+            }
+        }
+
+        h1{
+            color: $sky-blue;
+        }
+
+        .ld-breadcrumbs{
+            border-radius: 0px;
+            padding: 0.8em 1.6em;
+            span, a{
+                color: $gray-slate !important;
+                font-family: $font-primary-bold;
+            }
+        }
+
+        .ld-tabs .ld-tabs-navigation .ld-tab{
+            color: $friar-gray;
+            font-family: $font-primary-regular;
+            font-weight: 400;
+            &.ld-active{
+                color: $purple-dark !important;
+                font-family: $font-primary-bold;
+                &::after{
+                    background-color: $purple-dark !important;
+                }
+            }            
+        }
+
+        .ld-table-list .ld-table-list-header{
+            background-color: $purple-dark !important;
+            padding: 22px 25px;
+            font-size: 14px;
+        }
+
+        .ld-lesson-list-progress{
+            text-transform: none !important;
+        }
+
+        .ld-topic-title,
+        .ld-lesson-title{
+            font-family: $font-primary-regular;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .ld-lesson-item.ld-is-current-lesson .ld-lesson-title,
+        .ld-expand-button.ld-button-alternate .ld-text {
+            color: $purple-dark !important;
+        }
+
+        .ld-expand-button.ld-button-alternate .ld-icon{
+            background-color: $purple-dark !important;
+        }
+
+        .ld-status-incomplete.ld-status-icon,
+        .ld-course-navigation .ld-lesson-item.ld-is-current-lesson .ld-status-incomplete{
+            border-width: 2px;
+            border-color: $alto-light !important;
+        }
+
+        .ld-button:not(.ld-button-reverse):not(.learndash-link-previous-incomplete):not(.ld-button-transparent),
+        .learndash_mark_complete_button{
+            background: $olnav !important;
+            color: $gray-slate !important
+        }
+        
+        .sfwd-mark-complete:after{
+            color: $gray-slate !important;
+        }
+
+        .ld-content-actions{
+            border-top: 0 !important;
+            .ld-content-action .ld-course-step-back{
+                display: none !important;
+            }
+        } 
+
+        .ld-focus .ld-focus-sidebar .ld-course-navigation .ld-topic-list.ld-table-list{
+            background-color: $concrete !important;
+            padding-left: 7.5vw;
+        }
+
+        .ld-focus .ld-course-navigation .ld-lesson-item-section-heading{
+            padding-left: 7.5vw;
+            .ld-lesson-section-heading{
+                color: $gray-slate;
+                font-family: $font-primary-semi-bold;
+            }            
+        } 
+
+        //Sidebar width
+        .ld-focus .ld-focus-sidebar {
+            width: 390px;
+            box-shadow: 6px 0px 15px rgba(128, 125, 121, 0.15);
+        }
+
+        .ld-focus .ld-focus-sidebar .ld-course-navigation-heading {
+            width: 390px;
+            padding-left: 25px;
+            @include medium{
+                padding-left: 7.5vw;
+            }
+        }
+
+        .ld-focus .ld-focus-sidebar .ld-course-navigation .ld-lesson-item .ld-lesson-item-preview{
+            padding-left: 25px;
+            @include medium{
+                padding-left: 7.5vw;
+            }
+        }
+
+        .ld-focus .ld-focus-sidebar .ld-course-navigation .ld-topic-list.ld-table-list:before{
+            left: 9vw;
+            @media screen and (max-width: 1280px){
+                left: 10vw;
+            }
+            @media screen and (max-width: 720px){
+                left: 48px;
+            }  
+            @media screen and (max-width: 640px){
+                left: 58px;
+            }            
+        }
+
+        .ld-focus.ld-focus-sidebar-collapsed{
+            .ld-focus-main{
+                margin-left: -390px;
+                width: 100%;
+                @include large{
+                    margin-left: -340px;
+                }
+            }
+            .ld-focus-header{
+                max-width: calc(100% - 50px);
+                @media screen and (max-width: 768px) {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .ld-focus .ld-focus-main {
+            margin-left: 0;
+            width: 100%;
+            @include large{
+                width: 100%;
+            }
+        }
+
+        .ld-focus .ld-focus-header .ld-content-actions{
+            background: $concrete;
+            padding: 0;
+            .ld-content-action{
+                background: $concrete;
+                padding: 5px 0;
+                @media screen and (max-width: 768px) {
+                    border-top: 1px solid $alto-light;
+                    border-left: 1px solid $alto-light;
+                }
+            }
+        } 
+
+        .ld-tabs-content{
+            a {
+                text-decoration: underline;
+                color: $purple-dark;
+            }
+            ul li {
+                list-style: disc;
+                margin-bottom: 15px;
+                &::marker{
+                    font-size: 12px;
+                }
+            }
+        }
+        .ld-status.ld-status-progress {
+            display: none;
+        }
+    }    
+}
+

@@ -1,0 +1,135 @@
+{% extends "templates/blocks/_defaults.twig" %}
+
+{% block content %}
+<div class="content-wrapper container mt-4 mb-4">
+    {% do action('woocommerce_before_single_product') %}
+
+    <article itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }}">
+		<div class="row">
+      <div class="col-md-6">
+        <div class="entry-images">
+            {% do action('woocommerce_before_single_product_summary') %}
+            {# <img src="{{ post.thumbnail.src('shop_single') }}" /> #}
+        </div>
+      </div>
+			<div class="col-md-6">
+        <div class="summary entry-summary">
+            {% do action('woocommerce_single_product_summary') %}
+        </div>
+			</div>
+			<div class="row">
+				{# {% do action('woocommerce_after_single_product_summary') %} #}
+
+        <meta itemprop="url" content="{{ post.link }}" />
+			</div>
+			{% for productFlex in post.meta('custom_product_meta') %}
+				{% if productFlex.acf_fc_layout == '5050_content_block' %}
+					{% set twoblock = productFlex.single_content_block_content_block_rep %}
+					<div class="row">
+						<h2>{{ productFlex.single_content_block_title }}</h2>
+						{% for twoblockData in twoblock %}
+							{% if (twoblockData.cbcbr_column_1.cbcbr_column_type_1 == 'Image') and (twoblockData.cbcbr_column_2.cbcbr_column_type_2 == 'Content')  %}
+								<div class="row">
+									<div class="col-md-4">
+										<img src="{{ twoblockData.cbcbr_column_1.cbcbr_content1_Image.url }}" />
+									</div>
+									<div class="col-md-8">
+										{{ twoblockData.cbcbr_column_2.cbcbr_column2_description }}
+									</div>
+								</div>
+							{% endif %}
+
+							{% if (twoblockData.cbcbr_column_1.cbcbr_column_type_1 == 'Content') and (twoblockData.cbcbr_column_2.cbcbr_column_type_2 == 'Image') %}
+								<div class="row">
+									<div class="col-md-8">
+										{{ twoblockData.cbcbr_column_1.cbcbr_description }}
+									</div>
+									<div class="col-md-4">
+										<img src="{{ twoblockData.cbcbr_column_2.cbcbr_column2_image.url }}" />
+									</div>
+								</div>
+								{% endif %}
+
+							{% if (twoblockData.cbcbr_column_1.cbcbr_column_type_1 == 'Image') and (twoblockData.cbcbr_column_2.cbcbr_column_type_2 == 'Image')  %}
+								<div class="row">
+									<div class="col-md-6">
+										<img src="{{ twoblockData.cbcbr_column_1.cbcbr_content1_Image.url }}" />
+									</div>
+									<div class="col-md-6">
+										<img src="{{ twoblockData.cbcbr_column_2.cbcbr_column2_image.url }}" />
+									</div>
+								</div>
+								{% endif %}
+
+							{% if (twoblockData.cbcbr_column_1.cbcbr_column_type_1 == 'Content') and (twoblockData.cbcbr_column_2.cbcbr_column_type_2 == 'Content')  %}
+								<div class="row">
+									<div class="col-md-6">
+										{{ twoblockData.cbcbr_column_1.cbcbr_description }}
+									</div>
+									<div class="col-md-6">
+										{{ twoblockData.cbcbr_column_2.cbcbr_column2_description }}
+									</div>
+								</div>
+								{% endif %}
+
+						{#  #}
+						{% endfor %}
+					</div>
+				{% elseif productFlex.acf_fc_layout == 'testimonial_grid' %}
+					{% set testimonialsRep = productFlex.tg_testimonial_block %}
+					<section class="product-testimonials-section mt-4 mb-4">
+						{% if productFlex.testimonial_grid_title %}<h2>{{ productFlex.testimonial_grid_title  }}</h2>{% endif %}
+						<div class="row">
+						{% for proTestimonialsData in testimonialsRep %}
+							<div class="col-md-6 mb-4">
+								<h3>{{ proTestimonialsData.tg_testimonial_block_name }}</h3>
+								{{ proTestimonialsData.g_testimonial_block_testimonial }}
+							</div>
+						{% endfor %}
+						</div>
+					</section>
+					{% elseif productFlex.acf_fc_layout == 'accordion_promo' %}
+						{% set accordionData = productFlex.accordion_block %}
+						<section class="accordion-section">
+							{% if productFlex.accordion_promo_title %}<h2>{{ productFlex.accordion_promo_title  }}</h2>{% endif %}
+							<div id="accordion">
+							{% for i, accordData in accordionData %}
+								<div class="card w-100">
+									<div class="card-header" id="heading{{ i }}">
+										<h5 class="mb-0">
+											<button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ i }}" aria-expanded="true" aria-controls="collapse{{ i }}">
+												{{ accordData.question }}
+											</button>
+										</h5>
+									</div>
+
+									<div id="collapse{{ i }}" class="collapse show" aria-labelledby="heading{{ i }}" data-parent="#accordion">
+										<div class="card-body">
+											{{ accordData.answer }}
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+							</div>
+						</section>
+				{% endif %}
+				{% if content_block.acf_fc_layout == 'cta_banner' %}
+            {% include "@molecules/cta-banner/cta-banner.twig" with {
+                data: content_block,
+                item: loop.index,
+            } %}	 
+        {% endif %}
+				{% if content_block.acf_fc_layout == 'testimonial_card_carousel' %}
+            {% include "@molecules/testimonial-card-carousel/testimonial-card-carousel.twig" with {
+                data: content_block,
+                item: loop.index,
+            } %}	 
+        {% endif %} 
+			{% endfor %}
+    </article>
+
+    
+
+    {% do action('woocommerce_after_single_product') %}
+</div>
+{% endblock  %}

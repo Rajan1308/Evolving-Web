@@ -1,0 +1,31 @@
+{% if text_block %}
+  <div class="text-block">
+    {% if text_block.inline_form %}
+      <div class="text-block__inline-form__container">
+        <div class="text-block__container">
+          <div class="text-block__heading">
+            {{ text_block.heading }}
+          </div>
+          <div class="text-block__description">
+            {{ text_block.description }}
+          </div>
+          <div class="text-block_forshortcode">
+           {{ text_block.formshortcode }}
+          </div>
+          {% block text_block_inline_form %}{% endblock %}
+        </div>
+      </div>
+    {% elseif text_block.inline_cta %}
+      <div class="text-block__inline-cta__container">
+        <div class="text-block__container">
+          <div class="text-block__heading">
+            {{ text_block.heading }}
+          </div>
+          {% if text_block.cta and text_block.cta.title %}
+            <a href="{{ text_block.cta.url }}" class="text-block__link">{{ text_block.cta.title }}</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

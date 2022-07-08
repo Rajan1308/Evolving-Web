@@ -1,0 +1,262 @@
+{% extends "templates/blocks/_defaults.twig" %}
+
+{% set playIcon = theme ? theme.link ~  '/images/play-buttonv.png' : 'play-buttonv.png' %}
+{% block content %}
+
+<div class="home-page__hero-container">
+	{% include '@molecules/Hero/hero.twig' with { 
+			hero_banner__image__src: backgroundImage.url,
+			responsive_image_blockname: 'hero-banner',
+			hero_banner__heading: bannerTitle,
+			hero_banner__button_text: buttonLabel.title, 
+			button_url: buttonLabel.url,
+			heading_level: '1',
+			hero_banner__body: bannerSubtitle,
+			hero_banner__image__alt: bannerTitle,
+			hero_banner_mobile_url: post.meta('header_background_image_mobile').url
+	} %}
+</div>
+
+{% for homeFlexible in post.meta('home_page_content') %}
+	{% if homeFlexible.acf_fc_layout == 'as_seen_on_section' %}
+		<section class="partners-logo">
+			<div class="container">
+				{% if homeFlexible.as_seen_on_title %}<h3 class="items-title">{{ homeFlexible.as_seen_on_title}}</h3>{% endif %}
+				<div class="logo-itmes owl-carousel">
+				{% for Promologos in homeFlexible.home_as_seen_on %}
+				<span class="logo"><img src="{{Promologos.as_seen_on_logo.url}}" alt="{{Promologos.as_seen_on_logo.alt}}" /></span>
+				{% endfor %}
+				</div>
+			</div>
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'video_section' %}
+		<section class="video-block-section  pb-3">
+			<div class="container">
+				<div class="row">
+				
+					{% if homeFlexible.twoblock_video_video != 'URL' %}
+						{% set thumbnailLink = homeFlexible.video_section_video_link %}
+						{% include '@molecules/two-block/two-block.twig' with { 
+							video_content_raw: vimeoThumbUrl,
+							twoblocksection_heading: homeFlexible.content_section_title,
+							twoblocksection_body: homeFlexible.content_section_description,
+							twoblocksection_button__content: homeFlexible.video_two_block_button.title,
+							twoblocksection_button__url: homeFlexible.video_two_block_button.url,
+							twoblocksection_image__class: 'w-100'
+						} %}
+						
+					{% endif %}
+				</div>
+				</div>
+		</section>
+		{% elseif homeFlexible.acf_fc_layout == 'featured_image_block' %}
+		<section class="video-block-section  pb-3">
+			<div class="container">
+				<div class="row">
+						{% include '@molecules/two-block/two-block.twig' with { 
+							twoblocksection_image__src: homeFlexible.featured_image_block_link.url,
+							twoblocksection_heading: homeFlexible.featured_image_block_title,
+							twoblocksection_body: homeFlexible.featured_image_block_description,
+							twoblocksection_button__content: homeFlexible.featured_image_block_button.title,
+							twoblocksection_button__url: homeFlexible.featured_image_block_button.url,
+							twoblocksection_image__class: 'w-100'
+						} %}
+				</div>
+				</div>
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'solution_block_section' %}
+		{% set solution_block = homeFlexible.solution_block %}
+		<section class="solution-block pt-4 pb-4 mt-4 aos-init" data-aos="fade-up">
+			<div class="container">
+			<h2 class="solution-block__heading text-center">{{ homeFlexible.solution_block_title }}</h2>
+				<div class="row">
+				{% if solution_block %}
+					{% for featuredSolutions in solution_block %}
+							{% include '@molecules/card/card.twig' with { 
+								card__base_class:'solutions-card',
+								card__image__src: featuredSolutions.solution_block_image.url|tojpg,
+								card__image__alt: featuredSolutions.solution_block_image.alt,
+								card__modifiers: [featuredSolutions.solution_block_color,'with-image'],
+								card__heading: featuredSolutions.solution_block_repeter_title,
+								card__body: featuredSolutions.solutions_block_repeterPdescription,
+								card__button__content: featuredSolutions.solutions_block_repeter_cta.title,
+								card__button__url: featuredSolutions.solutions_block_repeter_cta.url
+							} %}
+					{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'home_team_member_spotlight' %}
+		{% set formshow = homeFlexible.home_team_do_you_want_to_show_subscribe_form ? homeFlexible.home_team_member_form_shortcode |shortcodes: '' %}
+		<section class="member-spotlight-section pt-4 mt-4 aos-init" data-aos="fade-up">
+			<div class="container">
+				{% include '@molecules/card/card.twig' with { 
+					card__image__src: homeFlexible.home_team_member_spotlight_image.url,
+					card__image__alt: homeFlexible.home_team_member_spotlight_image.alt,
+					card__heading: homeFlexible.home_team_member_spotlight_title, 
+					card__body: homeFlexible.home_team_member_spotlight_description,
+					card__formshrotcode: formshow, 
+					card__base_class: 'team-member-spotlight'
+				} %}
+			</div>
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'home_team_promo' %}
+		{% set home_team_promo_team_member = homeFlexible.home_team_profiles %}
+		<section class="home-team-promo-section aos-init pb-3" data-aos="fade-up">
+			<div class="container pt-4 mt-4">
+				<div class="rows">
+						{% include '@molecules/Text/text.twig' with { 
+							text__heading: homeFlexible.home_team_promo_title,
+							text__subheading: homeFlexible.home_team_promo_description,
+							text__button__content: homeFlexible.home_team_promo_cta.title,
+							text__button__url: homeFlexible.home_team_promo_cta.url,
+						} %}
+				</div>
+			</div>
+			<div class="container pt-4 mt-3 pb-4 mb-4  ">
+				{% if home_team_promo_team_member %}
+				<div class="owl-carousel teampromo">
+						{% for teamPromo in home_team_promo_team_member %}
+							{% set teamProfile = teamPromo.team_profile %}
+						{% include '@molecules/card/card.twig' with {
+							card__image__src: Image(teamProfile.team_featured_image).src,
+							card__heading: teamProfile.title,
+							card__subheading: teamProfile.titlecredentials,
+							card__base_class: 'team-member',
+							card__extra_classes: 'item slide',
+							card__image__alt: teamProfile.title
+						} %}
+						{% endfor %}
+				</div>
+				{% endif %}
+			</div>
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'home_featured_content_block' %}
+		<section class="featured-content-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-lg-3 featured-block-text text-left" data-aos="fade-up-right">
+						{% include '@molecules/Text/text.twig' with {
+							text__heading: homeFlexible.home_featured_content_block_title,
+							text__subheading: homeFlexible.home_featured_content_block_description,
+							text__button__content: homeFlexible.home_featured_content_block_cta.title,
+							text__button__url: homeFlexible.home_featured_content_block_cta.url,
+							text__extra_classes: 'text-left'
+						} %}
+					</div>
+					<div class="col-md-8 col-lg-9 text-left featured-block-items row owl-carousel" data-aos="fade-up-left">
+						{% for hfcBlock  in Post(homeFlexible.home_featured_content_block_dynamic_listing) %}
+							{% set counter = ( counter | default(0) ) + 1 %}
+							<div class="col-lg-4 featured-block-item featured-block-{{counter}}" >
+							{% include '@molecules/card/card.twig' with {
+								card__image__src: hfcBlock.thumbnail.src|tojpg| resize(280, 177),
+								card__image__alt: hfcBlock.title,
+								card__heading: hfcBlock.title,
+								card__button__url: hfcBlock.link,
+								card__button__content: 'Learn More',
+								card__base_class: 'card-with-image-link'
+							} %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'home_testimonial_block' %}
+		{% set repeter_testimonial_block = homeFlexible.repeter_testimonial_block %}
+		{% set testimoniColor = '' %}
+		{% for testimoniSlider in repeter_testimonial_block %}
+			{% set testimoniColor = testimoniSlider.repeter_testimonial_block_color %}
+		{% endfor %}
+		<section class="home-testimonial-section aos-init pb-3 {{ testimoniColor }}" data-aos="fade-up">
+			<div class="container-fluid pl-0 pr-0">
+				<div class="container">
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading_base_class: slider__heading__base_class|default('heading-testimonials'),
+        heading_modifiers: slider__heading__modifiers,
+        heading_blockname: slider__base_class,
+        heading_level: 2,
+        heading: homeFlexible.home_testimonial_block_title,
+        heading_url: slider__heading__link|default(slider__link__url),
+        heading_link_base_class: slider__heading__link_base_class|default('heading-link'),
+        heading_link_blockname: slider__base_class,
+      } %}
+			</div>
+    
+			{% if repeter_testimonial_block %}
+			<div class="owl-carousel testimonials">
+				{% for testimonialslider in repeter_testimonial_block %}
+				{% set Purple = theme.link ~ '/images/purple.svg' %}
+				{% set Blue 	= theme.link ~ '/images/blue.svg' 	%}
+				{% set Green 	= theme.link ~ '/images/orange.svg' %}
+				
+				{% set iconColor = testimonialslider.repeter_testimonial_block_color == 'Purple' ? Blue : testimonialslider.repeter_testimonial_block_color == 'Blue' ? Purple : testimonialslider.repeter_testimonial_block_color == 'Green' ? Green :  '' %}
+
+					{% include '@molecules/slider/slide.twig' with { 
+						slider__image__src: iconColor,
+						slider__image__alt: testimonialslider.repeter_testimonial_block_image.alt,
+						slider__body: testimonialslider.repeter_testimonial_block_quote,
+						slider__author: testimonialslider.repeter_testimonial_block_name~ "<br />"~testimonialslider.repeter_testimonial_block_title,
+						slider__base_class: 'slide-with-image',
+						responsive_image_blockname: 'left',
+						slider__extra_classes: 'pt-0',
+						slider__modifiers:[testimonialslider.repeter_testimonial_block_color]
+
+					} %}
+				{% endfor %}
+			</div>
+			{% endif %}
+			</div>
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'home_cta_promo' %}
+		<section class="home-cta-promo-section pt-4 mt-4 pb-3">
+			<div class="container">
+				{% include '@molecules/Hero/hero.twig' with {
+					hero_banner__image__src: homeFlexible.home_cta_promo_cta_image.url,
+					hero_banner__image__alt: homeFlexible.home_cta_promo_cta_image.alt,
+					responsive_image_blockname: 'hero-banner',
+					hero_banner__modifiers: 'with-card',
+					hero_banner__heading:  homeFlexible.home_cta_promo_title,
+					hero_banner__button_text: homeFlexible.home_cta_promo_cta.title,
+					button_url: homeFlexible.home_cta_promo_cta.url,
+					heading_level: '2',
+				} %}
+			</div>
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'home_full_width_cta_promo' %}
+		{% set description_enabled = homeFlexible.home_full_width_cta_promo_description ? 'with-description' : 'without-description' %}
+		<section class="home-full-width-promo-section pt-4 mt-4 pb-0 {{ description_enabled }}">
+				{% include '@molecules/Text/text.twig' with {
+					text__backround_image__url: homeFlexible.home_full_width_cta_promo_background_image.url,
+					text__heading: homeFlexible.home_full_width_cta_promo_title,
+					text__subheading: homeFlexible.home_full_width_cta_promo_description,
+					text__button__content: homeFlexible.home_full_width_cta_promo_cta.title,
+					text__button__url: homeFlexible.home_full_width_cta_promo_cta.url,
+					text__base_class: 'text-with-bg-image'
+				} %}
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'home_full_width_form' %}
+		{% set homefullwidthform = homeFlexible.home_full_width_form_shortcode_form ? homeFlexible.home_full_width_form_shortcode_form |shortcodes: '' %}
+		<section class="home-full-width-form-section pt-0 mt-0 pb-3">
+			{% include '@molecules/Text/text.twig' with {
+				text__backround_image__url: homeFlexible.home_full_width_form_background_image.url,
+				text__heading: homeFlexible.home_full_width_form_title,
+				text__subheading: homeFlexible.home_full_width_form_description,
+				text__form_short_code: homefullwidthform,
+				text__base_class: 'text-with-form'
+			} %}
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'home_social_block' %}
+		<section class="socical-feed">
+			<div class="container">
+				{% if homeFlexible.home_social_block_title %}<h2 class="socical-title">{{ homeFlexible.home_social_block_title}}</h2>{% endif %}
+				{{ homeFlexible.home_social_block_social_feed | shortcodes }}
+				{% if homeFlexible.home_social_block_description %}<p>{{ homeFlexible.home_social_block_description}}</p>{% endif %}
+			</div>
+		</section>
+	
+	{% endif %}
+{% endfor %}
+
+{% endblock %}

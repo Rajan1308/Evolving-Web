@@ -1,0 +1,79 @@
+@media print {
+  body * {
+    visibility: hidden;
+    height:0;
+  }
+  #leftcontainer, #leftcontainer * {
+    visibility: visible;
+    height:auto;
+  }
+  #leftcontainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .content-wrapper .content__container .article-h1 {
+    max-width: 700px;
+    color: #31ABD1;
+    margin: 16px 0 24px;
+  }
+  .assidecontent {
+    padding-top: 420px !important;
+}
+  .text-block__inline-cta__container{
+    max-width: 740px;
+    padding: 20px 18px;
+    background: #EB6131 !important;
+    color: #fff;
+    -webkit-print-color-adjust: exact;
+    
+  }
+  .text-block__inline-cta__container .text-block__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .text-block__inline-cta__container .text-block__heading {
+      font-family: "BuenosAires-Black",sans-serif;
+      font-size: 28px;
+      line-height: 1.2;
+      max-width: 504px;
+      color: #fff;
+  }
+  .text-block__inline-cta__container .text-block__link {
+    font-family: "BuenosAires-SemiBold",sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 11px 22px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    color: #313131;
+    align-self: center;
+  }
+  .text-block__inline-form__container {
+    padding: 42px;
+      background: #256E30;
+      color: #fff;
+      -webkit-print-color-adjust: exact;
+  }
+  .text-block__inline-form__container .text-block__container {
+    max-width: 560px;
+  }
+  .text-block__inline-form__container .text-block__heading:not(:last-child) {
+      margin-bottom: 24px;
+  }
+  .text-block__inline-form__container .text-block__heading {
+    font-family: "BuenosAires-Bold",sans-serif;
+    font-size: 32px;
+      line-height: 1.2;
+  }
+  .text-block__inline-form__container .text-block__description {
+    font-size: 22px;
+      line-height: 1.2;
+      color: #fff;
+      font-family: "BuenosAires-Light","helvetica","arial",sans-serif;
+  }
+}

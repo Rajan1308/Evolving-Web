@@ -1,0 +1,46 @@
+.promo-block-listing {
+  background-color: $alabaster;
+  padding: 32px 0 0;
+
+  @include breakpoint($medium) {
+    padding: 48px 0;
+  }
+
+  &__container {
+    max-width: 1268px;
+    padding: 0 24px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include fs-h2();
+
+    color: $purple-dark;
+    text-align: center;
+    margin-bottom: 38px;
+
+    @include breakpoint($medium) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .promo-block {
+      width: 100%;
+      margin-bottom: 16px;
+
+      @include breakpoint($medium) {
+        width: calc((100% - 40px) / 2);
+        margin-bottom: 30px;
+      }
+
+      @include breakpoint($large) {
+        width: calc((100% - 80px) / 3);
+      }
+    }
+  }
+}

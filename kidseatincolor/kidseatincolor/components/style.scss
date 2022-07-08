@@ -1,0 +1,395 @@
+// Libraries
+@import '~normalize.css/normalize';
+@import '~breakpoint-sass/stylesheets/breakpoint';
+@import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
+
+// Components
+@import '00-base/**/*.scss';
+@import '01-atoms/**/*.scss';
+@import '02-molecules/**/*.scss';
+@import '03-organisms/**/*.scss';
+@import '04-templates/**/*.scss';
+
+// Sections
+@import '06-sections/**/*.scss';
+
+.video-block-section {
+  padding: 40px 0 40px 0;
+}
+
+.playBtn {
+  position: absolute;
+  right: 47%;
+  top: 43%;
+  width: 70px;
+  transition: 0.5s;
+}
+
+.playBtn:hover {
+  transform: scale(1.5);
+}
+
+.teampromo .owl-next,
+.teampromo .owl-prev,
+.testimonials .owl-next,
+.testimonials .owl-prev,
+.product-listing__container .owl-next,
+.product-listing__container .owl-prev {
+  color: #0f0f28;
+  border: 2px solid #0f0f28;
+  font-weight: 700;
+}
+
+.teampromo .owl-prev {
+  position: absolute;
+  left: -50px;
+  color: $black;
+  border: 1px solid $olnav;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  top: 40%;
+  text-align: center;
+  transition: 0.5s;
+  border-radius: 50%;
+  background: $olnav;
+}
+
+.testimonials .owl-prev,
+.product-listing__container .owl-prev {
+  position: absolute;
+  left: 150px;
+  color: $black;
+  border: 1px solid $olnav;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  top: 50%;
+  text-align: center;
+  transition: 0.5s;
+  border-radius: 50%;
+  background: $olnav;
+}
+
+.teampromo .owl-next {
+  position: absolute;
+  right: -50px;
+  color: $black;
+  border: 1px solid $olnav;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  top: 40%;
+  text-align: center;
+  transition: 0.5s;
+  border-radius: 50%;
+  background: $olnav;
+}
+
+.testimonials .owl-next,
+.product-listing__container .owl-next {
+  position: absolute;
+  right: 150px;
+  color: $black;
+  border: 1px solid $olnav;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  top: 50%;
+  text-align: center;
+  transition: 0.5s;
+  border-radius: 50%;
+  background: $olnav;
+}
+
+.member-spotlight-section,
+.home-team-promo-section {
+  background: $white;
+}
+
+// .home-testimonial-section{
+//   background-color: $purple;
+// }
+
+.socical-feed {
+  .socical-title {
+    color: $purple;
+    font-size: 40px;
+    font-weight: 900;
+  }
+
+  p {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 25px;
+
+    a {
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+}
+
+// .slide-with-image--Green{background: $green;}
+// .slide-with-image--Purple{background: $purple;}
+// .slide-with-image--Blue{background: $sky-blue;}
+// .home-testimonial-section {
+//   .heading-testimonials{
+//     position: absolute;
+//     display: block;
+//     z-index: 111111;
+//     padding-top: 28px;
+//     color: $white;
+//   }
+//   .slide-with-image__wrapper.container {
+//     padding: 90px;
+//     padding-bottom: 0;
+//   }
+// }
+
+.teampromo {
+  .owl-stage {
+    margin: 0 auto;
+  }
+}
+
+div#cookie-notice {
+  .cookie-notice-container {
+    margin: 30px auto;
+
+    .cn-text-container {
+      line-height: 23.1px;
+      font-size: 14px;
+      font-family: $font-heading;
+
+      a {
+        color: red;
+        text-decoration: underline;
+      }
+    }
+
+    .cn-buttons-container {
+      display: block;
+
+      a#cn-accept-cookie {
+        width: 78px;
+        color: $white;
+        font-family: $font-heading;
+      }
+    }
+
+    .cn-close-icon {
+      @include breakpoint($upto-medium) {
+        margin-top: 0;
+        top: 8px;
+      }
+    }
+  }
+}
+
+.ads-right-sidebar {
+  .wrapper {
+    padding: 20px 0;
+    
+  }
+}
+
+.ads-right-sidebar.desktop-only {
+  height: 100%;
+}
+
+.desktop-only .wrapper:last-child {
+  position: sticky;
+  top: 10px;
+  padding-bottom: 300px;
+}
+
+.mobile-only.wrapper {
+  margin: auto;
+  width: 60%;
+}
+
+._form-content input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  text-align-last: left;
+  font-size: 14px;
+  color: #262732;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #66B0CB;
+  border-radius: 3px;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+._form-content input[type="text"] {
+  background: $concrete;
+  border: none;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 16px;
+  color: $gray !important;
+}
+
+._form-content button {
+  font-family: $font-primary-semi-bold;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 11px 22px;
+  text-transform: capitalize;
+  border-radius: 10px;
+  background: $red;
+  border: 2px solid $red;
+  color: $white;
+  margin-top: 24px;
+}
+
+._form-content button:hover {
+  font-family: $font-primary-semi-bold;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 11px 22px;
+  text-transform: capitalize;
+  border-radius: 10px;
+  background: $white;
+  border: 2px solid $red;
+  color: $red;
+  margin-top: 24px;
+}
+
+._form-content button {
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+._form-content input[type='email']::-moz-placeholder,
+._form-content input[type='text']::-moz-placeholder {
+  text-transform: uppercase;
+  font-family: $font-primary-light;
+  font-size: 16px;
+  line-height: 1.125;
+  color: $friar-gray;
+  padding-left: 0
+}
+
+._form-content input[type='email']:-ms-input-placeholder,
+._form-content input[type='text']:-ms-input-placeholder {
+  text-transform: uppercase;
+  font-family: $font-primary-light;
+  font-size: 16px;
+  line-height: 1.125;
+  color: $friar-gray;
+  padding-left: 0
+}
+
+._form-content input[type='email']::placeholder,
+._form-content input[type='text']::placeholder {
+  text-transform: uppercase;
+  font-family: $font-primary-light;
+  font-size: 16px;
+  line-height: 1.125;
+  color: $friar-gray;
+  padding-left: 0
+}
+
+.course-text-block a {
+  font-family: "BuenosAires-SemiBold", sans-serif;
+  color: #E5391A;
+  text-decoration: underline;
+}
+
+.courses-logo {
+  padding-bottom: 30px;
+  border: 1px #D0D0D0;
+  border-style: solid none;
+}
+
+.course-team-promo {
+  background: #FBFBFB;
+}
+
+.cta-banner .button.secondary {
+  font-family: "BuenosAires-SemiBold", sans-serif;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  padding: 11px 22px !important;
+  margin-top: 40px !important;
+  text-transform: capitalize !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: #313131 !important;
+  border: 2px solid #fff !important;
+  display: inline-block !important;
+}
+
+.cta-banner .button.secondary:hover,
+.button.secondary.outline {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+.product-purchase-options-title{
+  display: none;
+}
+
+/* .subscription-option-selected{
+  display: none!important;
+} */
+.product-purchase-options {
+  max-width: 475px!important;
+}
+.product-purchase-option{
+  border: none;
+  .active {
+    border: none;
+  }
+  label{
+    font-family: "BuenosAires-Bold",sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+   input[type="radio"]+label {
+    content: '';
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: #fff;
+    border: 4px solid #fff;
+    cursor: pointer;
+    transition: none;
+    top: 4px;
+    margin-right: 15px;
+    position: relative;
+    border-radius: 50%;
+    outline: 2px solid #d0d0d0;
+  }
+  input[type="radio"]:checked+label::before {
+    background: #610c63;
+  }
+}
+
+.sv-wc-payment-gateway-payment-form-manage-payment-methods{
+  display: none!important;
+}
+
+.woocommerce-validated{
+  label{
+    width: 81%!important;
+    line-height: 50px!important;
+  }
+}
+
+.woocommerce-custom-text{
+  color: #313131;
+  font-size: 20px;
+  font-family: $font-primary-book;
+}

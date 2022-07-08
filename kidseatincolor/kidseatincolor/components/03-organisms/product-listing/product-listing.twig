@@ -1,0 +1,106 @@
+<div class="product-listing">
+  <div class="product-listing__container">
+    {% if product_listing.title %}
+    <div class="product-listing__title">{{ product_listing.title }}</div>
+    {% endif %}
+    {% block product_listing %} 
+      <div class="product-listing__slider glide">
+        <div class="product-listing__track glide__track" data-glide-el="track">
+          <div class="product-listing__content glide__slides">
+            {# {% block product_listing %}  #}
+              {% for i in range (1, 6) %}
+                {% include "@molecules/product/product.twig" with product %}
+              {% endfor %}
+            {# {% endblock %} #}
+          </div>
+        </div>
+        <div data-glide-el="controls">
+          <button
+            data-glide-dir="<"
+            class="product-listing__control product-listing__left__control"
+          >
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                r="24"
+                transform="matrix(1 8.74228e-08 8.74228e-08 -1 24 24)"
+                fill="#D7D81B"
+              />
+              <line
+                x1="1.5"
+                y1="-1.5"
+                x2="11.1067"
+                y2="-1.5"
+                transform="matrix(-0.707107 0.707107 0.707107 0.707107 27.84 17.28)"
+                stroke="#313131"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <line
+                x1="1.5"
+                y1="-1.5"
+                x2="11.1067"
+                y2="-1.5"
+                transform="matrix(0.707107 0.707107 0.707107 -0.707107 18.9258 22.7659)"
+                stroke="#313131"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <button
+            data-glide-dir=">"
+            class="product-listing__control product-listing__right__control"
+          >
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle r="24" transform="matrix(-1 0 0 1 24 24)" fill="#D7D81B" />
+              <line
+                x1="1.5"
+                y1="-1.5"
+                x2="11.1067"
+                y2="-1.5"
+                transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 20.16 30.72)"
+                stroke="#313131"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <line
+                x1="1.5"
+                y1="-1.5"
+                x2="11.1067"
+                y2="-1.5"
+                transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 29.0742 25.2341)"
+                stroke="#313131"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% if product_listing.productview_button__url %}
+  <div class="center">
+    {% include "@atoms/buttons/twig/button.twig" with {
+      button_base_class: twoblocksection_button__base_class|default('button'),
+      button_modifiers: twoblocksection_button__modifiers,
+      button_blockname: twoblocksection_base_class,
+      button_attributes: twoblocksection_button__attributes,
+      button_content: product_listing.productview_button__content,
+      button_url: product_listing.productview_button__url,
+    } %}
+  </div>
+  {% endif %}
+</div>

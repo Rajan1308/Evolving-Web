@@ -1,0 +1,19 @@
+.solution-block {
+  .container {
+    padding: 0 24px;
+
+    @include large {
+      padding: 0;
+    }
+
+    .row {
+      margin: 0;
+      justify-content: center;
+    } 
+  }
+
+  &__heading {
+    color: $purple-dark;
+    margin-bottom: 40px;
+  }
+}

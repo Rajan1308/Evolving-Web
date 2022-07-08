@@ -1,0 +1,8 @@
+slider__heading: 'Helping you get your child to eat veggies'
+slider__image__src: 'https://placeimg.com/150/150/any/sepia'
+slider__image__alt: "This is the card image's alt text"
+slider__image__output_image_tag: true
+slider__body: 'ellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.'
+slider__author: 'Cristin <br>Mother of two Toddlers'
+responsive_image_blockname: 'left'
+slider__base_class: 'slide-with-image'

@@ -1,0 +1,4 @@
+card__heading: 'First Name Last Name'
+card__image__src: 'https://thumbs.dreamstime.com/b/profile-picture-smiling-indian-female-employee-profile-picture-smiling-millennial-indian-female-employee-posing-office-198022033.jpg'
+card__subheading: 'Title'
+card__base_class: 'team-member'

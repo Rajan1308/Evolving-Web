@@ -1,0 +1,25 @@
+{#
+/**
+ * Block Name: Popup Setup
+ *
+ * This is the template that displays the popup block.
+ */
+#}
+
+{% if is_preview %}
+    <p>Popup Setup Block editor, its only appear in the editor</p>
+{% endif %}
+
+<div id="popup-{{ block.id }}" class="wrapper inline-popup">
+    {% include '@molecules/popup/popup.twig' with {
+			popup: {
+				title: fields.popup_title,
+				description: fields.popup_description,
+				image_src: fields.popup_image.url,
+				image_alt:  fields.popup_title,
+				mobile_image_src: fields.mobile_popup_image.url,
+				mobile_image_alt: fields.popup_title,
+				popup__form: fields.form_shortcode
+			}
+    } %}
+</div>

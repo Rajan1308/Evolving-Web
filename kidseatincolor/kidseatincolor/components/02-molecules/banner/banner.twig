@@ -1,0 +1,13 @@
+{% set cta__base_class = 'cta' %}
+<div {{ bem(cta__base_class, cta__modifiers, cta__blockname, cta__extra_classes) }} style="background:url('')">
+  {% include "@atoms/images/image/responsive-image.twig" with {
+        image_blockname: card__base_class,
+        output_image_tag: card__image__output_image_tag,
+        image_src: card__image__src,
+        image_alt: card__image__alt,
+      } %}
+  <h2>{{ cta__heading }}</h2>
+  {% include "@atoms/buttons/twig/button.twig" with {
+    button_content: cta__button_text,
+  } %}
+</div>

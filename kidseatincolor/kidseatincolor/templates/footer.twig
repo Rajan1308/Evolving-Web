@@ -1,0 +1,136 @@
+{% set footer__base_class = 'footer' %}
+{% set header__logo_src = theme ? theme.link ~  '/images/footer.png' : 'footer.png' %}
+
+<footer class="footer" {{ bem(footer__base_class) }}>
+  <div class="container">
+  <div class="footer__logo" {{bem('inner', [], footer__base_class)}}>
+    {% include "@organisms/site/site-header/_site-header-branding.twig" with {
+      header__logo_src: options.bottom_footer_logo
+    } %}
+  </div>
+  <dov {{ bem('inner', [], footer__base_class) }}>
+    
+      <div class="footer-menu-container">
+        <div {{ bem('footerColOneMenu', [], footer__base_class) }}>
+          <h5>{% if options.footer_title_picky_eating_help.label_picky_eating_help %} 
+                <a href="{{ options.footer_title_picky_eating_help.link_picky_eating_help }}">{{ options.footer_title_picky_eating_help.label_picky_eating_help }} </a>
+              {% else %} 
+               <a href="{{ options.footer_title_picky_eating_help.link_picky_eating_help }}"> Picky Eating Help</a>
+              {% endif %}</h5>
+          {% block footer__footerColOneMenu %}
+            {% include "@molecules/menus/footer-link/footer-link.twig" with {
+                footer_menu_items: footerColOneMenu.get_items
+            } %}
+          {% endblock %}
+        </div>
+        <div {{ bem('footerColTwoMenu', [], footer__base_class) }}>
+        <h5>{% if options.footer_title_courses.label_courses %} 
+                <a href="{{ options.footer_title_courses.link_courses }}">{{ options.footer_title_courses.label_courses }} </a>
+              {% else %} 
+               <a href="{{ options.footer_title_courses.link_courses }}"> Courses</a>
+              {% endif %}</h5>
+          {% block footer__footerColTwoMenu %}
+            {% include "@molecules/menus/footer-link/footer-link.twig" with {
+                footer_menu_items: footerColTwoMenu.get_items
+            } %}
+          {% endblock %}
+        </div>
+        <div {{ bem('footerColThreeMenu', [], footer__base_class) }}>
+          <h5>{% if options.footer_title_recipes.label_recipes %} 
+                <a href="{{ options.footer_title_recipes.link_recipes }}">{{ options.footer_title_recipes.label_recipes }} </a>
+              {% else %} 
+               <a href="{{ options.footer_title_recipes.link_recipes }}"> Recipes</a>
+              {% endif %}</h5>
+          {% block footer__footerColThreeMenu %}
+            {% include "@molecules/menus/footer-link/footer-link.twig" with {
+                footer_menu_items: footerColThreeMenu.get_items
+            } %}
+          {% endblock %}
+        </div>
+        <div {{ bem('footerColFourMenu', [], footer__base_class) }}>
+        <h5>{% if options.footer_title_shop.label_shop %} 
+                <a href="{{ options.footer_title_shop.link_shop }}">{{ options.footer_title_shop.label_shop }} </a>
+              {% else %} 
+               <a href="{{ options.footer_title_shop.link_shop }}"> Shop</a>
+              {% endif %}</h5>
+          {% block footer__footerColFourMenu %}
+            {% include "@molecules/menus/footer-link/footer-link.twig" with {
+                footer_menu_items: footerColFourMenu.get_items
+            } %}
+          {% endblock %}
+        </div>
+        <div {{ bem('footerColFiveMenu', [], footer__base_class) }}>
+        <h5>{% if options.footer_blog_title.label_blog %} 
+                <a href="{{ options.footer_blog_title.link_blog }}">{{ options.footer_blog_title.label_blog }} </a>
+              {% else %} 
+               <a href="{{ options.footer_blog_title.link_blog }}"> Blog</a>
+              {% endif %}</h5>
+          {% block footer__footerColFiveMenu %}
+            {% include "@molecules/menus/footer-link/footer-link.twig" with {
+                footer_menu_items: footerColFiveMenu.get_items
+            } %}
+          {% endblock %}
+        </div>
+        <div {{ bem('footerColSixMenu', [], footer__base_class) }}>
+          <h5>{% if options.footer_about_title.label_about %} 
+                <a href="{{ options.footer_about_title.link_about }}">{{ options.footer_about_title.label_about }} </a>
+              {% else %} 
+               <a href="{{ options.footer_about_title.link_about }}"> About</a>
+              {% endif %}</h5>
+          {% block footer__footerColSixMenu %}
+            {% include "@molecules/menus/footer-link/footer-link.twig" with {
+                footer_menu_items: footerColSixMenu.get_items
+            } %}
+          {% endblock %}
+        </div>
+        <div {{ bem('footerNewsletter', [], footer__base_class) }}>
+          {% if options.follow_us %}
+          <h5>Follow Us</h5>
+          {% block footer__footerNewsletter %}
+          <div class="socical-menu">
+            {% for options in options.follow_us %}
+            <a href="{{ options.socical_media.socical_media_link }}"><i class="{{ options.socical_media.socical_media_icon }} text-white"></i></a>
+            {% endfor %}
+          </div>
+          {% endblock %}
+          {% endif %}
+          {% if options.newsletter_details %}<p>{{ options.newsletter_details }}</p>{% endif %}
+          <div class="newsletter-form">
+          {% filter shortcodes %}
+          {{ options.newsletter_form }}
+          {% endfilter %}
+          
+          </div>
+        </div>
+        
+      </div>
+  </div>
+  </div>
+  <div class="container">
+    <div class="footer__secondary">
+      <div class="footer__secondary__container">
+        <div class="footer__secondary--copyright-text">
+          <p>{{ options.footer_bottom_top_section.copyright_message }}</p>
+        </div>
+        <div class="footer__secondary--quick__links">
+          {% if(options.footer_bottom_top_section.footer_right_links) %}
+            <div class="footer__secondary--quick__link">
+              {% include "@molecules/menus/inline/inline-menu.twig" with {
+                  inline_menu_items: footerMenu.items
+              } %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="footer__secondary__bottom">
+        <div class="footer__secondary__bottom--content">
+          {{ options.footer_section_bottom_message }}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="{{theme.link}}/dist/js/02-molecules/about-us/about-us.js"></script>
+<script src="{{theme.link}}/dist/js/02-molecules/social-share/social-share.js"></script>
+<script src="{{theme.link}}/dist/js/02-molecules/menus/main-menu/main-menu.js"></script>
+{{ function('wp_footer') }}

@@ -1,0 +1,332 @@
+.header {
+  background-color: $sky-blue;
+  @include breakpoint($large) {
+    height: 4.313em;
+  }
+
+  + .container {
+    position: relative;
+  }
+
+  &__inner {
+    @include wrapper;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include breakpoint($large) {
+      .main-menu__link:not(.main-menu__link--with-sub) {
+        margin: 0 8px;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      .main-menu__item {
+        &:last-child {
+          .main-menu__link {
+            margin-right: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  &__primary {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: $space 0;
+  }
+
+  &__branding {
+    margin-right: $space;
+    max-width: 227px;
+    height: 29px;
+    margin-top: 6px;
+
+    img {
+      width: 227px;
+    }
+  }
+  .header__topBarMenu{
+    position: relative;
+    display: none;
+
+    @include breakpoint($large) {
+      display: flex;
+    }
+
+    a.main-menu__link {
+      font-family: $font-heading;
+    }
+  }
+
+  &__hamburger__menu {
+    @include breakpoint($large) {
+      display: none;
+    }
+  }
+}
+
+.header,
+.primary-header-menu {
+  .c-search-form{
+    position: relative;
+    display: flex;
+    align-items: center;
+    .c-site-search__btn {
+      position: absolute;
+      border: 0 !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      justify-content: center !important;
+      align-items: center !important;
+      background: $purple-dark !important;
+      color: $white !important;
+      border-radius: 50% !important;
+      &:hover {
+        background: $purple-dark !important;
+        color: $white !important;
+      }
+    }
+    input {
+      border: 0;
+      padding: 13px 30px 13px 8px;
+      font-size: 16px;
+      color: $gray;
+      border-radius: 34px;
+      background: $concrete;
+      width: 100%;
+
+      &::placeholder {
+        color: transparent;
+      }
+
+      @include breakpoint($large) {
+        max-width: 180px;
+        background: $white;
+        padding: 4px 30px 4px 8px;
+      }
+    }
+
+    button {
+      position: relative;
+      right: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      background: $purple-dark;
+      color: $white;
+      border-radius: 50%;
+
+      @include breakpoint($upto-large) {
+        width: 44px;
+        height: 44px;
+      }
+
+      svg {
+        width: 16px;
+        height: 24px;
+        @include breakpoint($large) {
+          position: initial;
+        }
+      }
+    }
+  }
+}
+
+.primary-header-menu {
+  a {
+    &.main-menu__link{
+      color: $gray-slate;
+      font-size: 18px;
+      font-family: $font-heading;
+      margin: 0;
+
+      @include breakpoint($upto-medium) {
+        font-family: $font-primary-semi-bold;
+      }
+    }
+
+    @include breakpoint($large) {
+      &.main-menu__link--sub-1 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @include breakpoint($large) {
+    .main-menu:not(.main-menu--sub) {
+      > .main-menu__item {
+        &:first-child {
+          > .main-menu__link:not(.main-menu__link--sub-1) {
+            padding-left: 0;
+            margin-left: 0;
+          }
+        }
+
+        > .main-menu__link:not(.main-menu__link--sub-1, .main-menu__link--with-sub) {
+          margin: 8px 20px;
+          padding: 0;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .header__topBarMenu {
+    display: block;
+
+    @include breakpoint($large) {
+      display: none;
+    }
+  }
+
+  .main-nav {
+    display: block;
+  }
+}
+
+@include breakpoint($upto-large) {
+  .hamburger__menu {
+    &--open {
+      background: transparent;
+      border: none;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      display: block;
+    }
+  }
+
+  .header__inner {
+    padding: 0 24px;
+  }
+
+  .header {
+    &__branding {
+      margin-top: 0;
+    }
+
+    &__primary {
+      padding: 14px 0;
+    }
+
+    &__hamburger__menu {
+      display: flex;
+    }
+
+    &__topBarMenu {
+      a.main-menu__link {
+        color: $friar-gray;
+        padding: 6px 18px;
+      }
+
+      .main-menu__item {
+        border-top: none;
+
+        &:last-child {
+          .main-menu__link {
+            padding-bottom: 18px;
+          }
+        }
+
+        &:first-child {
+          .main-menu__link {
+            padding-top: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .primary-header-menu {
+    position: fixed;
+    left: 100%;
+    top: 103px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    width: 83%;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 36px 22px;
+    z-index: 2;
+    background: $white;
+
+    &.open-menu {
+      visibility: visible;
+      left: 17%;
+      opacity: 1;
+
+      + .primary-header--ghost {
+        &::after {
+          opacity: 1;
+          z-index: 1;
+          left: 0;
+          background: rgba(49, 49, 49, 0.21);
+        }
+      }
+    }
+
+    > .main-nav {
+      .main-menu__item:not(.main-menu__item--sub-1) {
+        border-top: 1px solid $alto-light;
+      }
+
+      a {
+        &.main-menu__link {
+          padding: 18px;
+
+          &:not(.main-menu__link--sub-1) {
+            font-size: 20px;
+          }
+        }
+
+        &.main-menu__link--sub-1 {
+          padding: 18px 28px;
+        }
+      }
+    }
+
+    .main-menu--sub-1 {
+      > li {
+        border: none;
+      }
+    }
+  }
+
+  .main-menu {
+    border: none;
+  }
+}
+
+.primary-header--ghost {
+  &::after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 103px;
+    left: 100%;
+    opacity: 0;
+    z-index: -1;
+    background-color: transparent;
+    transition: opacity .5s ease-in-out,background-color .5s ease-in-out,z-index .5s ease-in-out;
+  }
+}
+
+.active-menu {
+  overflow: hidden;
+}

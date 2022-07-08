@@ -1,0 +1,6 @@
+{% set headertop__base_class = 'header-top' %}
+<div {{ bem(headertop__base_class, headertop__modifiers, headertop__blockname, headertop__extra_classes) }}>
+  {% include "@atoms/text/text/01-paragraph.twig" with {
+    paragraph_content: headertop__contet,
+  } %}
+</div>

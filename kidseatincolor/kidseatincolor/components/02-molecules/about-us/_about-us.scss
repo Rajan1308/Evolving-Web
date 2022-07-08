@@ -1,0 +1,80 @@
+.about-us-block{
+  background-color: #604893;
+  width: 100%;
+  color: white;
+  border-radius: 10px;
+  @include large {
+    display: inline-block;
+  }
+}
+
+.content-block{
+  margin: 20px;
+  position: relative;
+}
+
+.about-us-icon{
+  width: 75px;
+  height: 72px;
+  @include breakpoint($upto-medium){
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+  }
+}
+
+.about-us-label{
+  font-weight: 700;
+  margin: 10px 0 8px;
+  color: $white;
+  font-size: 18px;
+  @include breakpoint($upto-medium){
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    vertical-align: sub;
+  }
+ 
+}
+.about-us-text{
+  font-weight: 400;
+  font-size: 16px;
+  line-height:24px;
+  margin: 0;
+  color: $white;
+  margin-top: 10px;
+  @include medium{
+    display: block;
+  }
+  @include breakpoint($upto-medium){
+    display: none;
+    margin: 0;
+    height: 0;
+  }
+}
+
+.about-us-arrow-down{
+  display: block;
+}
+
+.about-us-arrow-up{
+  display: none;
+  transform: rotate(180deg);
+}
+
+.about-us__dropdown {
+  background-image: url('../images/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 100%;
+  width: 16px;
+  height: 9px;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  @include medium{
+    display: none;
+  }
+}

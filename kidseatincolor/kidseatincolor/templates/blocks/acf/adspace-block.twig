@@ -1,0 +1,16 @@
+{#
+/**
+ * Block Name: Pull Quote
+ *
+ * This is the template that displays the example block.
+ */
+#}
+
+{% if is_preview %}
+    <p>Ad Space Its  only appear in the editor</p>
+{% endif %}
+{% if fields.adspace %}
+<div id="adspace-{{ block.id }}" class="wrapper inline-ad">
+    <a href="{{ fields.ads_banner_link }}"><img src="{{ fields.adspace.url }}" alt="{{ fields.adspace.alt }}" /></a>
+</div>
+{% endif %}

@@ -1,0 +1,11 @@
+{% if post %}
+  <div class="post">
+    <div class="post__image__wrapper">
+      <a href="{{ post.cta.url }}"> <img src="{{ post.image_src }}" alt="{{ post.image_alt }}"></a>
+    </div>
+    <div class="post__wrapper">
+      <h{{ post.heading_level }} class="post__heading">{{ post.heading }}</h{{ post.heading_level }}>
+      <a href="{{ post.cta.url }}" class="post__link">{{ post.cta.text }}</a>
+    </div>
+  </div>
+{% endif %}

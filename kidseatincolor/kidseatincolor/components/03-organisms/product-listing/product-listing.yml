@@ -1,0 +1,4 @@
+product_listing:
+  title: Lorem ipsum dolor sit amet
+  productview_button__content: 'View all'
+  productview_button__url: '#'

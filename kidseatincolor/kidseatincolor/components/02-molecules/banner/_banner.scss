@@ -1,0 +1,39 @@
+.cta {
+  background-color: clr(background-section);
+  padding: $space-triple;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.banner-section {
+  height: 30vw;
+  background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    width: 100%;
+    position: relative;
+    padding: 0 40px;
+    h1.banner-heading{
+        font-size: 54px;
+        padding: 55px 55px 0 55px;
+        color: #31ABD1;
+      }
+    .banner-content {
+      a {
+        margin-left: 55px;
+      }
+    }
+}
+
+.kidsbtn{
+  background: #E5391A;
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px;
+  font-weight: 500;
+
+  &:hover {
+    opacity: .5;
+    color: #fff;
+  }
+}

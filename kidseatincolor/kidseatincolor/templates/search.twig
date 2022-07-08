@@ -1,0 +1,43 @@
+{# see `archive.twig` for an alternative strategy of extending templates #}
+{% extends "templates/blocks/_defaults.twig" %}
+
+{% block content %}
+	{# see `base.twig:27` for where this block's content will be inserted #}
+	<div class="search-page-section pt-4 mt-3">
+		<div class="promo-block-listing__container">
+			<div class="search-section pb-4">
+				<form class="c-search-form" role="search" method="GET" action="/">
+					<input type="text" class="columns small-14" value="{{ function('get_search_query') }}" id="search" name="s" placeholder="Search">
+					<button class="button c-site-search__btn columns small-2" type="submit">
+						<svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+							<path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+						</svg>
+					</button>
+				</form>
+			</div>
+
+			<div class="results-for">
+				<p>Results for: “{{ function('get_search_query') }}”</p>
+			</div>
+			
+			<div class="search-result">
+				{% for post in posts %}
+					{#{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}#}
+					{% include ['tease-generic.twig'] %}
+				{% endfor %}
+			</div>
+
+			{% if posts.pagination.pages|length > 1 %}
+			<div class="view-more text-center">
+				<a id="view-more-search" href="" class="button" 
+					data-current="{{posts.pagination.current}}" 
+					data-max="{{posts.pagination.pages|length}}"
+					data-search="{{ fn('get_search_query') }}">View More</a>
+			</div>
+			{% endif %}
+
+			
+
+		</div>
+	</div>
+{% endblock %}

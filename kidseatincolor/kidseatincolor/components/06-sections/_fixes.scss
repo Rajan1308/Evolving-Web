@@ -1,0 +1,125 @@
+.hero-banner {
+  .hero-banner__content {
+    .button {
+      @include primary-cta();
+    }
+  }
+
+  &.hero-banner--with-card {
+    .hero-banner__content {
+      .button {
+        @include primary-cta-with-color-bg();
+      }
+    }
+  }
+}
+
+.two-block-section {
+  .content {
+    .button {
+      @include primary-cta();
+
+      margin-top: 24px;
+    }
+  }
+}
+
+.home-team-promo-section,
+.featured-content-block {
+  .text-with-cta__button {
+    @include primary-cta();
+  }
+}
+
+.team-member-spotlight {
+  form {
+    input[type='email'] {
+      margin-bottom: 0;
+      padding: 13px 0 13px 14px;
+      border-radius: 4px;
+      color: $friar-gray !important;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.card-with-image-link {
+  .card-with-image-link__button {
+    text-decoration: underline;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.text-with-bg-image__content {
+  .text-with-bg-image__button {
+    @include primary-cta-with-color-bg();
+  }
+}
+
+.home-full-width-form-section {
+  form {
+    margin-top: 20px;
+
+    input[type='email'] {
+      height: 45px;
+      min-width: 345px;
+      margin-bottom: 21px;
+      color: $friar-gray !important;
+      padding: 13px 16px;
+    }
+
+    input[type='submit'] {
+      background: $red;
+      text-transform: capitalize;
+      border-radius: 4px;
+      font-family: $font-primary-semi-bold;
+      font-size: 16px;
+      line-height: 1.25;
+      padding: 11px 13px;
+      min-width: 125px;
+      border: none;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.two-col-content__container {
+  .two-col-content__link {
+    &:hover {
+      color:$red;
+    }
+  }
+}
+
+.home-full-width-promo-section {
+  .text-with-bg-image__content {
+    .text-with-bg-image__body {
+      color: $white;
+    }
+  }
+
+  .text-with-bg-image__heading {
+    @include fs-h2();
+
+    color: $white;
+  }
+
+  &.without-description {
+    .text-with-bg-image__heading {
+      margin-bottom: 40px;
+
+      @include breakpoint($medium) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<section id="related-courses-promo-{{item}}" class="related-courses-promo">
+    <div class="container">
+        <h3>{{data.title}}</h3>
+        <div class="courses">
+            {% for course in data.course %}
+                {% set hero = course.meta('header_zone') %}
+                {% set product = fn('wc_get_product', hero.product) %}
+                <div class="course">
+                    {% if hero.image.url %}
+                        <img src="{{ hero.image.url }}">
+                    {% else %}
+                        <img src="{{ fn('get_template_directory_uri') }}/images/placeholder.png">
+                    {% endif %}
+                    <div class="course-content">
+                        <h5 class="course-title">{{ course.title }}</h5>
+                        <p>{{ course.post_excerpt }}</p>
+                        {% if product.get_price() %}
+                        <h5 class="course-price">${{ product.get_price() }}</h5>
+                        {% endif %}
+                        <a href="{{course.link}}" class="button outline">Learn More</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+        {% if data.cta.title %}
+            <a href="{{data.cta.url}}" class="button">{{data.cta.title}}</a>
+        {% endif %}
+        </div>
+    </div>
+</section>

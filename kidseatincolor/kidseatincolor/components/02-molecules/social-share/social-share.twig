@@ -1,0 +1,26 @@
+{# Set classes #}
+<div class="social-share-block">
+  <div>Share</div>
+  <div id="social-block" class="social-block">
+     {# List #}
+     <div id="icon-block" class="icon-block">
+        {% for item in social_menu_items %}
+          {% include "@molecules/social-share/_social-menu-link.twig" %}
+        {% endfor %}
+        <div class="social-icon">
+        <a href="mailto:?subject={{ emailshare.subject }}&amp;body={{ emailshare.body  }}&#13;" target="_blank" rel="noopener noreferrer">
+          <i class='fab fa-{{emailshare.icon}} fa-lg text-white'></i>
+        </a>
+        </div>
+      </div>
+      
+      <span class="plus-block">+</span>
+  </div>
+  <div id="print-block" class="print-block">
+    <div class="social-icon">
+      <a href="javascript:void(0);" class="printdiv-btn"   rel="noopener noreferrer">
+        <i class='fa fa-print fa-lg fa-fw text-white'></i>
+      </a>
+    </div>
+  </div>
+</div>

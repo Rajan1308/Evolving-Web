@@ -1,0 +1,5 @@
+card__image__src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT80lAnMEuTOjHjOyAyJ7af-rORmnacwHQVA&usqp=CAU'
+card__heading: 'Lorem ipsum'
+card__button__url: '#'
+card__button__content: 'Learn More'
+card__base_class: 'card-with-image-link'

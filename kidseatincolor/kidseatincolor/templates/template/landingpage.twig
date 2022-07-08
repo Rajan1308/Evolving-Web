@@ -1,0 +1,435 @@
+{% extends "templates/blocks/_defaults.twig" %}
+
+{% set playIcon = theme ? theme.link ~  '/images/play-buttonv.png' : 'play-buttonv.png' %}
+{% block content %}
+<section class="hero-zone-section mt-4">
+{% include '@molecules/hero-zone/hero-zone.twig' with { 
+		hero_zone : {
+			title: bannerTitle,
+			description: description,
+			image_src: backgroundImage.url,
+			image_alt: backgroundImage.alt,
+			cta1: {
+				title: ctabutton1.title,
+				url: ctabutton1.url,
+			},
+			cta2: {
+				title: ctabutton2.title,
+				url: ctabutton2.url,
+			},
+			hero_zone__modifiers: bgcolor,
+		}
+} %}
+</section>
+{% for lPFlexible in post.meta('landing_page') %}
+	{% if lPFlexible.acf_fc_layout == 'two_column_content_block' %}
+		{% set twocontentrep = lPFlexible.content_block_rep %}
+	<section class="two-col-content-section mt-4">
+		{% if twocontentrep %}
+			{% for key, twoContent in twocontentrep %}
+				{% set title = twoContent.tccb_content_block.tccb_content_block_column_1.tccb_content_block_title %}
+				{% set description = twoContent.tccb_content_block.tccb_content_block_column_1.tccb_content_block_description %}
+				{% set Image = twoContent.tccb_content_block.tccb_content_block_column_1.column_type1_image.url ? twoContent.tccb_content_block.tccb_content_block_column_1.column_type1_image.url : twoContent.tccb_content_block.tccb_content_block_column_2.column_type2_image.url %}
+				{% set imgattribuite = twoContent.tccb_content_block.tccb_content_block_column_1.column_type1_image.alt ? twoContent.tccb_content_block.tccb_content_block_column_1.column_type1_image.alt : twoContent.tccb_content_block.tccb_content_block_column_2.column_type2_image.alt %}
+				{% set ctaLevel = twoContent.tccb_content_block.tccb_content_block_column_1.tccb_content_block1_cta.title ? twoContent.tccb_content_block.tccb_content_block_column_1.tccb_content_block1_cta.title : twoContent.tccb_content_block.tccb_content_block_column_2.tccb_content_block2_cta.title %}
+				{% set ctaUrl = twoContent.tccb_content_block.tccb_content_block_column_1.tccb_content_block1_cta.url ? twoContent.tccb_content_block.tccb_content_block_column_1.tccb_content_block1_cta.url : twoContent.tccb_content_block.tccb_content_block_column_2.tccb_content_block2_cta.url %}
+				{% set key = (twoContent.tccb_content_block.tccb_content_block_column_1.column_type == 'Image') ? "left" : (twoContent.tccb_content_block.tccb_content_block_column_1.column_type == 'Content' ) ? "right" : ''  %}
+				{% include '@molecules/two-col-content-block/two-col-content-block.twig' with { 
+					two_col_content: {
+						title: title ? title : twoContent.tccb_content_block.tccb_content_block_column_2.tccb_content_block2_title,
+						description: description ? description : twoContent.tccb_content_block.tccb_content_block_column_2.tccb_content_block2_description,
+						image_src : Image,
+						image_alt: imgattribuite,
+						cta: {
+							title: ctaLevel,
+							url: ctaUrl
+						},
+						image_aligment: key
+					}
+				} %}
+			{% endfor %}
+		{% endif %}
+	</section>
+	{% elseif lPFlexible.acf_fc_layout == 'lp_featured_video_block' %}
+		<section class="video-block-section  pb-3">
+			<div class="container">
+				<div class="row">
+				
+					{% if lPFlexible.twoblock_video_video != 'URL' %}
+						{% set thumbnailLink = lPFlexible.lp_featured_video_block_video_link %}
+						{% include '@molecules/two-block/two-block.twig' with { 
+							video_content_raw: vimeoThumbUrl,
+							twoblocksection_heading: lPFlexible.lp_featured_video_block_title,
+							twoblocksection_body: lPFlexible.lp_featured_video_block_description,
+							twoblocksection_button__content: lPFlexible.lp_featured_video_block_cta.title,
+							twoblocksection_button__url: lPFlexible.lp_featured_video_block_cta.url,
+							twoblocksection_image__class: 'w-100'
+						} %}
+					{% endif %}
+				</div>
+				</div>
+		</section>
+		{% elseif lPFlexible.acf_fc_layout == 'featured_image_block' %}
+		<section class="video-block-section  pb-3">
+			<div class="container">
+				<div class="row">
+						{% include '@molecules/two-block/two-block.twig' with { 
+							twoblocksection_image__src: lPFlexible.featured_image_block_link.url,
+							twoblocksection_heading: lPFlexible.featured_image_block_title,
+							twoblocksection_body: lPFlexible.featured_image_block_description,
+							twoblocksection_button__content: lPFlexible.featured_image_block_button.title,
+							twoblocksection_button__url: lPFlexible.featured_image_block_button.url,
+							twoblocksection_image__class: 'w-100'
+						} %}
+				</div>
+				</div>
+		</section>
+	{% elseif lPFlexible.acf_fc_layout == 'lp_product_carousel' %}
+		<section class="product-carousel">
+		<div class="container">
+		{% embed '@organisms/product-listing/product-listing.twig' with {
+				product_listing:{ 
+					title: lPFlexible.lp_title,
+					productview_button__content: lPFlexible.lp_cta_field.title,
+					productview_button__url: lPFlexible.lp_cta_field.url
+					}
+			} %}
+			{% block product_listing %}
+				{% set productrepblock = lPFlexible.lp_product %}
+                <div class="product-listing__wp-content owl-carousel">
+                    {% for key, pl in productrepblock %}
+                        {% include '@molecules/product/product.twig' with {
+													product: {
+														image_src: pl.lp_product_image.url,
+														image_alt: pl.lp_product_image.alt,
+														title: pl.lp_product_title,
+														description: pl.lp_product_description,
+														url: pl.lp_product_url,
+													}
+                        } %}
+                    {% endfor %}
+                </div>
+			{% endblock %}
+		{% endembed %}
+		</div>
+		</section>
+	{% elseif lPFlexible.acf_fc_layout == 'lp_promo_grid' %}
+			{% embed '@organisms/promo-block-listing/promo-block-listing.twig' with {
+				promo_block_listing:{ title: lPFlexible.lppg_title }
+			} %}
+			{% block promo_block_listing %}
+				{% set prompblock = lPFlexible.promo_grid_rep %}
+				{% for key, promoGrid in prompblock %}
+					{% include '@molecules/promo-block/promo-block.twig' with { 
+						promo_block: {
+							title: promoGrid.promo_grid_rep_title,
+							description: promoGrid.promo_grid_rep_description,
+							cta: {
+								url: promoGrid.promo_grid_rep_url.url,
+								text: "Learn More"
+							}
+						}
+					} %}
+				{% endfor %}
+			{% endblock %}
+		{% endembed %}
+	{% elseif lPFlexible.acf_fc_layout == 'home_team_promo' %}
+		{% set home_team_promo_team_member = lPFlexible.home_team_promo_team_member %}
+		<section class="home-team-promo-section aos-init pb-3" data-aos="fade-up">
+			<div class="container pt-4 mt-4">
+				<div class="rows">
+						{% include '@molecules/Text/text.twig' with { 
+							text__heading: lPFlexible.home_team_promo_title,
+							text__subheading: lPFlexible.home_team_promo_description,
+							text__button__content: lPFlexible.home_team_promo_cta.title,
+							text__button__url: lPFlexible.home_team_promo_cta.url,
+						} %}
+				</div>
+			</div>
+			<div class="container pt-4 mt-3 pb-4 mb-4  ">
+				{% if home_team_promo_team_member %}
+				<div class="owl-carousel teampromo">
+						{% for teamPromo in home_team_promo_team_member %}
+						{% set teamPromoName = teamPromo.home_team_promo_team_member_name.home_team_promo_team_member_name_first_name~" "~teamPromo.home_team_promo_team_member_name.home_team_promo_team_member_name_last_name %}
+						{% include '@molecules/card/card.twig' with {
+							card__image__src: teamPromo.home_team_promo_team_member_image.url,
+							card__heading: teamPromoName,
+							card__subheading: teamPromo.home_team_promo_team_member_title,
+							card__base_class: 'team-member',
+							card__extra_classes: 'item slide'
+						} %}
+						{% endfor %}
+				</div>
+				{% endif %}
+			</div>
+		</section>
+    {% elseif lPFlexible.acf_fc_layout == 'home_featured_content_block' %}
+		<section class="featured-content-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-lg-3 featured-block-text text-left" data-aos="fade-up-right">
+						{% include '@molecules/Text/text.twig' with {
+							text__heading: lPFlexible.home_featured_content_block_title,
+							text__subheading: lPFlexible.home_featured_content_block_description,
+							text__button__content: lPFlexible.home_featured_content_block_cta.title,
+							text__button__url: lPFlexible.home_featured_content_block_cta.url,
+							text__extra_classes: 'text-left'
+						} %}
+					</div>
+					<div class="col-md-8 col-lg-9 text-left featured-block-items row owl-carousel" data-aos="fade-up-left">
+						{% for hfcBlock  in Post(lPFlexible.home_featured_content_block_dynamic_listing) %}
+							{% set counter = ( counter | default(0) ) + 1 %}
+							<div class="col-lg-4 featured-block-item featured-block-{{counter}}" >
+							{% include '@molecules/card/card.twig' with {
+								card__image__src: hfcBlock.thumbnail.src|tojpg| resize(280, 177),
+								card__image__alt: hfcBlock.title,
+								card__heading: hfcBlock.title,
+								card__button__url: hfcBlock.link,
+								card__button__content: 'Learn More',
+								card__base_class: 'card-with-image-link'
+							} %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+	{% elseif lPFlexible.acf_fc_layout == 'home_testimonial_block' %}
+		{% set repeter_testimonial_block = lPFlexible.repeter_testimonial_block %}
+		{% set testimoniColor = '' %}
+		{% for testimoniSlider in repeter_testimonial_block %}
+			{% set testimoniColor = testimoniSlider.repeter_testimonial_block_color %}
+		{% endfor %}
+		<section class="home-testimonial-section aos-init pb-3 {{ testimoniColor }}" data-aos="fade-up">
+			<div class="container-fluid pl-0 pr-0">
+				<div class="container">
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading_base_class: slider__heading__base_class|default('heading-testimonials'),
+        heading_modifiers: slider__heading__modifiers,
+        heading_blockname: slider__base_class,
+        heading_level: 2,
+        heading: lPFlexible.home_testimonial_block_title,
+        heading_url: slider__heading__link|default(slider__link__url),
+        heading_link_base_class: slider__heading__link_base_class|default('heading-link'),
+        heading_link_blockname: slider__base_class,
+      } %}
+			</div>
+    
+			{% if repeter_testimonial_block %}
+			<div class="owl-carousel testimonials">
+				{% for testimonialslider in repeter_testimonial_block %}
+				{% set Purple = theme.link ~ '/images/Purple.png' %}
+				{% set Blue 	= theme.link ~ '/images/blue.png' 	%}
+				{% set Green 	= theme.link ~ '/images/orange.png' %}
+				
+				{% set iconColor = testimonialslider.repeter_testimonial_block_color == 'Purple' ? Blue : testimonialslider.repeter_testimonial_block_color == 'Blue' ? Purple : testimonialslider.repeter_testimonial_block_color == 'Green' ? Green :  '' %}
+
+					{% include '@molecules/slider/slide.twig' with { 
+						slider__image__src: iconColor,
+						slider__image__alt: testimonialslider.repeter_testimonial_block_image.alt,
+						slider__body: testimonialslider.repeter_testimonial_block_quote,
+						slider__author: testimonialslider.repeter_testimonial_block_name~ "<br />"~testimonialslider.repeter_testimonial_block_title,
+						slider__base_class: 'slide-with-image',
+						responsive_image_blockname: 'left',
+						slider__extra_classes: 'pt-0',
+						slider__modifiers:[testimonialslider.repeter_testimonial_block_color]
+
+					} %}
+				{% endfor %}
+			</div>
+			{% endif %}
+			</div>
+		</section>
+	{% elseif lPFlexible.acf_fc_layout == 'lp_cta_promo' %}
+		<section class="home-cta-promo-section pt-4 mt-4 pb-3">
+			<div class="container">
+				{% include '@molecules/Hero/hero.twig' with {
+					hero_banner__image__src: lPFlexible.lp_cta_promo_image.url,
+					hero_banner__image__alt: lPFlexible.lp_cta_promo_image.alt,
+					responsive_image_blockname: 'hero-banner',
+					hero_banner__modifiers: 'with-card',
+					hero_banner__heading:  lPFlexible.lp_cta_promo_title,
+					hero_banner__button_text: lPFlexible.lp_cta_promo_cta.title,
+					button_url: lPFlexible.lp_cta_promo_cta.url,
+                    heading_level: '2',
+				} %}
+			</div>
+		</section>
+	{% elseif lPFlexible.acf_fc_layout == 'lp_full_width_cta_promo' %}
+        {% set description_enabled = lPFlexible.lp_full_width_cta_promo_description ? 'with-description' : 'without-description' %}
+		<section class="home-full-width-promo-section pt-4 mt-4 pb-0 {{ description_enabled }}">
+				{% include '@molecules/Text/text.twig' with {
+					text__backround_image__url: lPFlexible.lp_full_width_cta_promo_background.url,
+					text__heading: lPFlexible.lp_full_width_cta_promo_title,
+					text__subheading: lPFlexible.lp_full_width_cta_promo_description,
+					text__button__content: lPFlexible.lp_full_width_cta_promo_cta.title,
+					text__button__url: lPFlexible.lp_full_width_cta_promo_cta.url,
+					text__base_class: 'text-with-bg-image'
+				} %}
+		</section>
+	
+	{% elseif lPFlexible.acf_fc_layout == 'lp_full_width_form' %}
+		{% set homefullwidthform = lPFlexible.lp_full_width_form_shortcode_form ? lPFlexible.lp_full_width_form_shortcode_form |shortcodes: '' %}
+		<section class="home-full-width-form-section pt-0 mt-0 pb-3">
+			{% include '@molecules/Text/text.twig' with {
+				text__backround_image__url: lPFlexible.lp_full_width_form_background_image.url,
+				text__heading: lPFlexible.lp_full_width_form_title,
+				text__subheading: lPFlexible.lp_full_width_form_description,
+				text__form_short_code: homefullwidthform,
+				text__base_class: 'text-with-form'
+			} %}
+		</section>
+	{% elseif lPFlexible.acf_fc_layout == 'lp_text_block' %}
+	 <section class="text-block">
+		<div class="container">
+			{{ lPFlexible.content_text_block }}
+		</div>
+	 </section>
+	{% elseif lPFlexible.acf_fc_layout == 'lp_logo_promo' %}
+		<section class="partners-logo">
+			<div class="container">
+				{% if lPFlexible.lp_logo_promo_title %}<h3 class="items-title">{{ lPFlexible.lp_logo_promo_title}}</h3>{% endif %}
+				<div class="logo-itmes owl-carousel">
+				{% for Promologos in lPFlexible.lp_logo_promo_logos %}
+				  <span class="logo"><img src="{{Promologos.lp_logo_promo_logos_logo.url}}" alt="{{Promologos.lp_logo_promo_logos_logo.alt}}" /></span>
+				{% endfor %}
+				</div>
+			</div>
+		</section>
+	{% elseif lPFlexible.acf_fc_layout == 'lp_team_grid' %}
+		{% set home_team_promo_team_member = lPFlexible.lp_team_member %}
+		{% if home_team_promo_team_member %}
+		<div class="container">
+			{% embed '@organisms/team-grid/team-grid.twig' %}
+			{% block team_grid_mobile %}
+			{% for teamPromo in home_team_promo_team_member %}
+					{% set teamProfile = teamPromo.team_member %}
+					{% include '@molecules/team-member/team-member.twig' with {
+						member: {
+							image_src: Image(teamProfile.team_featured_image).src,
+							name: teamProfile.title,
+							title: teamProfile.titlecredentials,
+							image_alt: teamProfile.title
+						}
+					} %}
+			{% endfor %}
+			{% endblock %}
+			{% block team_grid %}
+			{% for teamPromo in home_team_promo_team_member %}
+					{% set teamProfile = teamPromo.team_member %}
+					{% include '@molecules/team-member/team-member.twig' with {
+						member: {
+							image_src: Image(teamProfile.team_featured_image).src,
+							name: teamProfile.title,
+							title: teamProfile.titlecredentials,
+							image_alt: teamProfile.title
+						}
+					} %}
+			{% endfor %}
+			{% endblock %}
+			{% endembed %}
+			</div>
+		{% endif %}
+	{% elseif lPFlexible.acf_fc_layout == 'lp_featured_content_block' %}
+		<section class="featured-content-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-lg-3 featured-block-text text-left" data-aos="fade-up-right">
+						{% include '@molecules/Text/text.twig' with {
+							text__heading: lPFlexible.lp_featured_content_block_title,
+							text__subheading: lPFlexible.lp_featured_content_block_description,
+							text__button__content: lPFlexible.lp_featured_content_block_cta.title,
+							text__button__url: lPFlexible.lp_featured_content_block_cta.url,
+							text__extra_classes: 'text-left'
+						} %}
+					</div>
+					<div class="col-md-8 col-lg-9 text-left featured-block-items row owl-carousel" data-aos="fade-up-left">
+						{% for hfcBlock  in Post(lPFlexible.home_featured_content_block_dynamic_listing) %}
+							{% set counter = ( counter | default(0) ) + 1 %}
+							<div class="col-lg-4 featured-block-item featured-block-{{counter}}" >
+							{% include '@molecules/card/card.twig' with {
+								card__image__src: hfcBlock.thumbnail.src|tojpg| resize(280, 177),
+								card__heading: hfcBlock.title,
+								card__button__url: hfcBlock.link,
+								card__button__content: 'Learn More',
+								card__base_class: 'card-with-image-link'
+							} %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+	{% elseif homeFlexible.acf_fc_layout == 'home_testimonial_block' %}
+		{% set repeter_testimonial_block = homeFlexible.repeter_testimonial_block %}
+		{% set testimoniColor = '' %}
+		{% for testimoniSlider in repeter_testimonial_block %}
+			{% set testimoniColor = testimoniSlider.repeter_testimonial_block_color %}
+		{% endfor %}
+		<section class="home-testimonial-section aos-init pb-3 {{ testimoniColor }}" data-aos="fade-up">
+			<div class="container-fluid pl-0 pr-0">
+				<div class="container">
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading_base_class: slider__heading__base_class|default('heading-testimonials'),
+        heading_modifiers: slider__heading__modifiers,
+        heading_blockname: slider__base_class,
+        heading_level: 2,
+        heading: homeFlexible.home_testimonial_block_title,
+        heading_url: slider__heading__link|default(slider__link__url),
+        heading_link_base_class: slider__heading__link_base_class|default('heading-link'),
+        heading_link_blockname: slider__base_class,
+      } %}
+			</div>
+    
+			{% if repeter_testimonial_block %}
+			<div class="owl-carousel testimonials">
+				{% for testimonialslider in repeter_testimonial_block %}
+				{% set Purple = theme.link ~ '/images/purple.svg' %}
+				{% set Blue 	= theme.link ~ '/images/blue.svg' 	%}
+				{% set Green 	= theme.link ~ '/images/orange.svg' %}
+				
+				{% set iconColor = testimonialslider.repeter_testimonial_block_color == 'Purple' ? Blue : testimonialslider.repeter_testimonial_block_color == 'Blue' ? Purple : testimonialslider.repeter_testimonial_block_color == 'Green' ? Green :  '' %}
+
+					{% include '@molecules/slider/slide.twig' with { 
+						slider__image__src: iconColor,
+						slider__image__alt: testimonialslider.repeter_testimonial_block_image.alt,
+						slider__body: testimonialslider.repeter_testimonial_block_quote,
+						slider__author: testimonialslider.repeter_testimonial_block_name~ "<br />"~testimonialslider.repeter_testimonial_block_title,
+						slider__base_class: 'slide-with-image',
+						responsive_image_blockname: 'left',
+						slider__extra_classes: 'pt-0',
+						slider__modifiers:[testimonialslider.repeter_testimonial_block_color]
+
+					} %}
+				{% endfor %}
+			</div>
+			{% endif %}
+			</div>
+		</section>
+		
+			{% elseif lPFlexible.acf_fc_layout == 'testimonial_grid' %}
+			<section class="testimonial-grid-block">
+				<div class="container">
+				{% include "@molecules/testimonial-grid/testimonial-grid.twig" with {
+						data: lPFlexible,
+						item: loop.index,
+				} %}	 
+				</div>
+			</section>
+
+			{% elseif lPFlexible.acf_fc_layout == 'testimonial_card_carousel' %}
+				{% include "@molecules/testimonial-card-carousel/testimonial-card-carousel.twig" with {
+						data: lPFlexible,
+						item: loop.index,
+				} %}	
+				{% elseif lPFlexible.acf_fc_layout == 'cta_banner' %}
+					{% include "@molecules/cta-banner/cta-banner.twig" with {
+							data: lPFlexible,
+							item: loop.index,
+					} %}	 
+        
+		
+	{% endif %}
+{% endfor %}
+
+{% endblock %}

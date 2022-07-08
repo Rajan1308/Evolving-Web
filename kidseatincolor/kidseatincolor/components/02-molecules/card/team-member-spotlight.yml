@@ -1,0 +1,11 @@
+card__image__src: 'https://www.mckinsey.com/~/media/mckinsey/our%20people/andre%20andonian/andr%20andonian_alt_cm28200_fc-mask_headshot_988x741.png?mw=250&car=1:1'
+card__image__alt: "This is the card image's alt text"
+card__image__output_image_tag: true
+card__heading: "Hi, I'm John!"
+card__body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt molestiae est quos possimus quasi eveniet nam, ea expedita rerum culpa enim repellendus maxime accusamus rem quae? Totam tempore placeat nostrum, alias quos obcaecati quo incidunt voluptates. Laudantium quam quod, aspernatur distinctio iste, provident veniam, impedit odit molestias minus reprehenderit!'
+card__link__text: 'Read more about this card'
+card__email_placeholder: 'EMAIL'
+card__button__url: '#'
+card__button__content: 'Subscribe'
+card__formshrotcode: 'form shortcode goes here'
+card__base_class: 'team-member-spotlight'

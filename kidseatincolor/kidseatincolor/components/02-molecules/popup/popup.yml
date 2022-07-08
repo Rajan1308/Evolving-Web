@@ -1,0 +1,8 @@
+popup:
+  title: 'Got a Picky Eater? We can help.'
+  description: 'Sign up to receive our free Picky Eater Guide plus expert advice, support, and evidence-based help for feeding kids directly to your inbox.'
+  image_src: 'https://placeimg.com/340/455/nature'
+  image_alt:  'placehold alt text'
+  popup__form: 'Form Shortcodes'
+  mobile_image_src: 'https://placeimg.com/340/200/nature'
+  mobile_image_alt: 'mobile_alt text'

@@ -1,0 +1,89 @@
+.two-block-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  img {
+    width: 100%;
+  }
+  @include breakpoint($medium) {
+    flex-direction: row;
+  }
+  .srcvideo{
+    width: 100%;
+    @include breakpoint($xl) {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .content {
+    @include breakpoint($upto-medium) {
+      margin-top: 17px;
+    }
+
+    .heading{
+      @include fs-h2();
+
+      text-decoration: none;
+      color: $purple-dark;
+      @include breakpoint($medium) {  
+        text-decoration: none;
+      }
+    }
+    p{
+      font-size: 16px;
+      line-height: 24px;
+      color: $gray-slate;
+      font-family: $font-primary-light;
+      @include breakpoint($medium) {
+      font-size: 22px;
+      line-height: 30.8px;
+      }
+    }
+    @include breakpoint($xl) {
+      padding: 0;
+    }
+  }
+
+  .button {
+    border-radius: 4px;
+    font-family: $font-primary-semi-bold;
+    text-transform: initial;
+  }
+}
+
+.twoblocksection_heading {
+  @include heading-large($font-size: 1.3rem);
+  @include no-bottom;
+
+  &-link {
+    @include link;
+  }
+}
+
+.twoblocksection_subheading {
+  @include heading-medium($font-size: 1rem);
+  @include no-bottom;
+
+  color: clr(text);
+}
+
+.twoblocksection_body {
+  margin: 0.7em 0 1em;
+}
+
+.twoblocksection_link {
+  @include link;
+}
+
+.twoblocksection_button {
+  @include button-base;
+  @include button-color-primary;
+  @include button-medium;
+}
+
+/* Variations */
+.card--bg {
+  background-color: clr(highlight-high);
+  padding: 1em;
+}

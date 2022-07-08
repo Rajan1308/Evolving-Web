@@ -1,0 +1,77 @@
+
+.social-share-block{    
+  text-align: center;
+  font-family: $font-primary-light;
+  color: $gray-slate;
+  margin: 0;
+  float: left;
+  @include medium{
+    position: sticky !important;
+    left: 0;
+    padding-bottom: 150px;
+    height: 100%;
+    top: 25px;
+  }
+  @include breakpoint($upto-medium){
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    top: -128px;
+    float: right;
+  }
+}
+
+.social-block{
+  margin-top: 10px;
+  width:56px;
+  height:auto;
+  min-height: 56px;
+  border-radius: 50px;
+  background-color: $purple-dark;
+}
+
+
+.plus-block{
+  color: white;
+  font-size: 60px;
+  display: none;
+  height: 0;
+  position: relative;
+  bottom: 19px;
+  @include breakpoint($upto-medium){
+    display: block;
+  }
+}
+.icon-block{
+  @include medium{
+    padding: 15px 0;
+  }
+  a{
+    color: white;
+    margin-top: 10px;
+  }
+  .social-icon{
+    width: 56px;
+    color: white;
+    left: 10px;
+    padding-top: 6px;
+    font-size: 20px;
+    height: 47px;
+  }
+  @include breakpoint($upto-medium){
+    display: none;
+    margin: 0;
+    height: 0;
+  }
+}
+
+.print-block{
+  margin-top: 20px;
+  padding: 15px 0;
+  color: white;
+  background-color: $friar-gray;
+  border-radius: 50%;
+  @include breakpoint($upto-medium){
+    display: none;
+  }
+}

@@ -1,0 +1,26 @@
+{# This file demonstrates using most of the index.twig template and modifying 
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "templates/blocks/_defaults.twig" %}
+
+{% block content %}
+<div class="content-wrapper container mt-4 mb-4">
+	<div class="archive-row ">
+    <h1 class="category-heading">{{title}}</h1>
+    <div class="archive-page">
+			{% for post in posts %}
+				{#{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}#}
+				{% include ['tease-post.twig'] %}
+			{% endfor %}
+			</div>
+    
+    {% if posts.pagination.pages|length > 1 %}
+			<div class="view-more text-center">
+				<a id="view-more-archive-search" href="" class="button" 
+					data-current="{{posts.pagination.current}}" 
+					data-max="{{posts.pagination.pages|length}}">View More</a>
+			</div>
+			{% endif %}
+  </div>
+</div>
+{% endblock %}

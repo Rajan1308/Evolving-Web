@@ -1,0 +1,81 @@
+.text-with-form {
+  background-position: center;
+  background-size: cover;
+  min-height: 475px;
+  background-color: $cloud;
+  background-position-x: 100%;
+
+  @include large {
+    background-position-x: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    padding: 40px 27px;
+
+    @include large {
+      padding: 36px;
+      max-width: 520px;
+      margin-right: 182px;
+    }
+  }
+
+  &__heading {
+    @include fs-h3();
+
+    color: $green;
+    margin-top: 0;
+  }
+
+  &__body {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.58px;
+    color: $black;
+    font-family: $font-primary-light;
+
+    @include large {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 33.4px;
+    }
+  }
+
+  .textbox {
+    height: 45px;
+    width: 270px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26.4px;
+    display: block;
+    margin-bottom: 21px;
+
+    @include large {
+      width: 345px;
+      font-size: 16px;
+      line-height: 23.1px;
+    }
+  }
+
+  input:not([type='submit']) {
+    background: $white;
+    opacity: 1;
+    color: black;
+    border-radius: 4px;
+    border: 0;
+  }
+
+  &__button {
+    @include button-large;
+    @include button-color-primary;
+
+    margin-top: 7px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    min-width: 125px;
+    padding: 6px;
+    text-align: center;
+  }
+}

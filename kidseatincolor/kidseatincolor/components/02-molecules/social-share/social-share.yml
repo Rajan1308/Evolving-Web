@@ -1,0 +1,18 @@
+social_menu_items:
+  - title: 'Twitter'
+    url: '#'
+    icon: 'twitter'
+  - title: 'Facebook'
+    url: '#'
+    icon: 'facebook-f'
+  - title: 'Instagram'
+    url: '#'
+    icon: 'instagram'
+emailshare:
+  - subject: 'Email Subject'
+    body: 'Body content'
+    icon: 'envelope'
+print:
+  - title: 'Print'
+    url: '#'
+    icon: 'print'

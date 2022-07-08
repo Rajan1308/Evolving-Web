@@ -1,0 +1,110 @@
+{% extends "templates/blocks/_defaults.twig" %}
+
+{% set playIcon = theme ? theme.link ~  '/images/play-buttonv.png' : 'play-buttonv.png' %}
+{% set allCategoryChecked = '' %}
+{% if url_term is not defined %}
+{% set allCategoryChecked = 'checked' %}
+{% endif %}
+
+{% block content %}
+	<section class="header-title listing-title">
+		<div class="container text-center">
+			{% if blogTitle %}
+				<h1>{{ blogTitle }}</h1>
+			{% else %}
+				<h1>{{post.title}}</h1>
+			{% endif %}
+		</div>
+	</section>
+
+	{% for blogFlexible in post.meta('blog_listing_page') %}
+
+		{% if blogFlexible.acf_fc_layout == 'home_full_width_form' %}
+
+			{% set homefullwidthform = blogFlexible.home_full_width_form_shortcode_form ? blogFlexible.home_full_width_form_shortcode_form |shortcodes: '' %}
+			<section class="home-full-width-form-section pt-0 mt-0 pb-3">
+				{% include '@molecules/Text/text.twig' with {
+					text__backround_image__url: blogFlexible.home_full_width_form_background_image.url,
+					text__heading: blogFlexible.home_full_width_form_title,
+					text__subheading: blogFlexible.home_full_width_form_description,
+					text__form_short_code: homefullwidthform,
+					text__base_class: 'text-with-form'
+				} %}
+			</section>
+			
+		{% elseif blogFlexible.acf_fc_layout == 'texonomo_categories' %}
+		
+			{% set blogcatagories = blogFlexible.blog_listing_categories %}
+			<section class="blog-section" id="blog-listing-rendered-data">
+				<div class="container">
+					<div class="search-section">
+						<form class="c-search-form" action="" method="POST" id="blog_listing_render_filter_form" name="blog_listing_render_filter_form" >
+							<input type="text" class="columns small-14" value="{{ function('get_search_query') }}" id="keyword-search" name="keyword-search" placeholder="Search">
+							<button class="button c-site-search__btn columns small-2" type="submit" id="submit" name="submit" alt="search">Search</button>
+							
+							{% if cat %}
+								<div class="blog-term pt-4 pb-4">
+									<div class="scroll">
+										<div class="item">
+											<label class="d-inline">
+												<input type="radio" class="columns small-14" value="" id="blogCatTerms" name="blogCatTerms" {{ allCategoryChecked }}>
+												<!--<a href="javascript:void(0)" class="allBlogList">-->
+												<span class="allBlogList">All</span>
+												<!--</a>-->
+											</label>
+										</div>
+										{% for catData in cat  %}
+										  {% if url_term is defined and catData.termSlug == url_term %}
+											  {% set categoryChecked = 'checked' %}
+											{% else %}
+												{% set categoryChecked = '' %}
+											{% endif %}
+
+										<div class="item">
+											<label class="d-inline">
+												<input type="radio" class="columns small-14" value="{{ catData.termSlug }}" id="blogCatTerms" name="blogCatTerms" {{ categoryChecked }}>
+												<!--<a href="javascript:void(0)" name="{{ catData.termName }}" data-index="{{ catData.termSlug }}" >-->
+												<span data-index="{{ catData.termSlug }}" >{{ catData.termName }}</span>
+												<!--</a>-->
+											</label>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							{% endif %}
+							
+							{% for catData in cat  %}
+								<input type="hidden" name="selectCat[]" value="{{ catData.termId }}" />
+							{% endfor %}
+							<input type="hidden" name="action" value="bloglisting_filter" />
+							<input type="hidden" name="offset" id="offset" value="" />
+							<input type="hidden" name="paged" id="paged" value="1">
+							<input type="hidden" name="term" value="category">
+						</form>
+					</div>
+					<!-- Compressed CSS -->
+				</div>
+
+				<div class="blog-section-main">
+					<div id="portfolio-data">
+						<section class="blog-section inside my-post">
+							<div class="container">
+								<hr>
+								<div class="search-message"></div>
+								<div class="bloglisting-data-filter-block">
+									
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="text-center load-more-block mb-4 pb-4">
+						<div id="spinloader" class="spinner lds-dual-ring hidden overlay"></div>
+						{# <div class="loader" style="display:none;"><i class="fa fa fa-spinner fa-spin fa-2x"></i></div> #}
+						<a href="javascript:void(0);" id="load-more" class="load-more btn-contact button primary" alt="View More">View More</a>
+					</div>
+				</div>
+			</section>
+				
+		{% endif %}
+	{% endfor %}
+{% endblock %}

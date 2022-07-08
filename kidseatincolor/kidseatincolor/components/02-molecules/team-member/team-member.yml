@@ -1,0 +1,5 @@
+member:
+  name: First Name Last Name
+  title: Title
+  image_src: 'https://placeimg.com/164/193/nature'
+  image_alt: "This is the card image's alt text"

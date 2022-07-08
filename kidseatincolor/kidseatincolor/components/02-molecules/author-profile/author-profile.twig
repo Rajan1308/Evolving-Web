@@ -1,0 +1,11 @@
+<div class="author-profile-block">
+  {% if author %}
+  <div class="author-img-block">
+      <img src="{{ author.image_src }}" alt="{{ author.image_alt }}">
+  </div>
+  <div class="author-text-block">
+  <p class="label">{{author.name}}</p>
+  <p>{{author.bio}}</p>
+  </div>
+	{% endif %}
+</div>

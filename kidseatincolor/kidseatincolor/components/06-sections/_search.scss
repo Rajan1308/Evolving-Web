@@ -1,0 +1,14 @@
+.search-results{
+    #breadcrumbs{
+        display: none;
+    }
+    .results-for {
+        margin: 20px 0;
+    }  
+    .view-more{
+        padding: 35px 0;
+        @include large{
+            padding: 70px 0;    
+        }
+    }  
+}

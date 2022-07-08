@@ -1,0 +1,17 @@
+.cta-banner{
+    background-image: url('../images/cookie-green.svg');
+    background-color: $sky-blue;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 90px 0;
+    text-align: center;
+    h2{
+        color: $white;
+        max-width: 740px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .button{
+        margin-top: 40px;
+    }
+}

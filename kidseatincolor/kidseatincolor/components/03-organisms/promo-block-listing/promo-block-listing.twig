@@ -1,0 +1,14 @@
+<div class="promo-block-listing">
+  <div class="promo-block-listing__container">
+    {% if promo_block_listing.title %}
+    <h2 class="promo-block-listing__title">
+      {{ promo_block_listing.title }}
+    </h2>
+    {% endif %}
+    <div class="promo-block-listing__content">
+      {% block promo_block_listing %} {% for i in range (1, 6) %} {% include
+      "@molecules/promo-block/promo-block.twig" with promoBlockData %} {% endfor
+      %} {% endblock %}
+    </div>
+  </div>
+</div>
